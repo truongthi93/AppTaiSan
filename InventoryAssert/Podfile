@@ -1,0 +1,16 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'InventoryAssert' do
+  use_frameworks!
+
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'TPKeyboardAvoiding'
+  pod 'SVProgressHUD'
+  pod 'PromiseKit'
+
+  target 'InventoryAssertTests' do
+    inherit! :search_paths
+  end
+end

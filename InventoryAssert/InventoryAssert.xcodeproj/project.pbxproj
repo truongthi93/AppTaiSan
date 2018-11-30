@@ -1,0 +1,683 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E1CD2F5218D81020086145E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD2F4218D81020086145E /* AppDelegate.swift */; };
+		4E1CD2FD218D81020086145E /* InventoryAssert.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD2FB218D81020086145E /* InventoryAssert.xcdatamodeld */; };
+		4E1CD2FF218D81040086145E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E1CD2FE218D81040086145E /* Assets.xcassets */; };
+		4E1CD302218D81040086145E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1CD300218D81040086145E /* LaunchScreen.storyboard */; };
+		4E1CD30D218D81040086145E /* InventoryAssertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD30C218D81040086145E /* InventoryAssertTests.swift */; };
+		4E1CD320218D849B0086145E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD31E218D849B0086145E /* LoginViewController.swift */; };
+		4E1CD321218D849B0086145E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1CD31F218D849B0086145E /* LoginViewController.xib */; };
+		4E1CD32B218D876A0086145E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD32A218D876A0086145E /* Constants.swift */; };
+		4E1CD32E218D8CD10086145E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD32D218D8CD10086145E /* LoginView.swift */; };
+		5C4348F31BC7C68B7CB360AE /* Pods_InventoryAssert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8069C9454B746C43277F4E6 /* Pods_InventoryAssert.framework */; };
+		EECA5BC440DD260ED773C8BF /* Pods_InventoryAssertTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D7798615BAD767F2D7F872 /* Pods_InventoryAssertTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E1CD309218D81040086145E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E1CD2E9218D81020086145E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E1CD2F0218D81020086145E;
+			remoteInfo = InventoryAssert;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4E1CD2F1218D81020086145E /* InventoryAssert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryAssert.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E1CD2F4218D81020086145E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E1CD2FC218D81020086145E /* InventoryAssert.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InventoryAssert.xcdatamodel; sourceTree = "<group>"; };
+		4E1CD2FE218D81040086145E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E1CD301218D81040086145E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4E1CD303218D81040086145E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E1CD308218D81040086145E /* InventoryAssertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InventoryAssertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E1CD30C218D81040086145E /* InventoryAssertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryAssertTests.swift; sourceTree = "<group>"; };
+		4E1CD30E218D81040086145E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E1CD31E218D849B0086145E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4E1CD31F218D849B0086145E /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		4E1CD32A218D876A0086145E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4E1CD32D218D8CD10086145E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		53B9F78F2CC13F5DFE0CF460 /* Pods-InventoryAssert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryAssert.release.xcconfig"; path = "Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert.release.xcconfig"; sourceTree = "<group>"; };
+		5956E89B123A497123F6F8FB /* Pods-InventoryAssertTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryAssertTests.release.xcconfig"; path = "Target Support Files/Pods-InventoryAssertTests/Pods-InventoryAssertTests.release.xcconfig"; sourceTree = "<group>"; };
+		99D7798615BAD767F2D7F872 /* Pods_InventoryAssertTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InventoryAssertTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B079DE23E2B15A667D875AD /* Pods-InventoryAssertTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryAssertTests.debug.xcconfig"; path = "Target Support Files/Pods-InventoryAssertTests/Pods-InventoryAssertTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8069C9454B746C43277F4E6 /* Pods_InventoryAssert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InventoryAssert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0C1308079EFDEF2EDDB05F0 /* Pods-InventoryAssert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryAssert.debug.xcconfig"; path = "Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E1CD2EE218D81020086145E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4348F31BC7C68B7CB360AE /* Pods_InventoryAssert.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E1CD305218D81040086145E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EECA5BC440DD260ED773C8BF /* Pods_InventoryAssertTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33539E4076E9F5A75CCAE59B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0C1308079EFDEF2EDDB05F0 /* Pods-InventoryAssert.debug.xcconfig */,
+				53B9F78F2CC13F5DFE0CF460 /* Pods-InventoryAssert.release.xcconfig */,
+				9B079DE23E2B15A667D875AD /* Pods-InventoryAssertTests.debug.xcconfig */,
+				5956E89B123A497123F6F8FB /* Pods-InventoryAssertTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		47A0BDEEF74CB183AD3FC826 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8069C9454B746C43277F4E6 /* Pods_InventoryAssert.framework */,
+				99D7798615BAD767F2D7F872 /* Pods_InventoryAssertTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E1CD2E8218D81020086145E = {
+			isa = PBXGroup;
+			children = (
+				4E1CD2F3218D81020086145E /* InventoryAssert */,
+				4E1CD30B218D81040086145E /* InventoryAssertTests */,
+				4E1CD2F2218D81020086145E /* Products */,
+				33539E4076E9F5A75CCAE59B /* Pods */,
+				47A0BDEEF74CB183AD3FC826 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4E1CD2F2218D81020086145E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E1CD2F1218D81020086145E /* InventoryAssert.app */,
+				4E1CD308218D81040086145E /* InventoryAssertTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E1CD2F3218D81020086145E /* InventoryAssert */ = {
+			isa = PBXGroup;
+			children = (
+				4E1CD325218D86590086145E /* Services */,
+				4E1CD324218D86320086145E /* DataStorages */,
+				4E1CD323218D86260086145E /* Extensions */,
+				4E1CD322218D84DF0086145E /* Models */,
+				4E1CD31B218D84200086145E /* Commons */,
+				4E1CD318218D81CD0086145E /* Modules */,
+				4E1CD317218D81A90086145E /* SupportingFiles */,
+			);
+			path = InventoryAssert;
+			sourceTree = "<group>";
+		};
+		4E1CD30B218D81040086145E /* InventoryAssertTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E1CD30C218D81040086145E /* InventoryAssertTests.swift */,
+				4E1CD30E218D81040086145E /* Info.plist */,
+			);
+			path = InventoryAssertTests;
+			sourceTree = "<group>";
+		};
+		4E1CD317218D81A90086145E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4E1CD2F4218D81020086145E /* AppDelegate.swift */,
+				4E1CD2FE218D81040086145E /* Assets.xcassets */,
+				4E1CD303218D81040086145E /* Info.plist */,
+				4E1CD2FB218D81020086145E /* InventoryAssert.xcdatamodeld */,
+				4E1CD300218D81040086145E /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4E1CD318218D81CD0086145E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4E1CD31C218D84460086145E /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4E1CD31B218D84200086145E /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				4E1CD32C218D88170086145E /* Views */,
+				4E1CD329218D87560086145E /* Resources */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		4E1CD31C218D84460086145E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4E1CD31E218D849B0086145E /* LoginViewController.swift */,
+				4E1CD31F218D849B0086145E /* LoginViewController.xib */,
+				4E1CD32D218D8CD10086145E /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4E1CD322218D84DF0086145E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4E1CD323218D86260086145E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4E1CD324218D86320086145E /* DataStorages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataStorages;
+			sourceTree = "<group>";
+		};
+		4E1CD325218D86590086145E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4E1CD329218D87560086145E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4E1CD32A218D876A0086145E /* Constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4E1CD32C218D88170086145E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E1CD2F0218D81020086145E /* InventoryAssert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E1CD311218D81040086145E /* Build configuration list for PBXNativeTarget "InventoryAssert" */;
+			buildPhases = (
+				CC0A14B2658F41A4C5E04014 /* [CP] Check Pods Manifest.lock */,
+				4E1CD2ED218D81020086145E /* Sources */,
+				4E1CD2EE218D81020086145E /* Frameworks */,
+				4E1CD2EF218D81020086145E /* Resources */,
+				898E8E013DEE3D9B82DC2FE9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InventoryAssert;
+			productName = InventoryAssert;
+			productReference = 4E1CD2F1218D81020086145E /* InventoryAssert.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4E1CD307218D81040086145E /* InventoryAssertTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E1CD314218D81040086145E /* Build configuration list for PBXNativeTarget "InventoryAssertTests" */;
+			buildPhases = (
+				9888E8F3A10FA4E983265DDF /* [CP] Check Pods Manifest.lock */,
+				4E1CD304218D81040086145E /* Sources */,
+				4E1CD305218D81040086145E /* Frameworks */,
+				4E1CD306218D81040086145E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E1CD30A218D81040086145E /* PBXTargetDependency */,
+			);
+			name = InventoryAssertTests;
+			productName = InventoryAssertTests;
+			productReference = 4E1CD308218D81040086145E /* InventoryAssertTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E1CD2E9218D81020086145E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Hospital;
+				TargetAttributes = {
+					4E1CD2F0218D81020086145E = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					4E1CD307218D81040086145E = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4E1CD2F0218D81020086145E;
+					};
+				};
+			};
+			buildConfigurationList = 4E1CD2EC218D81020086145E /* Build configuration list for PBXProject "InventoryAssert" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4E1CD2E8218D81020086145E;
+			productRefGroup = 4E1CD2F2218D81020086145E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E1CD2F0218D81020086145E /* InventoryAssert */,
+				4E1CD307218D81040086145E /* InventoryAssertTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E1CD2EF218D81020086145E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E1CD321218D849B0086145E /* LoginViewController.xib in Resources */,
+				4E1CD302218D81040086145E /* LaunchScreen.storyboard in Resources */,
+				4E1CD2FF218D81040086145E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E1CD306218D81040086145E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		898E8E013DEE3D9B82DC2FE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9888E8F3A10FA4E983265DDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InventoryAssertTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC0A14B2658F41A4C5E04014 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InventoryAssert-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E1CD2ED218D81020086145E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E1CD320218D849B0086145E /* LoginViewController.swift in Sources */,
+				4E1CD2F5218D81020086145E /* AppDelegate.swift in Sources */,
+				4E1CD2FD218D81020086145E /* InventoryAssert.xcdatamodeld in Sources */,
+				4E1CD32E218D8CD10086145E /* LoginView.swift in Sources */,
+				4E1CD32B218D876A0086145E /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E1CD304218D81040086145E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E1CD30D218D81040086145E /* InventoryAssertTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E1CD30A218D81040086145E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E1CD2F0218D81020086145E /* InventoryAssert */;
+			targetProxy = 4E1CD309218D81040086145E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4E1CD300218D81040086145E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E1CD301218D81040086145E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E1CD30F218D81040086145E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4E1CD310218D81040086145E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E1CD312218D81040086145E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0C1308079EFDEF2EDDB05F0 /* Pods-InventoryAssert.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/InventoryAssert/SupportingFiles/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Hospital.InventoryAssert;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E1CD313218D81040086145E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53B9F78F2CC13F5DFE0CF460 /* Pods-InventoryAssert.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/InventoryAssert/SupportingFiles/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Hospital.InventoryAssert;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4E1CD315218D81040086145E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B079DE23E2B15A667D875AD /* Pods-InventoryAssertTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = InventoryAssertTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Hospital.InventoryAssertTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InventoryAssert.app/InventoryAssert";
+			};
+			name = Debug;
+		};
+		4E1CD316218D81040086145E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5956E89B123A497123F6F8FB /* Pods-InventoryAssertTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = InventoryAssertTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Hospital.InventoryAssertTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InventoryAssert.app/InventoryAssert";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E1CD2EC218D81020086145E /* Build configuration list for PBXProject "InventoryAssert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E1CD30F218D81040086145E /* Debug */,
+				4E1CD310218D81040086145E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E1CD311218D81040086145E /* Build configuration list for PBXNativeTarget "InventoryAssert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E1CD312218D81040086145E /* Debug */,
+				4E1CD313218D81040086145E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E1CD314218D81040086145E /* Build configuration list for PBXNativeTarget "InventoryAssertTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E1CD315218D81040086145E /* Debug */,
+				4E1CD316218D81040086145E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4E1CD2FB218D81020086145E /* InventoryAssert.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4E1CD2FC218D81020086145E /* InventoryAssert.xcdatamodel */,
+			);
+			currentVersion = 4E1CD2FC218D81020086145E /* InventoryAssert.xcdatamodel */;
+			path = InventoryAssert.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4E1CD2E9218D81020086145E /* Project object */;
+}
