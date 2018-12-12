@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04648E5D21C169AA007F7A94 /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04648E5921C169AA007F7A94 /* ItemsCollectionViewCell.swift */; };
+		04648E5E21C169AA007F7A94 /* ItemsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04648E5A21C169AA007F7A94 /* ItemsCollectionViewCell.xib */; };
+		04648E5F21C169AA007F7A94 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04648E5B21C169AA007F7A94 /* MainViewController.swift */; };
+		04648E6021C169AA007F7A94 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04648E5C21C169AA007F7A94 /* MainViewController.xib */; };
 		4E1CD2F5218D81020086145E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD2F4218D81020086145E /* AppDelegate.swift */; };
 		4E1CD2FD218D81020086145E /* InventoryAssert.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD2FB218D81020086145E /* InventoryAssert.xcdatamodeld */; };
 		4E1CD2FF218D81040086145E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E1CD2FE218D81040086145E /* Assets.xcassets */; };
@@ -31,6 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04648E5921C169AA007F7A94 /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
+		04648E5A21C169AA007F7A94 /* ItemsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsCollectionViewCell.xib; sourceTree = "<group>"; };
+		04648E5B21C169AA007F7A94 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		04648E5C21C169AA007F7A94 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		4E1CD2F1218D81020086145E /* InventoryAssert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryAssert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E1CD2F4218D81020086145E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E1CD2FC218D81020086145E /* InventoryAssert.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InventoryAssert.xcdatamodel; sourceTree = "<group>"; };
@@ -72,6 +80,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04648E5821C169AA007F7A94 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				04648E5921C169AA007F7A94 /* ItemsCollectionViewCell.swift */,
+				04648E5A21C169AA007F7A94 /* ItemsCollectionViewCell.xib */,
+				04648E5B21C169AA007F7A94 /* MainViewController.swift */,
+				04648E5C21C169AA007F7A94 /* MainViewController.xib */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
 		33539E4076E9F5A75CCAE59B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +169,7 @@
 		4E1CD318218D81CD0086145E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				04648E5821C169AA007F7A94 /* MainView */,
 				4E1CD31C218D84460086145E /* Login */,
 			);
 			path = Modules;
@@ -302,6 +322,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E1CD321218D849B0086145E /* LoginViewController.xib in Resources */,
+				04648E5E21C169AA007F7A94 /* ItemsCollectionViewCell.xib in Resources */,
+				04648E6021C169AA007F7A94 /* MainViewController.xib in Resources */,
 				4E1CD302218D81040086145E /* LaunchScreen.storyboard in Resources */,
 				4E1CD2FF218D81040086145E /* Assets.xcassets in Resources */,
 			);
@@ -398,11 +420,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04648E5F21C169AA007F7A94 /* MainViewController.swift in Sources */,
 				4E1CD320218D849B0086145E /* LoginViewController.swift in Sources */,
 				4E1CD2F5218D81020086145E /* AppDelegate.swift in Sources */,
 				4E1CD2FD218D81020086145E /* InventoryAssert.xcdatamodeld in Sources */,
 				4E1CD32E218D8CD10086145E /* LoginView.swift in Sources */,
 				4E1CD32B218D876A0086145E /* Constants.swift in Sources */,
+				04648E5D21C169AA007F7A94 /* ItemsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

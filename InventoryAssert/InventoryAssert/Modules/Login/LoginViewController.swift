@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.setUpView()
     }
@@ -26,5 +26,13 @@ class LoginViewController: UIViewController {
         self.loginView.tfPassword.placeholder = Constants.Login.passwordTfPlaceHolder
         self.loginView.tfUserName.placeholder = Constants.Login.userNameTfPlaceHolder
         self.loginView.btnLogin.setTitle(Constants.Login.loginButtonTitle, for: .normal)
+        
+        self.loginView.btnLogin.addTarget(self, action: #selector(self.btnClick(_:)), for: .touchUpInside)
+    }
+    
+    @objc func btnClick(_ sender:UIButton) {
+        print("My custom button action")
+        let vc = MainViewController(nibName: "MainViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

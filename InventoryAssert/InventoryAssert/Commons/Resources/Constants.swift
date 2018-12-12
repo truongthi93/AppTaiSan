@@ -15,5 +15,10 @@ class Constants {
         static let passwordTfPlaceHolder = "Password"
         static let loginButtonTitle = "Log in"
     }
+    
+        public class MainView{
+            static let listFunction = ["Kiểm kê tài sản","Báo lỗi hư hỏng","Nhắc nhở","Tra cứu tài sản","Lịch bảo trì", "Ghi chú"]
+            static let title = "MainView"
+    }
 
 }
