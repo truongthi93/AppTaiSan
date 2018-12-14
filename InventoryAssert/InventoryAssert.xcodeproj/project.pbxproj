@@ -20,9 +20,9 @@
 		4E1CD321218D849B0086145E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1CD31F218D849B0086145E /* LoginViewController.xib */; };
 		4E1CD32B218D876A0086145E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD32A218D876A0086145E /* Constants.swift */; };
 		4E1CD32E218D8CD10086145E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD32D218D8CD10086145E /* LoginView.swift */; };
-		4E58C53A21C41FEE00DC0B08 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E58C53921C41FEE00DC0B08 /* LoginResult.swift */; };
 		4E58C53D21C4200100DC0B08 /* ListObjectTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E58C53B21C4200000DC0B08 /* ListObjectTransform.swift */; };
 		4E58C53E21C4200100DC0B08 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E58C53C21C4200100DC0B08 /* Utility.swift */; };
+		4E58C54021C420A700DC0B08 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E58C53F21C420A700DC0B08 /* LoginResult.swift */; };
 		4EA491F621C4016100C8D88A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F521C4016100C8D88A /* DataManager.swift */; };
 		4EA491F821C4017500C8D88A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F721C4017500C8D88A /* ColorExtension.swift */; };
 		5C4348F31BC7C68B7CB360AE /* Pods_InventoryAssert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8069C9454B746C43277F4E6 /* Pods_InventoryAssert.framework */; };
@@ -57,9 +57,9 @@
 		4E1CD31F218D849B0086145E /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		4E1CD32A218D876A0086145E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E1CD32D218D8CD10086145E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		4E58C53921C41FEE00DC0B08 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		4E58C53B21C4200000DC0B08 /* ListObjectTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListObjectTransform.swift; sourceTree = "<group>"; };
 		4E58C53C21C4200100DC0B08 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		4E58C53F21C420A700DC0B08 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		4EA491F521C4016100C8D88A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4EA491F721C4017500C8D88A /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		53B9F78F2CC13F5DFE0CF460 /* Pods-InventoryAssert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryAssert.release.xcconfig"; path = "Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert.release.xcconfig"; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 		4E1CD322218D84DF0086145E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4E58C53921C41FEE00DC0B08 /* LoginResult.swift */,
+				4E58C53F21C420A700DC0B08 /* LoginResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -439,8 +439,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E58C54021C420A700DC0B08 /* LoginResult.swift in Sources */,
 				4E58C53D21C4200100DC0B08 /* ListObjectTransform.swift in Sources */,
-				4E58C53A21C41FEE00DC0B08 /* LoginResult.swift in Sources */,
 				04648E5F21C169AA007F7A94 /* MainViewController.swift in Sources */,
 				4EA491F621C4016100C8D88A /* DataManager.swift in Sources */,
 				4E1CD320218D849B0086145E /* LoginViewController.swift in Sources */,
