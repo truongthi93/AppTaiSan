@@ -1,5 +1,9 @@
 PODS:
   - Alamofire (4.7.0)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
+  - ObjectMapper (3.3.0)
   - PromiseKit (6.2.1):
     - PromiseKit/CorePromise (= 6.2.1)
     - PromiseKit/Foundation (= 6.2.1)
@@ -15,6 +19,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireObjectMapper
+  - ObjectMapper (= 3.3)
   - PromiseKit
   - SVProgressHUD
   - SwiftyJSON
@@ -23,6 +29,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireObjectMapper
+    - ObjectMapper
     - PromiseKit
     - SVProgressHUD
     - SwiftyJSON
@@ -30,11 +38,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   PromiseKit: edaca6f0a7ed73b08c287600537d13867a7fabc7
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: 71c98bd69256ff935decf86f8472055aef03ce28
+PODFILE CHECKSUM: 63f09850d89adf71a7f97260093a0ec08cb02ec1
 
 COCOAPODS: 1.6.0.beta.2

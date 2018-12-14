@@ -7,9 +7,9 @@
 //
 
 import UIKit
-//import ObjectMapper
-//import AlamofireObjectMapper
-
+import ObjectMapper
+import AlamofireObjectMapper
+import Alamofire
 
 class DataManager: NSObject {
     
@@ -28,17 +28,17 @@ class DataManager: NSObject {
         super.init()
     }
     
-    func login(userName: String, password: String, completion: @escaping (_ result: Bool?, _ error: NSError?) -> Void) {
-//        let URL = "" //Constants.linkImage
-//        Ala
-//        Alamofire.request(URL).responseArray(keyPath: Constants.keyPathAlamofire) { (response: DataResponse<String>) in
-//            let forecastArray = response.result.value
-//            if let forecastArray = forecastArray {
-//                completion(true, forecastArray)
-//            } else {
-//                completion(false, [])
-//            }
-//        }
+    func login(userName: String, password: String, completion: @escaping (_ result: LoginResult?, _ error: NSError?) -> Void) {
+        let URL = "\(Constants.APIUrl.host)\(Constants.APIUrl.login)"
+        let params = [
+            "username": userName,
+            "password": password]
+        Alamofire.request(URL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseObject { (response:DataResponse<LoginResult>) in
+            if response.result.value != nil {
+                completion(response.result.value,nil)
+            } else {
+                completion(nil,NSError(domain: "Error Domain", code: 999, userInfo: [NSLocalizedDescriptionKey: "Fail"]))
+            }
+        }
     }
-    
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     public var loginView: LoginView! {
@@ -36,19 +37,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func btnClick(_ sender:UIButton) {
-        // Handle login here
-        DataManager.sharedInstance.loginDelegate = self
-        DataManager.sharedInstance.login(username: self.loginView.tfUserName.text ?? "", password: self.loginView.tfPassword.text ?? "")
-  
-    }
-}
-
-extension LoginViewController: LoginDelegate{
-    func returnLoginResult(isSuccess: Bool, error: NSError?) {
-        if isSuccess{
-            let vc = MainViewController(nibName: "MainViewController", bundle: nil)
-            let nav = UINavigationController(rootViewController: vc)
-            self.present(nav, animated: true, completion: nil)
+        if let username = self.loginView.tfUserName.text, !username.isEmpty, let password = self.loginView.tfPassword.text, !password.isEmpty{
+            SVProgressHUD.show()
+            self.view.isUserInteractionEnabled = false
+            // Handle login here
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                DataManager.shareInstance.login(userName: username, password: password) { (data, error) in
+                    if (data != nil && data?.userId != nil){
+                        let vc = MainViewController(nibName: "MainViewController", bundle: nil)
+                        let nav = UINavigationController(rootViewController: vc)
+                        self.present(nav, animated: true, completion: nil)
+                        SVProgressHUD.dismiss()
+                        self.view.isUserInteractionEnabled = true
+                    } else {
+                        SVProgressHUD.dismiss()
+                        self.view.isUserInteractionEnabled = true
+                        print("login error")
+                        Utility.showAlertInform(title: "Error", message: "Invalid User infomation", context: self)
+                    }
+                }
+            }
+        } else {
+            Utility.showAlertInform(title: "Error", message: "Missing User infomation", context: self)
         }
     }
 }

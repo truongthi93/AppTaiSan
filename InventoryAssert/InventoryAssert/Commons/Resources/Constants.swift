@@ -9,11 +9,17 @@
 import UIKit
 
 class Constants {
-    
+    public class APIUrl{
+        static let host = "http://115.79.197.84/"
+        static let login = "api/user/login"
+    }
+
     public class Login{
         static let userNameTfPlaceHolder = "User name"
         static let passwordTfPlaceHolder = "Password"
         static let loginButtonTitle = "Log in"
+        static let tagIndicator = 100
+
     }
     
         public class MainView{

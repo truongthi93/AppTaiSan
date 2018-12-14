@@ -9,7 +9,9 @@ target 'InventoryAssert' do
   pod 'TPKeyboardAvoiding'
   pod 'SVProgressHUD'
   pod 'PromiseKit'
-
+  pod 'ObjectMapper', '3.3'
+  pod 'AlamofireObjectMapper'
+  
   target 'InventoryAssertTests' do
     inherit! :search_paths
   end

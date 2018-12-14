@@ -6,8 +6,23 @@
 	<dict>
 		<key>InventoryAssert.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>9</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4E1CD2F0218D81020086145E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E1CD307218D81040086145E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
