@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0447510621C421CA00C41C99 /* ListObjectTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447510421C421C900C41C99 /* ListObjectTransform.swift */; };
+		0447510721C421CA00C41C99 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447510521C421CA00C41C99 /* Utility.swift */; };
+		0447510921C421D800C41C99 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447510821C421D800C41C99 /* LoginResult.swift */; };
 		04648E5D21C169AA007F7A94 /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04648E5921C169AA007F7A94 /* ItemsCollectionViewCell.swift */; };
 		04648E5E21C169AA007F7A94 /* ItemsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04648E5A21C169AA007F7A94 /* ItemsCollectionViewCell.xib */; };
 		04648E5F21C169AA007F7A94 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04648E5B21C169AA007F7A94 /* MainViewController.swift */; };
@@ -20,9 +23,6 @@
 		4E1CD321218D849B0086145E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1CD31F218D849B0086145E /* LoginViewController.xib */; };
 		4E1CD32B218D876A0086145E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD32A218D876A0086145E /* Constants.swift */; };
 		4E1CD32E218D8CD10086145E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD32D218D8CD10086145E /* LoginView.swift */; };
-		4E58C53D21C4200100DC0B08 /* ListObjectTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E58C53B21C4200000DC0B08 /* ListObjectTransform.swift */; };
-		4E58C53E21C4200100DC0B08 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E58C53C21C4200100DC0B08 /* Utility.swift */; };
-		4E58C54021C420A700DC0B08 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E58C53F21C420A700DC0B08 /* LoginResult.swift */; };
 		4EA491F621C4016100C8D88A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F521C4016100C8D88A /* DataManager.swift */; };
 		4EA491F821C4017500C8D88A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F721C4017500C8D88A /* ColorExtension.swift */; };
 		5C4348F31BC7C68B7CB360AE /* Pods_InventoryAssert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8069C9454B746C43277F4E6 /* Pods_InventoryAssert.framework */; };
@@ -40,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0447510421C421C900C41C99 /* ListObjectTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListObjectTransform.swift; sourceTree = "<group>"; };
+		0447510521C421CA00C41C99 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		0447510821C421D800C41C99 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		04648E5921C169AA007F7A94 /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
 		04648E5A21C169AA007F7A94 /* ItemsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsCollectionViewCell.xib; sourceTree = "<group>"; };
 		04648E5B21C169AA007F7A94 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -57,9 +60,6 @@
 		4E1CD31F218D849B0086145E /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		4E1CD32A218D876A0086145E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E1CD32D218D8CD10086145E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		4E58C53B21C4200000DC0B08 /* ListObjectTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListObjectTransform.swift; sourceTree = "<group>"; };
-		4E58C53C21C4200100DC0B08 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		4E58C53F21C420A700DC0B08 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		4EA491F521C4016100C8D88A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4EA491F721C4017500C8D88A /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		53B9F78F2CC13F5DFE0CF460 /* Pods-InventoryAssert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryAssert.release.xcconfig"; path = "Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert.release.xcconfig"; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 		4E1CD322218D84DF0086145E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4E58C53F21C420A700DC0B08 /* LoginResult.swift */,
+				0447510821C421D800C41C99 /* LoginResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,8 +238,8 @@
 		4E1CD329218D87560086145E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4E58C53B21C4200000DC0B08 /* ListObjectTransform.swift */,
-				4E58C53C21C4200100DC0B08 /* Utility.swift */,
+				0447510421C421C900C41C99 /* ListObjectTransform.swift */,
+				0447510521C421CA00C41C99 /* Utility.swift */,
 				4E1CD32A218D876A0086145E /* Constants.swift */,
 			);
 			path = Resources;
@@ -439,15 +439,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E58C54021C420A700DC0B08 /* LoginResult.swift in Sources */,
-				4E58C53D21C4200100DC0B08 /* ListObjectTransform.swift in Sources */,
+				0447510921C421D800C41C99 /* LoginResult.swift in Sources */,
 				04648E5F21C169AA007F7A94 /* MainViewController.swift in Sources */,
 				4EA491F621C4016100C8D88A /* DataManager.swift in Sources */,
 				4E1CD320218D849B0086145E /* LoginViewController.swift in Sources */,
+				0447510721C421CA00C41C99 /* Utility.swift in Sources */,
 				4EA491F821C4017500C8D88A /* ColorExtension.swift in Sources */,
 				4E1CD2F5218D81020086145E /* AppDelegate.swift in Sources */,
+				0447510621C421CA00C41C99 /* ListObjectTransform.swift in Sources */,
 				4E1CD2FD218D81020086145E /* InventoryAssert.xcdatamodeld in Sources */,
-				4E58C53E21C4200100DC0B08 /* Utility.swift in Sources */,
 				4E1CD32E218D8CD10086145E /* LoginView.swift in Sources */,
 				4E1CD32B218D876A0086145E /* Constants.swift in Sources */,
 				04648E5D21C169AA007F7A94 /* ItemsCollectionViewCell.swift in Sources */,
