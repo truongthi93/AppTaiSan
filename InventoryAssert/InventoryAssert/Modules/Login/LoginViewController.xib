@@ -57,7 +57,7 @@
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbF-tE-kUg">
                                             <rect key="frame" x="30" y="112" width="315" height="40"/>
-                                            <color key="backgroundColor" red="0.083237580955028534" green="0.50752019882202148" blue="0.66180795431137085" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.082352941176470587" green="0.50588235294117645" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="miL-NW-Wdv"/>
                                             </constraints>

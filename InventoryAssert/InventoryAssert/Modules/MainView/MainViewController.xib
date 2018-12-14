@@ -25,8 +25,8 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TgB-Pj-rUh">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                            <color key="backgroundColor" red="0.97254908080000002" green="0.96862751250000001" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lAA-Ol-OFR">
                                 <size key="itemSize" width="50" height="50"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -35,18 +35,20 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                     </subviews>
-                    <color key="backgroundColor" red="0.64705884459999996" green="0.91764712329999998" blue="0.56078433989999998" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="TgB-Pj-rUh" secondAttribute="trailing" id="3uk-NS-ClA"/>
-                        <constraint firstAttribute="bottom" secondItem="TgB-Pj-rUh" secondAttribute="bottom" id="ARJ-v9-FGr"/>
+                        <constraint firstAttribute="bottom" secondItem="TgB-Pj-rUh" secondAttribute="bottom" constant="40" id="ARJ-v9-FGr"/>
+                        <constraint firstItem="TgB-Pj-rUh" firstAttribute="top" secondItem="ef1-XR-hdu" secondAttribute="top" id="DPG-2G-cEq"/>
                         <constraint firstItem="TgB-Pj-rUh" firstAttribute="leading" secondItem="ef1-XR-hdu" secondAttribute="leading" id="sKC-8F-U0F"/>
-                        <constraint firstItem="TgB-Pj-rUh" firstAttribute="top" secondItem="ef1-XR-hdu" secondAttribute="top" id="sXr-ly-AoW"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ef1-XR-hdu" secondAttribute="bottom" id="85p-P4-Ojb"/>
+                <constraint firstAttribute="bottom" secondItem="ef1-XR-hdu" secondAttribute="bottom" id="85p-P4-Ojb"/>
+                <constraint firstItem="ef1-XR-hdu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="O2b-LT-bf6"/>
                 <constraint firstItem="ef1-XR-hdu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="d6Z-VI-9dY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ef1-XR-hdu" secondAttribute="trailing" id="tWn-0h-CLm"/>
                 <constraint firstItem="ef1-XR-hdu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xJQ-LW-OQf"/>

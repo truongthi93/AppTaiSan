@@ -13,9 +13,6 @@ class MainViewController: UIViewController {
     let items = Constants.MainView.listFunction
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
-        self.title = Constants.MainView.title
-        self.navigationItem.setHidesBackButton(true, animated:true);
         
         //Delegate, Datasource
         collectionView.delegate = self
@@ -27,6 +24,26 @@ class MainViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView.collectionViewLayout = layout
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = false
+        self.title = Constants.MainView.title
+        self.navigationItem.setHidesBackButton(true, animated:true);
+
+        navigationController?.navigationBar.barTintColor = UIColor.navigationBarColor
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.navigationTextColor]
+        navigationController?.navigationBar.tintColor = UIColor.navigationTextColor
+
+        
+        let logout = UIBarButtonItem(image: UIImage(named: "logout.png"), style: .plain, target: self, action: #selector(userLogout))
+        self.navigationItem.rightBarButtonItem  = logout
+    }
+    
+    @objc func userLogout() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -35,7 +52,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let width = UIScreen.main.bounds.size.width
         let height = UIScreen.main.bounds.size.height
         //calculation of cell size
-        return CGSize(width: ((width / 2) - 15), height: (height / 3) - 35)
+        return CGSize(width: ((width / 2) - 15), height: (height / 3) - 55)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

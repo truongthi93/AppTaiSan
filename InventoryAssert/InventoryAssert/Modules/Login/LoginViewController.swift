@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     public var loginView: LoginView! {
         guard isViewLoaded else { return nil }
         return view as? LoginView
@@ -21,6 +21,11 @@ class LoginViewController: UIViewController {
         self.setUpView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
+    }
     func setUpView() {
         self.loginView.tfPassword.isSecureTextEntry = true
         self.loginView.tfPassword.placeholder = Constants.Login.passwordTfPlaceHolder
@@ -31,8 +36,19 @@ class LoginViewController: UIViewController {
     }
     
     @objc func btnClick(_ sender:UIButton) {
-        print("My custom button action")
-        let vc = MainViewController(nibName: "MainViewController", bundle: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        // Handle login here
+        DataManager.sharedInstance.loginDelegate = self
+        DataManager.sharedInstance.login(username: self.loginView.tfUserName.text ?? "", password: self.loginView.tfPassword.text ?? "")
+  
+    }
+}
+
+extension LoginViewController: LoginDelegate{
+    func returnLoginResult(isSuccess: Bool, error: NSError?) {
+        if isSuccess{
+            let vc = MainViewController(nibName: "MainViewController", bundle: nil)
+            let nav = UINavigationController(rootViewController: vc)
+            self.present(nav, animated: true, completion: nil)
+        }
     }
 }
