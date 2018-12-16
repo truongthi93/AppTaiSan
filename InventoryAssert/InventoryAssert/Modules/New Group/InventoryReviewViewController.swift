@@ -40,11 +40,18 @@ class InventoryReviewViewController: BaseViewController {
         self.inventoryReviewView.tableView.tableFooterView = UIView()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.inventoryReviewView.tableView.isEditing = false
+        self.inventoryReviewView.btnDelete.setTitle("Xóa", for: .normal)
+
+    }
+    
     func getReviewList() {
         DataManager.shareInstance.getReviewList(token: "", tokenType: "") { (listReview, error) in
             if let list = listReview, list.count > 0{
                 // show list here
-                print("data \(list)")
+                // print("data \(list)")
                 self.listReviewData = list.sorted{ ($0.soLuongKiemKe ?? 0) < ($1.soLuongKiemKe ?? 0) }
                 self.inventoryReviewView.tableView.reloadData()
                 SVProgressHUD.dismiss()
@@ -64,7 +71,6 @@ class InventoryReviewViewController: BaseViewController {
     }
     
     @IBAction func addNewInventoryReview(_ sender: Any) {
-        print("addNewInventoryReview")
         let vc = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
         vc.isAddNewReview = true
         self.navigationController?.pushViewController(vc, animated: true)
@@ -72,23 +78,21 @@ class InventoryReviewViewController: BaseViewController {
     }
     
     @IBAction func deleteInventoryReview(_ sender: Any) {
-        print("deleteInventoryReview")
         if(self.inventoryReviewView.tableView.isEditing == true){
             self.inventoryReviewView.tableView.isEditing = false
-            self.inventoryReviewView.btnDelete.titleLabel?.text = "Hoàn Thành"
+            self.inventoryReviewView.btnDelete.setTitle("Xóa", for: .normal)
+
         } else {
             self.inventoryReviewView.tableView.isEditing = true
-            self.inventoryReviewView.btnDelete.titleLabel?.text = "Xóa"
+            self.inventoryReviewView.btnDelete.setTitle("Hoàn Thành", for: .normal)
+
         }
     }
     
     @IBAction func EditInventoryReview(_ sender: Any) {
         let vc = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
         vc.isAddNewReview = false
-        
         self.navigationController?.pushViewController(vc, animated: true)
-        
-        print("EditInventoryReview")
     }
 }
 
@@ -119,13 +123,20 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("")
+        print("Select row at index: \(indexPath.row), id: \(self.listReviewData[indexPath.row].taiSanKiemKeId ?? -1)")
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             self.listReviewData.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView .RowAnimation .automatic )
+            tableView.setEditing(false, animated: true)
+        } else {
+            print("not edit mode")
         }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }
