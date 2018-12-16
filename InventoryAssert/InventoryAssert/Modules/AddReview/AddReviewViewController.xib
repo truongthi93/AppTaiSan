@@ -31,6 +31,9 @@
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Bắt đầu kiểm"/>
+                            <connections>
+                                <action selector="StartReview:" destination="-1" eventType="touchUpInside" id="rUT-6l-Uwv"/>
+                            </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bz5-fs-Oxa">
                             <rect key="frame" x="10" y="0.0" width="355" height="290"/>
@@ -47,6 +50,9 @@
                                                     <state key="normal" title="Chọn kho">
                                                         <color key="titleColor" red="0.083237580960000002" green="0.50752019879999999" blue="0.66180795429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="selectWarehouse:" destination="-1" eventType="touchUpInside" id="vrc-dN-TEw"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DV-pC-Fz8">
                                                     <rect key="frame" x="341" y="10" width="14" height="20.5"/>
@@ -129,7 +135,7 @@
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sRH-x2-iXA">
                                             <rect key="frame" x="177.5" y="0.0" width="177.5" height="40"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.083237580960000002" green="0.50752019879999999" blue="0.66180795429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -177,6 +183,21 @@
                 <constraint firstItem="xzr-OR-3sJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="weX-Ow-hGF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <connections>
+                <outlet property="btnChooseWareHouse" destination="kgj-Ib-9uU" id="O3U-Xq-GT3"/>
+                <outlet property="btnReview" destination="np9-dx-7Cd" id="THH-mt-WZQ"/>
+                <outlet property="lblNote" destination="6k4-4l-kmd" id="o3f-Wz-0FA"/>
+                <outlet property="lblReviewDate" destination="bzk-c5-eqt" id="XjF-Vh-wUK"/>
+                <outlet property="lblReviewId" destination="Ohw-sh-3ve" id="Pp3-h7-zLf"/>
+                <outlet property="lblReviewed" destination="n4A-y3-Xaj" id="hF7-OH-0wB"/>
+                <outlet property="lblReviewer" destination="3t6-PC-hIT" id="BX1-PP-eIp"/>
+                <outlet property="lblTotal" destination="frT-bU-DWa" id="BFj-UI-7D8"/>
+                <outlet property="lblWareHouse" destination="1DV-pC-Fz8" id="3nR-wG-4C7"/>
+                <outlet property="tfNote" destination="Wun-9z-tgG" id="h25-4q-gOb"/>
+                <outlet property="tfReviewDate" destination="sRH-x2-iXA" id="pkd-CS-Ped"/>
+                <outlet property="tfReviewId" destination="ejx-cs-YXL" id="kRz-tU-Ri7"/>
+                <outlet property="tfReviewer" destination="Tj0-Km-8Pa" id="pNs-ps-6fG"/>
+            </connections>
             <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
         </view>
     </objects>

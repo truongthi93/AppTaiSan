@@ -37,6 +37,7 @@ class InventoryReviewViewController: BaseViewController {
     @IBAction func addNewInventoryReview(_ sender: Any) {
         print("addNewInventoryReview")
         let vc = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
+        vc.isAddNewReview = true
         self.navigationController?.pushViewController(vc, animated: true)
 
     }
@@ -47,6 +48,8 @@ class InventoryReviewViewController: BaseViewController {
     
     @IBAction func EditInventoryReview(_ sender: Any) {
         let vc = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
+        vc.isAddNewReview = false
+
         self.navigationController?.pushViewController(vc, animated: true)
 
         print("EditInventoryReview")
