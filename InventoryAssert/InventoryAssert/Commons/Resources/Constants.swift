@@ -13,6 +13,7 @@ class Constants {
         static let host = "http://115.79.197.84/"
         static let login = "api/user?username="
         static let getToken = "api/user/login"
+        static let getReviewList = "api/inventory"
     }
     
     public class Login{

@@ -29,21 +29,6 @@ class DataManager: NSObject {
         super.init()
     }
     
-    func login(userName: String, token: String, tokenType: String, completion: @escaping (_ result: LoginResult?, _ error: NSError?) -> Void) {
-        let URL = "\(Constants.APIUrl.host)\(Constants.APIUrl.login)\(userName)"
-        let headers = [
-            "Authorization": "\(tokenType) \(token)"
-        ]
-
-        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseObject {(response:DataResponse<LoginResult>) in
-            if response.result.value != nil {
-                completion(response.result.value,nil)
-            } else {
-                completion(nil,NSError(domain: "Error Domain", code: 999, userInfo: [NSLocalizedDescriptionKey: "Fail"]))
-            }
-        }
-    }
-
     func getToken(userName: String, password: String, completion: @escaping (_ result: TokenResult?, _ error: NSError?) -> Void) {
         let URL = "\(Constants.APIUrl.host)\(Constants.APIUrl.getToken)"
         let headers = [
@@ -60,5 +45,36 @@ class DataManager: NSObject {
                 completion(nil,NSError(domain: "Error Domain", code: 999, userInfo: [NSLocalizedDescriptionKey: "Fail"]))
             }
         }
+    }
+    
+    func login(userName: String, token: String, tokenType: String, completion: @escaping (_ result: LoginResult?, _ error: NSError?) -> Void) {
+        let URL = "\(Constants.APIUrl.host)\(Constants.APIUrl.login)\(userName)"
+        let headers = [
+            "Authorization": "\(tokenType) \(token)"
+        ]
+        
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseObject {(response:DataResponse<LoginResult>) in
+            if response.result.value != nil {
+                completion(response.result.value,nil)
+            } else {
+                completion(nil,NSError(domain: "Error Domain", code: 999, userInfo: [NSLocalizedDescriptionKey: "Fail"]))
+            }
+        }
+    }
+    
+    func getReviewList(token: String, tokenType: String, completion: @escaping (_ result: [ReviewData]?, _ error: NSError?) -> Void) {
+        let URL = "\(Constants.APIUrl.host)\(Constants.APIUrl.getReviewList)"
+        let headers = [
+            "Authorization": "\(tokenType) \(token)"
+        ]
+        print(headers)
+        
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseArray(completionHandler: { (response: DataResponse<[ReviewData]>) in
+            if response.result.value != nil {
+                completion(response.result.value,nil)
+            } else {
+                completion(nil,NSError(domain: "Error Domain", code: 999, userInfo: [NSLocalizedDescriptionKey: "Fail"]))
+            }
+        })
     }
 }
