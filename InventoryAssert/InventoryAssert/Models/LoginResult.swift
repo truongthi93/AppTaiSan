@@ -29,16 +29,6 @@ class LoginResult : NSObject,Mappable{
     override init() {
     }
     
-    required init?(map: Map) {
-        userId <- map["userId"]
-        userCode <- map["userCode"]
-        userName <- map["userName"]
-        userPosition <- map["userPosition"]
-        groupAdmin <- map["groupAdmin"]
-        administrator <- map["administrator"]
-        token <- map["token"]
-    }
-    
     // Mappable
     func mapping(map: Map) {
         userId <- map["userId"]
@@ -49,4 +39,16 @@ class LoginResult : NSObject,Mappable{
         administrator <- map["administrator"]
         token <- map["token"]
     }
+
+    required init?(map: Map) {
+        userId <- map["userId"]
+        userCode <- map["userCode"]
+        userName <- map["userName"]
+        userPosition <- map["userPosition"]
+        groupAdmin <- map["groupAdmin"]
+        administrator <- map["administrator"]
+        token <- map["token"]
+    }
 }
+    
+    

@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import PromiseKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     public var loginView: LoginView! {
@@ -41,21 +42,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             SVProgressHUD.show()
             self.view.isUserInteractionEnabled = false
             // Handle login here
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                DataManager.shareInstance.login(userName: username, password: password) { (data, error) in
-                    if (data != nil && data?.userId != nil){
-                        let vc = MainViewController(nibName: "MainViewController", bundle: nil)
-                        let nav = UINavigationController(rootViewController: vc)
-                        self.present(nav, animated: true, completion: nil)
-                        SVProgressHUD.dismiss()
-                        self.view.isUserInteractionEnabled = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                DataManager.shareInstance.getToken(userName: username, password: password, completion: { (data, error) in
+                    if let tokenData = data, let newToken = tokenData.accessToken, let newTokenType = tokenData.tokenType{
+                        DataManager.shareInstance.login(userName: username, token: newToken, tokenType: newTokenType, completion: { (result, errorData) in
+                            if (result != nil && result?.userId != nil){
+                                let vc = MainViewController(nibName: "MainViewController", bundle: nil)
+                                let nav = UINavigationController(rootViewController: vc)
+                                self.present(nav, animated: true, completion: nil)
+                                SVProgressHUD.dismiss()
+                                self.view.isUserInteractionEnabled = true
+                            } else {
+                                SVProgressHUD.dismiss()
+                                self.view.isUserInteractionEnabled = true
+                                print("login error")
+                                Utility.showAlertInform(title: "Error", message: "Invalid User infomation", context: self)
+                            }
+                        })
                     } else {
                         SVProgressHUD.dismiss()
                         self.view.isUserInteractionEnabled = true
                         print("login error")
-                        Utility.showAlertInform(title: "Error", message: "Invalid User infomation", context: self)
+                        Utility.showAlertInform(title: "Error", message: "Get token fail", context: self)
+                        
                     }
-                }
+                })
             }
         } else {
             Utility.showAlertInform(title: "Error", message: "Missing User infomation", context: self)

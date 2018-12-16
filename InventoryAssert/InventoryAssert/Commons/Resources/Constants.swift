@@ -11,7 +11,8 @@ import UIKit
 class Constants {
     public class APIUrl{
         static let host = "http://115.79.197.84/"
-        static let login = "api/user/login"
+        static let login = "api/user?username="
+        static let getToken = "api/user/login"
     }
 
     public class Login{
