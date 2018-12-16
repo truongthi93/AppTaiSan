@@ -28,8 +28,12 @@ class Constants {
         static let title = "Màn hình chính"
     }
     
-    public class Inventory{
+    public class InventoryReview{
         static let title = "Danh sách các lần kiểm kê"
+    }
+
+    public class AddReview{
+        static let title = "Thông tin phiếu"
     }
 
 }

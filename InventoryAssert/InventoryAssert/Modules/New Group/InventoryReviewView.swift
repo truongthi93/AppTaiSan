@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InventoryView: UIView {
+class InventoryReviewView: UIView {
     @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet weak var btnEdit: UIButton!
     @IBOutlet weak var btnDelete: UIButton!

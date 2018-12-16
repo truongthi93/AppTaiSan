@@ -24,11 +24,14 @@
 		4E1CD32B218D876A0086145E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD32A218D876A0086145E /* Constants.swift */; };
 		4E1CD32E218D8CD10086145E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD32D218D8CD10086145E /* LoginView.swift */; };
 		4E3C539D21C61B900074AD61 /* TokenResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C539C21C61B900074AD61 /* TokenResult.swift */; };
-		4E3C53A021C62AF60074AD61 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C539E21C62AF60074AD61 /* InventoryViewController.swift */; };
-		4E3C53A121C62AF60074AD61 /* InventoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C539F21C62AF60074AD61 /* InventoryViewController.xib */; };
-		4E3C53A421C62B1D0074AD61 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53A321C62B1D0074AD61 /* InventoryView.swift */; };
+		4E3C53A021C62AF60074AD61 /* InventoryReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C539E21C62AF60074AD61 /* InventoryReviewViewController.swift */; };
+		4E3C53A121C62AF60074AD61 /* InventoryReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C539F21C62AF60074AD61 /* InventoryReviewViewController.xib */; };
+		4E3C53A421C62B1D0074AD61 /* InventoryReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53A321C62B1D0074AD61 /* InventoryReviewView.swift */; };
 		4E3C53A621C631C60074AD61 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53A521C631C60074AD61 /* ViewExtension.swift */; };
 		4E3C53A821C634380074AD61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53A721C634380074AD61 /* BaseViewController.swift */; };
+		4E3C53AC21C63E730074AD61 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53AA21C63E730074AD61 /* AddReviewViewController.swift */; };
+		4E3C53AD21C63E730074AD61 /* AddReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C53AB21C63E730074AD61 /* AddReviewViewController.xib */; };
+		4E3C53AF21C63E860074AD61 /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53AE21C63E860074AD61 /* AddReviewView.swift */; };
 		4EA491F621C4016100C8D88A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F521C4016100C8D88A /* DataManager.swift */; };
 		4EA491F821C4017500C8D88A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F721C4017500C8D88A /* ColorExtension.swift */; };
 		5C4348F31BC7C68B7CB360AE /* Pods_InventoryAssert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8069C9454B746C43277F4E6 /* Pods_InventoryAssert.framework */; };
@@ -67,11 +70,14 @@
 		4E1CD32A218D876A0086145E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E1CD32D218D8CD10086145E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4E3C539C21C61B900074AD61 /* TokenResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResult.swift; sourceTree = "<group>"; };
-		4E3C539E21C62AF60074AD61 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
-		4E3C539F21C62AF60074AD61 /* InventoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryViewController.xib; sourceTree = "<group>"; };
-		4E3C53A321C62B1D0074AD61 /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
+		4E3C539E21C62AF60074AD61 /* InventoryReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryReviewViewController.swift; sourceTree = "<group>"; };
+		4E3C539F21C62AF60074AD61 /* InventoryReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryReviewViewController.xib; sourceTree = "<group>"; };
+		4E3C53A321C62B1D0074AD61 /* InventoryReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryReviewView.swift; sourceTree = "<group>"; };
 		4E3C53A521C631C60074AD61 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		4E3C53A721C634380074AD61 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4E3C53AA21C63E730074AD61 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
+		4E3C53AB21C63E730074AD61 /* AddReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddReviewViewController.xib; sourceTree = "<group>"; };
+		4E3C53AE21C63E860074AD61 /* AddReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
 		4EA491F521C4016100C8D88A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4EA491F721C4017500C8D88A /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		53B9F78F2CC13F5DFE0CF460 /* Pods-InventoryAssert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryAssert.release.xcconfig"; path = "Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,7 +198,8 @@
 		4E1CD318218D81CD0086145E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				4E3C53A221C62AFE0074AD61 /* Inventory */,
+				4E3C53A921C63DE80074AD61 /* AddReview */,
+				4E3C53A221C62AFE0074AD61 /* InventoryReview */,
 				04648E5821C169AA007F7A94 /* MainView */,
 				4E1CD31C218D84460086145E /* Login */,
 			);
@@ -268,15 +275,25 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		4E3C53A221C62AFE0074AD61 /* Inventory */ = {
+		4E3C53A221C62AFE0074AD61 /* InventoryReview */ = {
 			isa = PBXGroup;
 			children = (
-				4E3C539E21C62AF60074AD61 /* InventoryViewController.swift */,
-				4E3C539F21C62AF60074AD61 /* InventoryViewController.xib */,
-				4E3C53A321C62B1D0074AD61 /* InventoryView.swift */,
+				4E3C539E21C62AF60074AD61 /* InventoryReviewViewController.swift */,
+				4E3C539F21C62AF60074AD61 /* InventoryReviewViewController.xib */,
+				4E3C53A321C62B1D0074AD61 /* InventoryReviewView.swift */,
 			);
-			name = Inventory;
+			name = InventoryReview;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		4E3C53A921C63DE80074AD61 /* AddReview */ = {
+			isa = PBXGroup;
+			children = (
+				4E3C53AA21C63E730074AD61 /* AddReviewViewController.swift */,
+				4E3C53AB21C63E730074AD61 /* AddReviewViewController.xib */,
+				4E3C53AE21C63E860074AD61 /* AddReviewView.swift */,
+			);
+			path = AddReview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,8 +384,9 @@
 				04648E5E21C169AA007F7A94 /* ItemsCollectionViewCell.xib in Resources */,
 				04648E6021C169AA007F7A94 /* MainViewController.xib in Resources */,
 				4E1CD302218D81040086145E /* LaunchScreen.storyboard in Resources */,
+				4E3C53AD21C63E730074AD61 /* AddReviewViewController.xib in Resources */,
 				4E1CD2FF218D81040086145E /* Assets.xcassets in Resources */,
-				4E3C53A121C62AF60074AD61 /* InventoryViewController.xib in Resources */,
+				4E3C53A121C62AF60074AD61 /* InventoryReviewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,15 +488,17 @@
 				0447510921C421D800C41C99 /* LoginResult.swift in Sources */,
 				04648E5F21C169AA007F7A94 /* MainViewController.swift in Sources */,
 				4E3C539D21C61B900074AD61 /* TokenResult.swift in Sources */,
+				4E3C53AF21C63E860074AD61 /* AddReviewView.swift in Sources */,
 				4EA491F621C4016100C8D88A /* DataManager.swift in Sources */,
 				4E1CD320218D849B0086145E /* LoginViewController.swift in Sources */,
 				0447510721C421CA00C41C99 /* Utility.swift in Sources */,
 				4E3C53A621C631C60074AD61 /* ViewExtension.swift in Sources */,
 				4E3C53A821C634380074AD61 /* BaseViewController.swift in Sources */,
-				4E3C53A421C62B1D0074AD61 /* InventoryView.swift in Sources */,
+				4E3C53A421C62B1D0074AD61 /* InventoryReviewView.swift in Sources */,
 				4EA491F821C4017500C8D88A /* ColorExtension.swift in Sources */,
-				4E3C53A021C62AF60074AD61 /* InventoryViewController.swift in Sources */,
+				4E3C53A021C62AF60074AD61 /* InventoryReviewViewController.swift in Sources */,
 				4E1CD2F5218D81020086145E /* AppDelegate.swift in Sources */,
+				4E3C53AC21C63E730074AD61 /* AddReviewViewController.swift in Sources */,
 				0447510621C421CA00C41C99 /* ListObjectTransform.swift in Sources */,
 				4E1CD2FD218D81020086145E /* InventoryAssert.xcdatamodeld in Sources */,
 				4E1CD32E218D8CD10086145E /* LoginView.swift in Sources */,

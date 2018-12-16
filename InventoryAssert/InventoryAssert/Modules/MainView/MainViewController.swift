@@ -77,7 +77,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         switch indexPath.row {
         case 0:
-            let vc = InventoryViewController(nibName: "InventoryViewController", bundle: nil)
+            let vc = InventoryReviewViewController(nibName: "InventoryReviewViewController", bundle: nil)
             self.navigationController?.pushViewController(vc, animated: true)
             print("Tap Items 1")
             break
