@@ -37,6 +37,8 @@ class MainViewController: BaseViewController {
         self.navigationItem.setHidesBackButton(true, animated:true);
 
         navigationController?.navigationBar.barTintColor = UIColor.navigationBarColor
+        navigationController?.navigationBar.isTranslucent = false
+
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.navigationTextColor]
         navigationController?.navigationBar.tintColor = UIColor.navigationTextColor
 

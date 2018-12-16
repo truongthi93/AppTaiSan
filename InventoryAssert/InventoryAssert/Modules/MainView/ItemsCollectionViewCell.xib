@@ -21,9 +21,9 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AU1-vD-JnL">
                         <rect key="frame" x="10" y="178.5" width="174" height="20.5"/>
-                        <color key="backgroundColor" red="0.64705884459999996" green="0.91764712329999998" blue="0.56078433989999998" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="inventoryItems" translatesAutoresizingMaskIntoConstraints="NO" id="c9L-FW-fPq">
@@ -31,7 +31,7 @@
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.083237580960000002" green="0.50752019879999999" blue="0.66180795429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="AU1-vD-JnL" firstAttribute="top" secondItem="c9L-FW-fPq" secondAttribute="bottom" constant="5" id="DXc-xx-xai"/>
                 <constraint firstItem="c9L-FW-fPq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="j5w-FD-VoA"/>
