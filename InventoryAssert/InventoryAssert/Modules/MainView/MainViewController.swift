@@ -8,12 +8,16 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+
     let items = Constants.MainView.listFunction
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        darkMode = false
+        setNeedsStatusBarAppearanceUpdate()
+
         //Delegate, Datasource
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -73,6 +77,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         switch indexPath.row {
         case 0:
+            let vc = InventoryViewController(nibName: "InventoryViewController", bundle: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
             print("Tap Items 1")
             break
         case 1:

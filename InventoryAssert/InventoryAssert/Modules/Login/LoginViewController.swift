@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 import PromiseKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: BaseViewController, UITextFieldDelegate {
     public var loginView: LoginView! {
         guard isViewLoaded else { return nil }
         return view as? LoginView
@@ -19,13 +19,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        darkMode = true
+        setNeedsStatusBarAppearanceUpdate()
         self.setUpView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        self.loginView.tfUserName.text = "Test"
+        self.loginView.tfPassword.text = "webapp"
         self.navigationController?.isNavigationBarHidden = true
     }
     func setUpView() {

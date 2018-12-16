@@ -24,6 +24,11 @@
 		4E1CD32B218D876A0086145E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD32A218D876A0086145E /* Constants.swift */; };
 		4E1CD32E218D8CD10086145E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CD32D218D8CD10086145E /* LoginView.swift */; };
 		4E3C539D21C61B900074AD61 /* TokenResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C539C21C61B900074AD61 /* TokenResult.swift */; };
+		4E3C53A021C62AF60074AD61 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C539E21C62AF60074AD61 /* InventoryViewController.swift */; };
+		4E3C53A121C62AF60074AD61 /* InventoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C539F21C62AF60074AD61 /* InventoryViewController.xib */; };
+		4E3C53A421C62B1D0074AD61 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53A321C62B1D0074AD61 /* InventoryView.swift */; };
+		4E3C53A621C631C60074AD61 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53A521C631C60074AD61 /* ViewExtension.swift */; };
+		4E3C53A821C634380074AD61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53A721C634380074AD61 /* BaseViewController.swift */; };
 		4EA491F621C4016100C8D88A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F521C4016100C8D88A /* DataManager.swift */; };
 		4EA491F821C4017500C8D88A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F721C4017500C8D88A /* ColorExtension.swift */; };
 		5C4348F31BC7C68B7CB360AE /* Pods_InventoryAssert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8069C9454B746C43277F4E6 /* Pods_InventoryAssert.framework */; };
@@ -62,6 +67,11 @@
 		4E1CD32A218D876A0086145E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E1CD32D218D8CD10086145E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4E3C539C21C61B900074AD61 /* TokenResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResult.swift; sourceTree = "<group>"; };
+		4E3C539E21C62AF60074AD61 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		4E3C539F21C62AF60074AD61 /* InventoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryViewController.xib; sourceTree = "<group>"; };
+		4E3C53A321C62B1D0074AD61 /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
+		4E3C53A521C631C60074AD61 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		4E3C53A721C634380074AD61 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4EA491F521C4016100C8D88A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4EA491F721C4017500C8D88A /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		53B9F78F2CC13F5DFE0CF460 /* Pods-InventoryAssert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryAssert.release.xcconfig"; path = "Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +184,7 @@
 				4E1CD303218D81040086145E /* Info.plist */,
 				4E1CD2FB218D81020086145E /* InventoryAssert.xcdatamodeld */,
 				4E1CD300218D81040086145E /* LaunchScreen.storyboard */,
+				4E3C53A721C634380074AD61 /* BaseViewController.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -181,6 +192,7 @@
 		4E1CD318218D81CD0086145E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4E3C53A221C62AFE0074AD61 /* Inventory */,
 				04648E5821C169AA007F7A94 /* MainView */,
 				4E1CD31C218D84460086145E /* Login */,
 			);
@@ -219,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				4EA491F721C4017500C8D88A /* ColorExtension.swift */,
+				4E3C53A521C631C60074AD61 /* ViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +266,17 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4E3C53A221C62AFE0074AD61 /* Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				4E3C539E21C62AF60074AD61 /* InventoryViewController.swift */,
+				4E3C539F21C62AF60074AD61 /* InventoryViewController.xib */,
+				4E3C53A321C62B1D0074AD61 /* InventoryView.swift */,
+			);
+			name = Inventory;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +368,7 @@
 				04648E6021C169AA007F7A94 /* MainViewController.xib in Resources */,
 				4E1CD302218D81040086145E /* LaunchScreen.storyboard in Resources */,
 				4E1CD2FF218D81040086145E /* Assets.xcassets in Resources */,
+				4E3C53A121C62AF60074AD61 /* InventoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +473,11 @@
 				4EA491F621C4016100C8D88A /* DataManager.swift in Sources */,
 				4E1CD320218D849B0086145E /* LoginViewController.swift in Sources */,
 				0447510721C421CA00C41C99 /* Utility.swift in Sources */,
+				4E3C53A621C631C60074AD61 /* ViewExtension.swift in Sources */,
+				4E3C53A821C634380074AD61 /* BaseViewController.swift in Sources */,
+				4E3C53A421C62B1D0074AD61 /* InventoryView.swift in Sources */,
 				4EA491F821C4017500C8D88A /* ColorExtension.swift in Sources */,
+				4E3C53A021C62AF60074AD61 /* InventoryViewController.swift in Sources */,
 				4E1CD2F5218D81020086145E /* AppDelegate.swift in Sources */,
 				0447510621C421CA00C41C99 /* ListObjectTransform.swift in Sources */,
 				4E1CD2FD218D81020086145E /* InventoryAssert.xcdatamodeld in Sources */,
