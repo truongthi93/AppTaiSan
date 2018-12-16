@@ -73,6 +73,13 @@ class InventoryReviewViewController: BaseViewController {
     
     @IBAction func deleteInventoryReview(_ sender: Any) {
         print("deleteInventoryReview")
+        if(self.inventoryReviewView.tableView.isEditing == true){
+            self.inventoryReviewView.tableView.isEditing = false
+            self.inventoryReviewView.btnDelete.titleLabel?.text = "Hoàn Thành"
+        } else {
+            self.inventoryReviewView.tableView.isEditing = true
+            self.inventoryReviewView.btnDelete.titleLabel?.text = "Xóa"
+        }
     }
     
     @IBAction func EditInventoryReview(_ sender: Any) {
@@ -89,18 +96,18 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.listReviewData.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InventoryReviewTableViewCell", for: indexPath) as! InventoryReviewTableViewCell
-
+        
         if let wh = self.listReviewData[indexPath.row].khoTaiSanId{
             cell.lblWareHouse.text = String(describing: wh)
         } else {
@@ -110,8 +117,15 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
         cell.lblTime.text = Utility.convertDateTimeFromServer(dtString: self.listReviewData[indexPath.row].thoiGianBatDauKiemKe ?? "")
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("")
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            self.listReviewData.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView .RowAnimation .automatic )
+        }
     }
 }
