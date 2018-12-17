@@ -73,7 +73,5 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         } else {
             Utility.showAlertInform(title: "Error", message: "Vui lòng điền đầy đủ thông tin đăng nhập", context: self)
         }
-         */
-
     }
 }

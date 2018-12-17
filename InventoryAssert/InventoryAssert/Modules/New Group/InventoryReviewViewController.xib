@@ -21,56 +21,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eQ9-Dr-znh">
-                    <rect key="frame" x="0.0" y="64" width="375" height="523"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuK-UV-7aa">
-                    <rect key="frame" x="0.0" y="587" width="375" height="80"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9np-de-zXI">
-                            <rect key="frame" x="10" y="10" width="355" height="60"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COU-b0-RhS">
-                                    <rect key="frame" x="0.0" y="0.0" width="355" height="60"/>
-                                    <color key="backgroundColor" red="0.082352941176470587" green="0.50588235294117645" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <state key="normal" title="Tạo mới">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="0.0"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="5"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="addNewInventoryReview:" destination="-1" eventType="touchUpInside" id="LBs-Th-tyZ"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                        </stackView>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="80" id="J4a-gT-vkk"/>
-                        <constraint firstAttribute="bottom" secondItem="9np-de-zXI" secondAttribute="bottom" constant="10" id="N9s-9c-zhp"/>
-                        <constraint firstItem="9np-de-zXI" firstAttribute="leading" secondItem="FuK-UV-7aa" secondAttribute="leading" constant="10" id="Rae-Op-ybd"/>
-                        <constraint firstItem="9np-de-zXI" firstAttribute="top" secondItem="FuK-UV-7aa" secondAttribute="top" constant="10" id="uSP-Hu-2US"/>
-                        <constraint firstAttribute="trailing" secondItem="9np-de-zXI" secondAttribute="trailing" constant="10" id="xko-VQ-D4o"/>
-                    </constraints>
-                </view>
             </subviews>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eQ9-Dr-znh" secondAttribute="trailing" id="8VO-O6-GSg"/>
-                <constraint firstItem="FuK-UV-7aa" firstAttribute="top" secondItem="eQ9-Dr-znh" secondAttribute="bottom" id="Ol2-UM-uuQ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FuK-UV-7aa" secondAttribute="trailing" id="VEZ-Z0-WI6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eQ9-Dr-znh" secondAttribute="bottom" id="AEc-fm-Zg2"/>
                 <constraint firstItem="eQ9-Dr-znh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gpx-p6-qb1"/>
-                <constraint firstItem="FuK-UV-7aa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hNn-km-kQ9"/>
                 <constraint firstItem="eQ9-Dr-znh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qi6-B7-g6C"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FuK-UV-7aa" secondAttribute="bottom" id="xnp-hg-gGX"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -87,7 +46,6 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="btnAdd" destination="COU-b0-RhS" id="kYd-mQ-2DY"/>
                 <outlet property="tableView" destination="eQ9-Dr-znh" id="Fvv-X2-J9h"/>
             </connections>
         </view>

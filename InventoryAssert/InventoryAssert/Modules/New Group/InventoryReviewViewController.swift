@@ -42,6 +42,13 @@ class InventoryReviewViewController: BaseViewController {
         self.title = Constants.InventoryReview.title
         let backButton = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem  = backButton
+        let addButton = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonItem.SystemItem.add,
+            target: self,
+            action: #selector(addNewInventoryReview)
+        )
+        self.navigationItem.leftBarButtonItem  = backButton
+        self.navigationItem.leftBarButtonItem  = addButton
         self.inventoryReviewView.tableView.tableFooterView = UIView()
     }
     
@@ -69,7 +76,7 @@ class InventoryReviewViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func addNewInventoryReview(_ sender: Any) {
+    @objc func addNewInventoryReview() {
         let vc = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
         vc.reviewType = ActionReviewType.Add
         vc.reviewData = ReviewData()
@@ -115,8 +122,7 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         // action one
-        let editAction = UITableViewRowAction(style: .default, title: "Edit", handler: { (action, indexPath) in
-            print("Edit tapped")
+        let editAction = UITableViewRowAction(style: .default, title: "Cập nhật", handler: { (action, indexPath) in
             let vc = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
             vc.reviewType = ActionReviewType.Edit
             vc.reviewData = self.listReviewData[indexPath.row]
@@ -126,7 +132,7 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
         editAction.backgroundColor = UIColor.blue
         
         // action two
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: { (action, indexPath) in
+        let deleteAction = UITableViewRowAction(style: .default, title: "Xoá", handler: { (action, indexPath) in
             // call APi to delete, if success remove in local list and UI, if fail show alert
             let buttonOk = UIAlertAction(title: "Đồng ý", style: .default, handler: { (action) in
                 self.listReviewData.remove(at: indexPath.row)
@@ -139,6 +145,6 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
         })
         deleteAction.backgroundColor = UIColor.red
         
-        return [editAction, deleteAction]
+        return [deleteAction, editAction]
     }
 }
