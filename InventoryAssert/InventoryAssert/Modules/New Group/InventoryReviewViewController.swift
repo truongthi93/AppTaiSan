@@ -71,7 +71,7 @@ class InventoryReviewViewController: BaseViewController {
     
     @IBAction func addNewInventoryReview(_ sender: Any) {
         let vc = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
-        vc.isAddNewReview = ActionReviewType.Add
+        vc.reviewType = ActionReviewType.Add
         vc.reviewData = ReviewData()
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -118,7 +118,7 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
         let editAction = UITableViewRowAction(style: .default, title: "Edit", handler: { (action, indexPath) in
             print("Edit tapped")
             let vc = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
-            vc.isAddNewReview = ActionReviewType.Edit
+            vc.reviewType = ActionReviewType.Edit
             vc.reviewData = self.listReviewData[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
 
