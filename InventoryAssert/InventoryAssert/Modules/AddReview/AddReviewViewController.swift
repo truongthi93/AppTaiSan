@@ -9,19 +9,20 @@
 import UIKit
 
 class AddReviewViewController: BaseViewController, UITextFieldDelegate {
-
+    
     public var addReviewView: AddReviewView! {
         guard isViewLoaded else { return nil }
         return view as? AddReviewView
     }
-    var isAddNewReview = true
+    var isAddNewReview : ActionReviewType = .Add
+    var reviewData = ReviewData()
     let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         darkMode = false
         setNeedsStatusBarAppearanceUpdate()
-
+        
         self.addReviewView.tfReviewDate.delegate = self
         self.addReviewView.tfReviewer.delegate = self
         self.addReviewView.tfReviewId.delegate = self
@@ -50,7 +51,7 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         let attributedString3 = NSMutableAttributedString(string:"Đã kiểm: ", attributes:attrs1)
         let attributedString4 = NSMutableAttributedString(string:"2", attributes:attrs2)
         attributedString3.append(attributedString4)
-
+        
         self.addReviewView.lblTotal.attributedText = attributedString1
         self.addReviewView.lblReviewed.attributedText = attributedString3
     }
@@ -72,25 +73,28 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         let kho2 = UIAlertAction(title: "Kho 2", style: .default, handler: { (action) -> Void in
             print("kho2")
             self.addReviewView.lblWareHouse.text = "Kho 2"
-
+            
         } )
         let kho3 = UIAlertAction(title: "Kho 3", style: .default, handler: { (action) -> Void in
             print("kho3")
             self.addReviewView.lblWareHouse.text = "Kho 3"
         } )
-
         
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
             print("Cancel button tapped")
         } )
-        
         
         alertController.addAction(kho3)
         alertController.addAction(kho2)
         alertController.addAction(kho1)
         alertController.addAction(cancelButton)
         
-        self.navigationController!.present(alertController, animated: true, completion: nil)
+        if let currentPopoverpresentioncontroller = alertController.popoverPresentationController{
+            currentPopoverpresentioncontroller.sourceView = self.addReviewView.lblWareHouse
+            currentPopoverpresentioncontroller.sourceRect = self.addReviewView.lblWareHouse.bounds;
+            currentPopoverpresentioncontroller.permittedArrowDirections = UIPopoverArrowDirection.up;
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     func showDatePicker(){

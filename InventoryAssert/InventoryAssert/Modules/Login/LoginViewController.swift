@@ -58,21 +58,22 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
                             } else {
                                 SVProgressHUD.dismiss()
                                 self.view.isUserInteractionEnabled = true
-                                print("login error")
-                                Utility.showAlertInform(title: "Error", message: "Invalid User infomation", context: self)
+                                Utility.showAlertInform(title: "Error", message: "Đăng nhập thất bại!", context: self)
                             }
                         })
                     } else {
                         SVProgressHUD.dismiss()
                         self.view.isUserInteractionEnabled = true
                         print("login error")
-                        Utility.showAlertInform(title: "Error", message: "Get token fail", context: self)
+                        Utility.showAlertInform(title: "Error", message: "Không thể lấy thông tin đăng nhập", context: self)
                         
                     }
                 })
             }
         } else {
-            Utility.showAlertInform(title: "Error", message: "Missing User infomation", context: self)
+            Utility.showAlertInform(title: "Error", message: "Vui lòng điền đầy đủ thông tin đăng nhập", context: self)
         }
+         */
+
     }
 }

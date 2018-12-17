@@ -10,8 +10,6 @@ import UIKit
 
 class InventoryReviewView: UIView {
     @IBOutlet weak var btnAdd: UIButton!
-    @IBOutlet weak var btnEdit: UIButton!
-    @IBOutlet weak var btnDelete: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     override init(frame: CGRect) {

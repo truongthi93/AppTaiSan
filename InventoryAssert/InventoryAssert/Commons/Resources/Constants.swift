@@ -17,9 +17,9 @@ class Constants {
     }
     
     public class Login{
-        static let userNameTfPlaceHolder = "User name"
-        static let passwordTfPlaceHolder = "Password"
-        static let loginButtonTitle = "Log in"
+        static let userNameTfPlaceHolder = "Tên đăng nhập"
+        static let passwordTfPlaceHolder = "Mật khẩu"
+        static let loginButtonTitle = "Đăng nhập"
         static let tagIndicator = 100
         
     }

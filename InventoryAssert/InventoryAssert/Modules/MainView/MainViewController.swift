@@ -48,7 +48,14 @@ class MainViewController: BaseViewController {
     }
     
     @objc func userLogout() {
-        self.dismiss(animated: true, completion: nil)
+        let buttonOk = UIAlertAction(title: "Đồng ý", style: .default, handler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        })
+        
+        let buttonCancel = UIAlertAction(title: "Huỷ bỏ", style: .cancel, handler: { (action) in
+            //self.dismiss(animated: true, completion: nil)
+        })
+        Utility.showAlert(title: "Lưu ý", message: "Bạn có muốn đăng xuất tài khoản khỏi thiết bị?", buttons: [buttonOk, buttonCancel], context: self)
     }
 }
 

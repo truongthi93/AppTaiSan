@@ -32,11 +32,29 @@ class ReviewData : NSObject,Mappable {
     var ngayUpdate : String?
     var tsKiemKeChiTiet : [String]?
     
-//    init(tokenType: String?, accessToken: String?, expiresIn: Int?) {
-//        self.tokenType = tokenType
-//        self.accessToken = accessToken
-//        self.expiresIn = expiresIn
-//    }
+    init(taiSanKiemKeId : Int?, maKiemKe : String?, ngayLapPhieu : String?, thoiGianLapPhieu : String?, thoiGianBatDauKiemKe : String?, noiDungKiemKe : String?, khoTaiSanId : Int?, soLuongTaiSan : Int?, soLuongKiemKe : Int?, soLuongTaiSanMoi : String?, soLuongTaiSanThieu : String?, nguoiKiemKe : String?, nguoiQuanLyKho : String?, nguoiLapPhieuId : Int?, khoaPhieu : String?, nguoiTao : Int?, ngayTao : String?, nguoiUpdate : String?, ngayUpdate : String?, tsKiemKeChiTiet : [String]?) {
+        self.taiSanKiemKeId = taiSanKiemKeId
+        self.maKiemKe = maKiemKe
+        self.ngayLapPhieu = ngayLapPhieu
+        self.thoiGianLapPhieu = thoiGianLapPhieu
+        self.thoiGianBatDauKiemKe = thoiGianBatDauKiemKe
+        self.noiDungKiemKe = noiDungKiemKe
+        self.khoTaiSanId = khoTaiSanId
+        self.soLuongTaiSan = soLuongTaiSan
+        self.soLuongKiemKe = soLuongKiemKe
+        self.soLuongTaiSanMoi = soLuongTaiSanMoi
+        self.soLuongTaiSanThieu = soLuongTaiSanThieu
+        self.nguoiKiemKe = nguoiKiemKe
+        self.nguoiTao = nguoiTao
+        self.ngayTao = ngayTao
+        self.nguoiUpdate = nguoiUpdate
+        self.ngayUpdate = ngayUpdate
+        self.tsKiemKeChiTiet = tsKiemKeChiTiet
+        self.nguoiQuanLyKho = nguoiQuanLyKho
+        self.nguoiLapPhieuId = nguoiLapPhieuId
+        self.khoaPhieu = khoaPhieu
+        self.nguoiTao = nguoiTao
+    }
     
     override init() {
     }

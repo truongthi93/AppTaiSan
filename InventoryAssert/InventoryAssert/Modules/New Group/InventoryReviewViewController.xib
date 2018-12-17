@@ -21,27 +21,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eQ9-Dr-znh">
-                    <rect key="frame" x="0.0" y="64" width="375" height="543"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="523"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuK-UV-7aa">
-                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                    <rect key="frame" x="0.0" y="587" width="375" height="80"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9np-de-zXI">
-                            <rect key="frame" x="10" y="10" width="355" height="40"/>
+                            <rect key="frame" x="10" y="10" width="355" height="60"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COU-b0-RhS">
-                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="40"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="60"/>
+                                    <color key="backgroundColor" red="0.082352941176470587" green="0.50588235294117645" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="Tạo mới">
-                                        <color key="titleColor" red="0.083237580960000002" green="0.50752019879999999" blue="0.66180795429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="0.0"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="20"/>
+                                            <real key="value" value="5"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
@@ -50,52 +50,12 @@
                                         <action selector="addNewInventoryReview:" destination="-1" eventType="touchUpInside" id="LBs-Th-tyZ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzC-Sd-HYv">
-                                    <rect key="frame" x="121.5" y="0.0" width="112" height="40"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Chỉnh sửa">
-                                        <color key="titleColor" red="0.083237580960000002" green="0.50752019879999999" blue="0.66180795429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="0.0"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="EditInventoryReview:" destination="-1" eventType="touchUpInside" id="mi9-0a-1Ye"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOg-t1-Pm4">
-                                    <rect key="frame" x="243.5" y="0.0" width="111.5" height="40"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Xóa">
-                                        <color key="titleColor" red="0.083237580960000002" green="0.50752019879999999" blue="0.66180795429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="0.0"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="deleteInventoryReview:" destination="-1" eventType="touchUpInside" id="kOu-MN-s51"/>
-                                    </connections>
-                                </button>
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.083237580960000002" green="0.50752019879999999" blue="0.66180795429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="J4a-gT-vkk"/>
+                        <constraint firstAttribute="height" constant="80" id="J4a-gT-vkk"/>
                         <constraint firstAttribute="bottom" secondItem="9np-de-zXI" secondAttribute="bottom" constant="10" id="N9s-9c-zhp"/>
                         <constraint firstItem="9np-de-zXI" firstAttribute="leading" secondItem="FuK-UV-7aa" secondAttribute="leading" constant="10" id="Rae-Op-ybd"/>
                         <constraint firstItem="9np-de-zXI" firstAttribute="top" secondItem="FuK-UV-7aa" secondAttribute="top" constant="10" id="uSP-Hu-2US"/>
@@ -103,7 +63,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.083237580960000002" green="0.50752019879999999" blue="0.66180795429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eQ9-Dr-znh" secondAttribute="trailing" id="8VO-O6-GSg"/>
                 <constraint firstItem="FuK-UV-7aa" firstAttribute="top" secondItem="eQ9-Dr-znh" secondAttribute="bottom" id="Ol2-UM-uuQ"/>
@@ -123,11 +82,12 @@
                     <real key="value" value="0.0"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="btnAdd" destination="COU-b0-RhS" id="kYd-mQ-2DY"/>
-                <outlet property="btnDelete" destination="qOg-t1-Pm4" id="GKf-Ti-oCG"/>
-                <outlet property="btnEdit" destination="fzC-Sd-HYv" id="ReR-XY-rnI"/>
                 <outlet property="tableView" destination="eQ9-Dr-znh" id="Fvv-X2-J9h"/>
             </connections>
         </view>
