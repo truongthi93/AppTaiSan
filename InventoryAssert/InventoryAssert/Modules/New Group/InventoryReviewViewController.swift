@@ -127,10 +127,15 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
         
         // action two
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: { (action, indexPath) in
-            print("Delete tapped")
             // call APi to delete, if success remove in local list and UI, if fail show alert
-            self.listReviewData.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: UITableView .RowAnimation .automatic )
+            let buttonOk = UIAlertAction(title: "Đồng ý", style: .default, handler: { (action) in
+                self.listReviewData.remove(at: indexPath.row)
+                self.inventoryReviewView.tableView.reloadData()
+            })
+            
+            let buttonCancel = UIAlertAction(title: "Huỷ bỏ", style: .cancel, handler: { (action) in
+            })
+            Utility.showAlert(title: "Lưu ý", message: "Bạn có chắc xoá lần kiểm kê này?", buttons: [buttonOk, buttonCancel], context: self)
         })
         deleteAction.backgroundColor = UIColor.red
         
