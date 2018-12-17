@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-enum ActionReviewType {
+enum ActionReviewType : Int {
     case Add
     case Edit
 }
@@ -48,7 +48,7 @@ class InventoryReviewViewController: BaseViewController {
             action: #selector(addNewInventoryReview)
         )
         self.navigationItem.leftBarButtonItem  = backButton
-        self.navigationItem.leftBarButtonItem  = addButton
+        self.navigationItem.rightBarButtonItem  = addButton
         self.inventoryReviewView.tableView.tableFooterView = UIView()
     }
     

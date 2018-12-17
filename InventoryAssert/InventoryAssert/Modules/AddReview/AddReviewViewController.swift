@@ -8,8 +8,14 @@
 
 import UIKit
 
+
+enum UIUserInterfaceIdiom : Int {
+    case unspecified
+    case phone // iPhone and iPod touch style UI
+    case pad // iPad style UI
+}
+
 class AddReviewViewController: BaseViewController, UITextFieldDelegate {
-    
     public var addReviewView: AddReviewView! {
         guard isViewLoaded else { return nil }
         return view as? AddReviewView
@@ -38,7 +44,7 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         let backButton = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem  = backButton
         
-        self.reviewType == .Add ? self.addReviewView.btnReview.setTitle("Tạo mới", for: .normal) : self.addReviewView.btnReview.setTitle("Cập nhật", for: .normal)
+        self.reviewType == .Add ? self.addReviewView.btnReview.setTitle("Bắt đầu kiểm", for: .normal) : self.addReviewView.btnReview.setTitle("Cập nhật", for: .normal)
     }
     
     func fillData() {
@@ -52,8 +58,9 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         let reviewed = String(describing: self.reviewData.soLuongKiemKe ?? -1)
         self.setUpTextAttributeLabel(total, reviewed)
     }
+    
     func setUpTextAttributeLabel(_ total: String,_ reviewed: String) {
-        let attrs1 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17), NSAttributedString.Key.foregroundColor : UIColor.black]
+        let attrs1 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17), NSAttributedString.Key.foregroundColor : UIColor.navigationBarColor]
         
         let attrs2 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17), NSAttributedString.Key.foregroundColor : UIColor.red]
         
@@ -68,6 +75,7 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         self.addReviewView.lblTotal.attributedText = attributedString1
         self.addReviewView.lblReviewed.attributedText = attributedString3
     }
+    
     @objc func back() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -102,11 +110,18 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         alertController.addAction(kho1)
         alertController.addAction(cancelButton)
         
-        if let currentPopoverpresentioncontroller = alertController.popoverPresentationController{
-            currentPopoverpresentioncontroller.sourceView = self.addReviewView.lblWareHouse
-            currentPopoverpresentioncontroller.sourceRect = self.addReviewView.lblWareHouse.bounds;
-            currentPopoverpresentioncontroller.permittedArrowDirections = UIPopoverArrowDirection.up;
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            if let currentPopoverpresentioncontroller = alertController.popoverPresentationController{
+                currentPopoverpresentioncontroller.sourceView = self.addReviewView.lblWareHouse
+                currentPopoverpresentioncontroller.sourceRect = self.addReviewView.lblWareHouse.bounds;
+                currentPopoverpresentioncontroller.permittedArrowDirections = UIPopoverArrowDirection.up;
+                self.present(alertController, animated: true, completion: nil)
+            }
+            break
+        default:
             self.present(alertController, animated: true, completion: nil)
+            break
         }
     }
     
