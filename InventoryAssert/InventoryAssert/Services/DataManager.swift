@@ -77,4 +77,16 @@ class DataManager: NSObject {
             }
         })
     }
+    
+    func DeleteReview(id: Int, completion: @escaping (_ result: Bool?, _ error: NSError?) -> Void) {
+        let URL = "\(Constants.APIUrl.host)\(Constants.APIUrl.deleteReview)\(id)"
+        Alamofire.request(URL, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
+            print(response)
+            if let result = response.result.value, let JSON = result as? NSDictionary, let isSuccess = JSON["isSuccess"] as? Bool, isSuccess == true{
+                completion(true,nil)
+            } else {
+                completion(false,NSError(domain: "Error Domain", code: 999, userInfo: [NSLocalizedDescriptionKey: "Fail"]))
+            }
+        })
+    }
 }

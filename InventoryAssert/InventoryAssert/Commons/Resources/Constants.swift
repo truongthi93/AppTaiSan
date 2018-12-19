@@ -14,6 +14,9 @@ class Constants {
         static let login = "api/user?username="
         static let getToken = "api/user/login"
         static let getReviewList = "api/inventory"
+        static let deleteReview = "api/InventoryAssetDetail?inventoryAssetDetailId="
+        
+
     }
     
     public class Login{

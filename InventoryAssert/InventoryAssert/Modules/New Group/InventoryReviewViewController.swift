@@ -135,8 +135,15 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
         let deleteAction = UITableViewRowAction(style: .default, title: "Xoá", handler: { (action, indexPath) in
             // call APi to delete, if success remove in local list and UI, if fail show alert
             let buttonOk = UIAlertAction(title: "Đồng ý", style: .default, handler: { (action) in
-                self.listReviewData.remove(at: indexPath.row)
-                self.inventoryReviewView.tableView.reloadData()
+                DataManager.shareInstance.DeleteReview(id: self.listReviewData[indexPath.row].taiSanKiemKeId ?? 0, completion: { (isSuccess, error) in
+                    if isSuccess != nil, isSuccess == true{
+                        self.listReviewData.remove(at: indexPath.row)
+                        self.inventoryReviewView.tableView.reloadData()
+                    } else {
+                        Utility.showAlertInform(title: "Lỗi", message: "Xóa kiểm kê thất bại", context: self)
+                    }
+                })
+
             })
             
             let buttonCancel = UIAlertAction(title: "Huỷ bỏ", style: .cancel, handler: { (action) in
