@@ -48,14 +48,14 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func fillData() {
-        self.addReviewView.lblWareHouse.text = String(describing: self.reviewData.khoTaiSanId ?? -1)
+        self.addReviewView.lblWareHouse.text = (self.reviewData.khoTaiSanId != nil) ? ("kho " + String(describing: self.reviewData.khoTaiSanId ?? -1)) : "Vui lòng chọn kho"
         self.addReviewView.tfNote.text = String(describing: self.reviewData.noiDungKiemKe ?? "")
         self.addReviewView.tfReviewer.text = String(describing: self.reviewData.nguoiKiemKe ?? "")
         self.addReviewView.tfReviewDate.text = Utility.convertDateTimeFromServer(dtString: String(describing: self.reviewData.ngayLapPhieu ?? ""))
         self.addReviewView.tfReviewId.text = String(describing: self.reviewData.maKiemKe ?? "")
             
-        let total = String(describing: self.reviewData.soLuongTaiSan ?? -1)
-        let reviewed = String(describing: self.reviewData.soLuongKiemKe ?? -1)
+        let total = (self.reviewData.khoTaiSanId != nil) ? String(describing: self.reviewData.soLuongTaiSan ?? -1) : "0"
+        let reviewed = (self.reviewData.khoTaiSanId != nil) ? String(describing: self.reviewData.soLuongKiemKe ?? -1) : "0"
         self.setUpTextAttributeLabel(total, reviewed)
     }
     
