@@ -40,4 +40,8 @@ class Constants {
         static let title = "Thông tin phiếu"
     }
 
+    public class AssetListInWareHouse{
+        static let title = "Danh sách tài sản trong kho"
+    }
+
 }
