@@ -51,7 +51,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="nyz-EC-ZuJ"/>
                                             </constraints>
-                                            <color key="textColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -89,7 +89,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="mro-Tx-MIg"/>
                                             </constraints>
-                                            <color key="textColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>

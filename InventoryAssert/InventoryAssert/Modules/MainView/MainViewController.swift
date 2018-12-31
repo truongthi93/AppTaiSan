@@ -97,6 +97,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             print("Tap Items 3")
             break
         case 3:
+            let vc = AssetListInWareHouseViewController(nibName: "AssetListInWareHouseViewController", bundle: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
             print("Tap Items 4")
         case 4:
             print("Tap Items 5")
