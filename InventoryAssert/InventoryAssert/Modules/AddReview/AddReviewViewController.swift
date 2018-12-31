@@ -81,9 +81,39 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func StartReview(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        if self.reviewType == ActionReviewType.Add{
+            self.addReview(reviewData: ReviewData())
+        } else {
+            self.editReview(reviewData: ReviewData())
+        }
     }
     
+    func addReview(reviewData: ReviewData){
+        DataManager.shareInstance.addReview(reviewData: ReviewData()) { (result, error) in
+            if result != nil, result == true{
+                print("add review success")
+                // Need call API and reload tableView
+            } else {
+                print("add review fail")
+                Utility.showAlertInform(title: "Lỗi", message: "Thêm kiểm kê thất bại", context: self)
+            }
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func editReview(reviewData: ReviewData){
+        DataManager.shareInstance.editReview(reviewData: ReviewData()) { (result, error) in
+            if result != nil, result == true{
+                print("edit review success")
+                // Need call API and reload tableView
+            } else {
+                print("edit review fail")
+                Utility.showAlertInform(title: "Lỗi", message: "Cập nhật kiểm kê thất bại", context: self)
+            }
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+
     @IBAction func selectWarehouse(_ sender: Any) {
         let alertController = UIAlertController(title: "", message: "Chọn Kho", preferredStyle: .actionSheet)
         
