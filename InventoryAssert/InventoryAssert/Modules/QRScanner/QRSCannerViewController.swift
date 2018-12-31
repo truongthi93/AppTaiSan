@@ -40,9 +40,9 @@ class QRSCannerViewController: BaseViewController , AVCaptureMetadataOutputObjec
         setNeedsStatusBarAppearanceUpdate()
         
         // Get the back-facing camera for capturing videos
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
+        let deviceDiscoverySession = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)
         
-        guard let captureDevice = deviceDiscoverySession.devices.first else {
+        guard let captureDevice = deviceDiscoverySession else {
             print("Failed to get the camera device")
             return
         }
@@ -110,29 +110,29 @@ class QRSCannerViewController: BaseViewController , AVCaptureMetadataOutputObjec
     
     // MARK: - Helper methods
     
-    func launchApp(decodedURL: String) {
-        
-        if presentedViewController != nil {
-            return
-        }
-        
-        let alertPrompt = UIAlertController(title: "Open App", message: "You're going to open \(decodedURL)", preferredStyle: .actionSheet)
-        let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { (action) -> Void in
-            
-            if let url = URL(string: decodedURL) {
-                if UIApplication.shared.canOpenURL(url) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }
-            }
-        })
-        
-        let cancelAction = UIAlertAction(title: "Hủy Bỏ", style: UIAlertAction.Style.cancel, handler: nil)
-        
-        alertPrompt.addAction(confirmAction)
-        alertPrompt.addAction(cancelAction)
-        
-        present(alertPrompt, animated: true, completion: nil)
-    }
+//    func launchApp(decodedURL: String) {
+//
+//        if presentedViewController != nil {
+//            return
+//        }
+//
+//        let alertPrompt = UIAlertController(title: "Open App", message: "You're going to open \(decodedURL)", preferredStyle: .actionSheet)
+//        let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { (action) -> Void in
+//
+//            if let url = URL(string: decodedURL) {
+//                if UIApplication.shared.canOpenURL(url) {
+//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//                }
+//            }
+//        })
+//
+//        let cancelAction = UIAlertAction(title: "Hủy Bỏ", style: UIAlertAction.Style.cancel, handler: nil)
+//
+//        alertPrompt.addAction(confirmAction)
+//        alertPrompt.addAction(cancelAction)
+//
+//        present(alertPrompt, animated: true, completion: nil)
+//    }
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         // Check if the metadataObjects array is not nil and it contains at least one object.
@@ -140,11 +140,13 @@ class QRSCannerViewController: BaseViewController , AVCaptureMetadataOutputObjec
             qrCodeView?.frame = CGRect.zero
             Utility.showAlertInform(title: "Thông báo", message: "Khong tim thay ket qua scan", context: self)
             print("Khong tim thay ket qua scan")
+            captureSession.stopRunning()
             return
         }
         
         // Get the metadata object.
         guard let metadataObj = metadataObjects[0] as? AVMetadataMachineReadableCodeObject else {
+            captureSession.stopRunning()
             return
         }
         
@@ -154,14 +156,20 @@ class QRSCannerViewController: BaseViewController , AVCaptureMetadataOutputObjec
             qrCodeView?.frame = barCodeObject?.bounds ?? CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 0, height: 0))
             
             if metadataObj.stringValue != nil {
-                launchApp(decodedURL: metadataObj.stringValue ?? "")
+//                launchApp(decodedURL: metadataObj.stringValue ?? "")
                 print("Ket qua scan: \(metadataObj.stringValue ?? "")")
-                Utility.showAlertInform(title: "Thông báo", message: "Ket qua scan: \(metadataObj.stringValue ?? "")", context: self)
                 
-                let vc = ConfirmAssetInfoViewController(nibName: "ConfirmAssetInfoViewController", bundle: nil)
-                vc.assetId = metadataObj.stringValue ?? ""
-                vc.delegate  = self
-                self.navigationController?.pushViewController(vc, animated: true)
+                let cancelAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel){ (aa) in
+                    self.captureSession.stopRunning()
+                    let vc = ConfirmAssetInfoViewController(nibName: "ConfirmAssetInfoViewController", bundle: nil)
+                    vc.assetId = metadataObj.stringValue ?? ""
+                    vc.delegate  = self
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                
+                Utility.showAlert(title: "Thông báo", message: "Ket qua scan: \(metadataObj.stringValue ?? "")", buttons: [cancelAction], context: self)
+                captureSession.stopRunning()
+                return
             }
         }
     }
