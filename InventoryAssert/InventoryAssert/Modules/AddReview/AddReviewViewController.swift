@@ -44,11 +44,11 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         let backButton = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem  = backButton
         
-        self.reviewType == .Add ? self.addReviewView.btnReview.setTitle("Bắt đầu kiểm", for: .normal) : self.addReviewView.btnReview.setTitle("Cập nhật", for: .normal)
+        self.reviewType == .Add ? self.addReviewView.btnReview.setTitle(Constants.AddReview.startInventory, for: .normal) : self.addReviewView.btnReview.setTitle(Constants.AppCommon.note, for: .normal)
     }
     
     func fillData() {
-        self.addReviewView.lblWareHouse.text = (self.reviewData.khoTaiSanId != nil) ? ("kho " + String(describing: self.reviewData.khoTaiSanId ?? -1)) : "Vui lòng chọn kho"
+        self.addReviewView.lblWareHouse.text = (self.reviewData.khoTaiSanId != nil) ? (Constants.AddReview.wareHouse + String(describing: self.reviewData.khoTaiSanId ?? -1)) : Constants.AddReview.pleaseSelectWareHouse
         self.addReviewView.tfNote.text = String(describing: self.reviewData.noiDungKiemKe ?? "")
         self.addReviewView.tfReviewer.text = String(describing: self.reviewData.nguoiKiemKe ?? "")
         self.addReviewView.tfReviewDate.text = Utility.convertDateTimeFromServer(dtString: String(describing: self.reviewData.ngayLapPhieu ?? ""))
@@ -64,11 +64,11 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         
         let attrs2 = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17), NSAttributedString.Key.foregroundColor : UIColor.red]
         
-        let attributedString1 = NSMutableAttributedString(string:"Tổng tài sản: ", attributes:attrs1)
+        let attributedString1 = NSMutableAttributedString(string: Constants.AddReview.totalAssert, attributes:attrs1)
         let attributedString2 = NSMutableAttributedString(string: total, attributes:attrs2)
         attributedString1.append(attributedString2)
         
-        let attributedString3 = NSMutableAttributedString(string:"Đã kiểm: ", attributes:attrs1)
+        let attributedString3 = NSMutableAttributedString(string: Constants.AddReview.checked, attributes:attrs1)
         let attributedString4 = NSMutableAttributedString(string: reviewed, attributes:attrs2)
         attributedString3.append(attributedString4)
         
@@ -85,23 +85,23 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func selectWarehouse(_ sender: Any) {
-        let alertController = UIAlertController(title: "", message: "Chọn Kho", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "", message: Constants.AddReview.selectWareHouse, preferredStyle: .actionSheet)
         
-        let kho1 = UIAlertAction(title: "Kho 1", style: .default, handler: { (action) -> Void in
+        let kho1 = UIAlertAction(title: Constants.AddReview.wareHouseOne, style: .default, handler: { (action) -> Void in
             print("kho1")
-            self.addReviewView.lblWareHouse.text = "Kho 1"
+            self.addReviewView.lblWareHouse.text = Constants.AddReview.wareHouseOne
         } )
-        let kho2 = UIAlertAction(title: "Kho 2", style: .default, handler: { (action) -> Void in
+        let kho2 = UIAlertAction(title: Constants.AddReview.wareHouseTwo, style: .default, handler: { (action) -> Void in
             print("kho2")
-            self.addReviewView.lblWareHouse.text = "Kho 2"
+            self.addReviewView.lblWareHouse.text = Constants.AddReview.wareHouseTwo
             
         } )
-        let kho3 = UIAlertAction(title: "Kho 3", style: .default, handler: { (action) -> Void in
+        let kho3 = UIAlertAction(title: Constants.AddReview.wareHouseThree, style: .default, handler: { (action) -> Void in
             print("kho3")
-            self.addReviewView.lblWareHouse.text = "Kho 3"
+            self.addReviewView.lblWareHouse.text = Constants.AddReview.wareHouseThree
         } )
         
-        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
+        let cancelButton = UIAlertAction(title: Constants.AppCommon.cancel, style: .cancel, handler: { (action) -> Void in
             print("Cancel button tapped")
         } )
         
@@ -132,9 +132,9 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let doneButton = UIBarButtonItem(title: Constants.AppCommon.done, style: .plain, target: self, action: #selector(donedatePicker));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        let cancelButton = UIBarButtonItem(title: Constants.AppCommon.cancel, style: .plain, target: self, action: #selector(cancelDatePicker));
         
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         self.addReviewView.tfReviewDate.inputAccessoryView = toolbar
@@ -144,7 +144,7 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
     
     @objc func donedatePicker(){
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = Constants.AppCommon.formatDate
         self.addReviewView.tfReviewDate.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }

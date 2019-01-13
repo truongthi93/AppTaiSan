@@ -50,7 +50,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
                     if let tokenData = data, let newToken = tokenData.accessToken, let newTokenType = tokenData.tokenType{
                         DataManager.shareInstance.login(userName: username, token: newToken, tokenType: newTokenType, completion: { (result, errorData) in
                             if (result != nil && result?.userId != nil){
-                                let vc = MainViewController(nibName: "MainViewController", bundle: nil)
+                                let vc = MainViewController(nibName: Constants.MainView.mainViewController, bundle: nil)
                                 let nav = UINavigationController(rootViewController: vc)
                                 self.present(nav, animated: true, completion: nil)
                                 SVProgressHUD.dismiss()
@@ -58,20 +58,20 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
                             } else {
                                 SVProgressHUD.dismiss()
                                 self.view.isUserInteractionEnabled = true
-                                Utility.showAlertInform(title: "Lỗi", message: "Đăng nhập thất bại", context: self)
+                                Utility.showAlertInform(title: Constants.AppCommon.error, message: Constants.AppCommon.messageLoginFailed, context: self)
                             }
                         })
                     } else {
                         SVProgressHUD.dismiss()
                         self.view.isUserInteractionEnabled = true
                         print("login error")
-                        Utility.showAlertInform(title: "Lỗi", message: "Không thể lấy thông tin đăng nhập", context: self)
+                        Utility.showAlertInform(title: Constants.AppCommon.error, message: Constants.AppCommon.messageGetLoginInfoFailed, context: self)
                         
                     }
                 })
             }
         } else {
-            Utility.showAlertInform(title: "Lỗi", message: "Vui lòng điền đầy đủ thông tin đăng nhập", context: self)
+            Utility.showAlertInform(title: Constants.AppCommon.error, message:Constants.AppCommon.messageFillLoginInfo, context: self)
         }
     }
 }

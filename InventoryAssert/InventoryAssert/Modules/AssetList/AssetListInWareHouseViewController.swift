@@ -27,7 +27,7 @@ class AssetListInWareHouseViewController: BaseViewController, AVCaptureMetadataO
         
         self.assetListView.tableView.delegate = self
         self.assetListView.tableView.dataSource = self
-        self.assetListView.tableView.register(UINib(nibName: "AssetListInWareHouseTableViewCell", bundle: nil), forCellReuseIdentifier: "AssetListInWareHouseTableViewCell")
+        self.assetListView.tableView.register(UINib(nibName: Constants.AssetListInWareHouse.assetListInWareHouseTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.AssetListInWareHouse.assetListInWareHouseTableViewCell)
 
     }
     
@@ -47,7 +47,7 @@ class AssetListInWareHouseViewController: BaseViewController, AVCaptureMetadataO
     }
     
     @IBAction func scanQRCode(_ sender: Any) {
-        let vc = QRSCannerViewController(nibName: "QRSCannerViewController", bundle: nil)
+        let vc = QRSCannerViewController(nibName: Constants.QASCanner.QRSCannerViewController, bundle: nil)
         vc.delegate = self
         let nav = UINavigationController(rootViewController: vc)
 
@@ -75,7 +75,7 @@ extension AssetListInWareHouseViewController: UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AssetListInWareHouseTableViewCell", for: indexPath) as! AssetListInWareHouseTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AssetListInWareHouse.assetListInWareHouseTableViewCell, for: indexPath) as! AssetListInWareHouseTableViewCell
         cell.imgCheck.image = indexPath.row % 2 == 0 ?  UIImage(named: "check.png") : UIImage(named: "uncheck.png")
         return cell
     }

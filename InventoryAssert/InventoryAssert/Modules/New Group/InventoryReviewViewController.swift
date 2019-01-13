@@ -30,7 +30,7 @@ class InventoryReviewViewController: BaseViewController {
         //Delegate, Datasource
         self.inventoryReviewView.tableView.delegate = self
         self.inventoryReviewView.tableView.dataSource = self
-        self.inventoryReviewView.tableView.register(UINib(nibName: "InventoryReviewTableViewCell", bundle: nil), forCellReuseIdentifier: "InventoryReviewTableViewCell")
+        self.inventoryReviewView.tableView.register(UINib(nibName: Constants.InventoryReview.inventoryReviewTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.InventoryReview.inventoryReviewTableViewCell)
         //(UINib(nibName: "InventoryReviewTableViewCell", bundle: nil), forCellWithReuseIdentifier: "InventoryReviewTableViewCell")
         
         self.getReviewList()
@@ -67,7 +67,7 @@ class InventoryReviewViewController: BaseViewController {
                 SVProgressHUD.dismiss()
                 self.view.isUserInteractionEnabled = true
                 print("login error")
-                Utility.showAlertInform(title: "Lỗi", message: "Không có dữ liệu", context: self)
+                Utility.showAlertInform(title: Constants.AppCommon.error, message: Constants.AppCommon.messageNoData, context: self)
             }
         }
     }
@@ -77,7 +77,7 @@ class InventoryReviewViewController: BaseViewController {
     }
     
     @objc func addNewInventoryReview() {
-        let vc = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
+        let vc = AddReviewViewController(nibName: Constants.AddReview.addReviewViewController, bundle: nil)
         vc.reviewType = ActionReviewType.Add
         vc.reviewData = ReviewData()
         self.navigationController?.pushViewController(vc, animated: true)
@@ -98,7 +98,7 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InventoryReviewTableViewCell", for: indexPath) as! InventoryReviewTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.InventoryReview.inventoryReviewTableViewCell, for: indexPath) as! InventoryReviewTableViewCell
         
         if let wh = self.listReviewData[indexPath.row].khoTaiSanId{
             cell.lblWareHouse.text = String(describing: wh)
@@ -122,8 +122,8 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         // action one
-        let editAction = UITableViewRowAction(style: .default, title: "Cập nhật", handler: { (action, indexPath) in
-            let vc = AddReviewViewController(nibName: "AddReviewViewController", bundle: nil)
+        let editAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.update, handler: { (action, indexPath) in
+            let vc = AddReviewViewController(nibName: Constants.AddReview.addReviewViewController, bundle: nil)
             vc.reviewType = ActionReviewType.Edit
             vc.reviewData = self.listReviewData[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
@@ -132,23 +132,23 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
         editAction.backgroundColor = UIColor.blue
         
         // action two
-        let deleteAction = UITableViewRowAction(style: .default, title: "Xoá", handler: { (action, indexPath) in
+        let deleteAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.delete, handler: { (action, indexPath) in
             // call APi to delete, if success remove in local list and UI, if fail show alert
-            let buttonOk = UIAlertAction(title: "Đồng ý", style: .default, handler: { (action) in
+            let buttonOk = UIAlertAction(title: Constants.AppCommon.agree, style: .default, handler: { (action) in
                 DataManager.shareInstance.DeleteReview(id: self.listReviewData[indexPath.row].taiSanKiemKeId ?? 0, completion: { (isSuccess, error) in
                     if isSuccess != nil, isSuccess == true{
                         self.listReviewData.remove(at: indexPath.row)
                         self.inventoryReviewView.tableView.reloadData()
                     } else {
-                        Utility.showAlertInform(title: "Lỗi", message: "Xóa kiểm kê thất bại", context: self)
+                        Utility.showAlertInform(title: Constants.AppCommon.error, message: Constants.AppCommon.messageDeleteFailed, context: self)
                     }
                 })
 
             })
             
-            let buttonCancel = UIAlertAction(title: "Huỷ bỏ", style: .cancel, handler: { (action) in
+            let buttonCancel = UIAlertAction(title: Constants.AppCommon.cancel, style: .cancel, handler: { (action) in
             })
-            Utility.showAlert(title: "Lưu ý", message: "Bạn có chắc xoá lần kiểm kê này?", buttons: [buttonOk, buttonCancel], context: self)
+            Utility.showAlert(title: Constants.AppCommon.note, message:Constants.AppCommon.messageConfirmDelete, buttons: [buttonOk, buttonCancel], context: self)
         })
         deleteAction.backgroundColor = UIColor.red
         

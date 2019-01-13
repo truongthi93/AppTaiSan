@@ -21,7 +21,7 @@ class MainViewController: BaseViewController {
         //Delegate, Datasource
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "ItemsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemsCollectionViewCell")
+        collectionView.register(UINib(nibName: Constants.MainView.itemsCollectionViewCell, bundle: nil), forCellWithReuseIdentifier:Constants.MainView.itemsCollectionViewCell)
         
         //edit size fr items
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -48,14 +48,14 @@ class MainViewController: BaseViewController {
     }
     
     @objc func userLogout() {
-        let buttonOk = UIAlertAction(title: "Đồng ý", style: .default, handler: { (action) in
+        let buttonOk = UIAlertAction(title: Constants.AppCommon.agree, style: .default, handler: { (action) in
             self.dismiss(animated: true, completion: nil)
         })
         
-        let buttonCancel = UIAlertAction(title: "Huỷ bỏ", style: .cancel, handler: { (action) in
+        let buttonCancel = UIAlertAction(title: Constants.AppCommon.cancel, style: .cancel, handler: { (action) in
             //self.dismiss(animated: true, completion: nil)
         })
-        Utility.showAlert(title: "Lưu ý", message: "Bạn có muốn đăng xuất tài khoản khỏi thiết bị?", buttons: [buttonOk, buttonCancel], context: self)
+        Utility.showAlert(title: Constants.AppCommon.note, message: Constants.AppCommon.messageLogout, buttons: [buttonOk, buttonCancel], context: self)
     }
 }
 
@@ -73,7 +73,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsCollectionViewCell", for: indexPath) as! ItemsCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.MainView.itemsCollectionViewCell, for: indexPath) as! ItemsCollectionViewCell
         cell.layer.borderColor = UIColor.darkGray.cgColor
         cell.layer.borderWidth = 0.5
         cell.layer.cornerRadius = 10
@@ -86,7 +86,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         switch indexPath.row {
         case 0:
-            let vc = InventoryReviewViewController(nibName: "InventoryReviewViewController", bundle: nil)
+            let vc = InventoryReviewViewController(nibName: Constants.InventoryReview.inventoryReviewViewController, bundle: nil)
             self.navigationController?.pushViewController(vc, animated: true)
             print("Tap Items 1")
             break
@@ -97,7 +97,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             print("Tap Items 3")
             break
         case 3:
-            let vc = AssetListInWareHouseViewController(nibName: "AssetListInWareHouseViewController", bundle: nil)
+            let vc = AssetListInWareHouseViewController(nibName: Constants.AssetListInWareHouse.assetListInWareHouseViewController, bundle: nil)
             self.navigationController?.pushViewController(vc, animated: true)
             print("Tap Items 4")
         case 4:

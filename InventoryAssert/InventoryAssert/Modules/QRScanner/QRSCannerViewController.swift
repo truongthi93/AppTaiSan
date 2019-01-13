@@ -98,7 +98,7 @@ class QRSCannerViewController: BaseViewController , AVCaptureMetadataOutputObjec
         navigationController?.navigationBar.tintColor = UIColor.navigationTextColor
         
         
-        self.title = "QR Scan"
+        self.title = Constants.QASCanner.title
         let backButton = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem  = backButton
     }
@@ -138,7 +138,7 @@ class QRSCannerViewController: BaseViewController , AVCaptureMetadataOutputObjec
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects.count == 0 {
             qrCodeView?.frame = CGRect.zero
-            Utility.showAlertInform(title: "Thông báo", message: "Khong tim thay ket qua scan", context: self)
+            Utility.showAlertInform(title:Constants.AppCommon.note, message:Constants.AppCommon.messgaeScanNotFound, context: self)
             print("Khong tim thay ket qua scan")
             captureSession.stopRunning()
             return
@@ -159,15 +159,15 @@ class QRSCannerViewController: BaseViewController , AVCaptureMetadataOutputObjec
 //                launchApp(decodedURL: metadataObj.stringValue ?? "")
                 print("Ket qua scan: \(metadataObj.stringValue ?? "")")
                 
-                let cancelAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel){ (aa) in
+                let cancelAction = UIAlertAction(title: Constants.AppCommon.cancel, style: UIAlertAction.Style.cancel){ (aa) in
                     self.captureSession.stopRunning()
-                    let vc = ConfirmAssetInfoViewController(nibName: "ConfirmAssetInfoViewController", bundle: nil)
+                    let vc = ConfirmAssetInfoViewController(nibName: Constants.ConfirmAssetInfo.confirmAssetInfoViewController, bundle: nil)
                     vc.assetId = metadataObj.stringValue ?? ""
                     vc.delegate  = self
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
                 
-                Utility.showAlert(title: "Thông báo", message: "Ket qua scan: \(metadataObj.stringValue ?? "")", buttons: [cancelAction], context: self)
+                Utility.showAlert(title: Constants.AppCommon.inform, message: "\(Constants.QASCanner.resultScan) \(metadataObj.stringValue ?? "")", buttons: [cancelAction], context: self)
                 captureSession.stopRunning()
                 return
             }
