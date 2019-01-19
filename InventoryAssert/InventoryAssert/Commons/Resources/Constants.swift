@@ -92,4 +92,10 @@ class Constants {
         static let resultScan = "Kết quả Scan:"
     }
     
+    public class InformErrorBroken {
+        static let title = "Báo lỗi hư hỏng"
+        static let InformErrorBrokenViewController = "InformErrorBrokenViewController"
+    }
+
+    
 }
