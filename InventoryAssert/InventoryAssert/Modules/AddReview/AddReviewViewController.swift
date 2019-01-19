@@ -23,6 +23,8 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
     var reviewType : ActionReviewType = .Add
     var reviewData = ReviewData()
     let datePicker = UIDatePicker()
+    var existedWareHouse = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,12 +51,12 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
     
     func fillData() {
         self.addReviewView.lblWareHouse.text = (self.reviewData.khoTaiSanId != nil) ? (Constants.AddReview.wareHouse + String(describing: self.reviewData.khoTaiSanId ?? -1)) : Constants.AddReview.pleaseSelectWareHouse
-        self.addReviewView.tfNote.text = String(describing: self.reviewData.noiDungKiemKe ?? "")
-        self.addReviewView.tfReviewer.text = String(describing: self.reviewData.nguoiKiemKe ?? "")
-        self.addReviewView.tfReviewDate.text = Utility.convertDateTimeFromServer(dtString: String(describing: self.reviewData.ngayLapPhieu ?? ""))
-        self.addReviewView.tfReviewId.text = String(describing: self.reviewData.maKiemKe ?? "")
+        self.addReviewView.tfNote.text = String(describing: self.reviewData.ghiChu ?? "")
+        self.addReviewView.tfReviewer.text = String(describing: self.reviewData.nguoiUpdate ?? "")
+        self.addReviewView.tfReviewDate.text = Utility.convertDateTimeFromServer(dtString: String(describing: self.reviewData.ngayTao ?? ""))
+        self.addReviewView.tfReviewId.text = String(describing: self.reviewData.kiemKeTaiSanChiTietId ?? 0)
             
-        let total = (self.reviewData.khoTaiSanId != nil) ? String(describing: self.reviewData.soLuongTaiSan ?? -1) : "0"
+        let total = (self.reviewData.khoTaiSanId != nil) ? String(describing: self.reviewData.soLuongKiemKe ?? -1) : "0"
         let reviewed = (self.reviewData.khoTaiSanId != nil) ? String(describing: self.reviewData.soLuongKiemKe ?? -1) : "0"
         self.setUpTextAttributeLabel(total, reviewed)
     }
@@ -80,8 +82,16 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
+    func validateForm() -> Bool{
+        return (self.addReviewView.lblWareHouse.text != "" && self.addReviewView.tfReviewId.text != "" && self.addReviewView.tfReviewer.text != "" && self.addReviewView.tfReviewId.text != "" && self.existedWareHouse)
+    }
+
     @IBAction func StartReview(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        if !self.validateForm(){
+            Utility.showAlertInform(title: Constants.AppCommon.error, message: Constants.AppCommon.messageFillAllInfo, context: self)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func selectWarehouse(_ sender: Any) {
@@ -89,15 +99,18 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         
         let kho1 = UIAlertAction(title: Constants.AddReview.wareHouseOne, style: .default, handler: { (action) -> Void in
             print("kho1")
+            self.existedWareHouse = true
             self.addReviewView.lblWareHouse.text = Constants.AddReview.wareHouseOne
         } )
         let kho2 = UIAlertAction(title: Constants.AddReview.wareHouseTwo, style: .default, handler: { (action) -> Void in
             print("kho2")
+            self.existedWareHouse = true
             self.addReviewView.lblWareHouse.text = Constants.AddReview.wareHouseTwo
             
         } )
         let kho3 = UIAlertAction(title: Constants.AddReview.wareHouseThree, style: .default, handler: { (action) -> Void in
             print("kho3")
+            self.existedWareHouse = true
             self.addReviewView.lblWareHouse.text = Constants.AddReview.wareHouseThree
         } )
         
@@ -139,7 +152,6 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         self.addReviewView.tfReviewDate.inputAccessoryView = toolbar
         self.addReviewView.tfReviewDate.inputView = datePicker
-        
     }
     
     @objc func donedatePicker(){

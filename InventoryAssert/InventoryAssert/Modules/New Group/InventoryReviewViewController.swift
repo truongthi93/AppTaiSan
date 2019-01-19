@@ -80,6 +80,7 @@ class InventoryReviewViewController: BaseViewController {
         let vc = AddReviewViewController(nibName: Constants.AddReview.addReviewViewController, bundle: nil)
         vc.reviewType = ActionReviewType.Add
         vc.reviewData = ReviewData()
+        vc.existedWareHouse = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -105,8 +106,8 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
         } else {
             cell.lblWareHouse.text = ""
         }
-        cell.lblName.text = self.listReviewData[indexPath.row].nguoiKiemKe
-        cell.lblTime.text = Utility.convertDateTimeFromServer(dtString: self.listReviewData[indexPath.row].thoiGianLapPhieu ?? "")
+        cell.lblName.text = self.listReviewData[indexPath.row].nguoiUpdate
+        cell.lblTime.text = Utility.convertDateTimeFromServer(dtString: self.listReviewData[indexPath.row].thoiGianCapNhat ?? "")
         return cell
     }
     
@@ -125,6 +126,7 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
         let editAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.update, handler: { (action, indexPath) in
             let vc = AddReviewViewController(nibName: Constants.AddReview.addReviewViewController, bundle: nil)
             vc.reviewType = ActionReviewType.Edit
+            vc.existedWareHouse = true
             vc.reviewData = self.listReviewData[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
 
@@ -135,7 +137,7 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
         let deleteAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.delete, handler: { (action, indexPath) in
             // call APi to delete, if success remove in local list and UI, if fail show alert
             let buttonOk = UIAlertAction(title: Constants.AppCommon.agree, style: .default, handler: { (action) in
-                DataManager.shareInstance.DeleteReview(id: self.listReviewData[indexPath.row].taiSanKiemKeId ?? 0, completion: { (isSuccess, error) in
+                DataManager.shareInstance.DeleteReview(id: self.listReviewData[indexPath.row].kiemKeTaiSanChiTietId ?? 0, completion: { (isSuccess, error) in
                     if isSuccess != nil, isSuccess == true{
                         self.listReviewData.remove(at: indexPath.row)
                         self.inventoryReviewView.tableView.reloadData()
