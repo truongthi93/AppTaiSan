@@ -94,7 +94,6 @@ class Constants {
     public class InformErrorBroken {
         static let title = "Báo lỗi hư hỏng"
         static let InformErrorBrokenViewController = "InformErrorBrokenViewController"
+        static let itemInformErrorBrokenTableViewCell = "ItemInformErrorBrokenTableViewCell"
     }
-
-    
 }
