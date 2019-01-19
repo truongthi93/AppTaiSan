@@ -13,7 +13,7 @@ class Constants {
         static let host = "http://115.79.197.84/"
         static let login = "api/user?username="
         static let getToken = "api/user/login"
-        static let getReviewList = "api/inventory"
+        static let getReviewList = "api/inventoryassetall"
         static let deleteReview = "api/InventoryAssetDetail?inventoryAssetDetailId="
         
         
@@ -36,6 +36,7 @@ class Constants {
         static let messageLoginFailed = "Đăng nhập thất bại"
         static let messageGetLoginInfoFailed = "Không thể lấy thông tin đăng nhập"
         static let messageFillLoginInfo = "Vui lòng điền đầy đủ thông tin đăng nhập"
+        static let messageFillAllInfo = "Vui lòng điền đầy đủ thông tin"
         static let messgaeScanNotFound = "Không tìm thấy kết quả scan"
     }
     

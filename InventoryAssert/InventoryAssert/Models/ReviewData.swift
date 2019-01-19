@@ -11,98 +11,110 @@ import Foundation
 import ObjectMapper
 
 class ReviewData : NSObject,Mappable {
+    var kiemKeTaiSanChiTietId : Int?
     var taiSanKiemKeId : Int?
-    var maKiemKe : String?
-    var ngayLapPhieu : String?
-    var thoiGianLapPhieu : String?
-    var thoiGianBatDauKiemKe : String?
-    var noiDungKiemKe : String?
-    var khoTaiSanId : Int?
-    var soLuongTaiSan : Int?
+    var taiSanId : Int?
+    var soLuongTon : Int?
     var soLuongKiemKe : Int?
-    var soLuongTaiSanMoi : String?
-    var soLuongTaiSanThieu : String?
-    var nguoiKiemKe : String?
-    var nguoiQuanLyKho : String?
-    var nguoiLapPhieuId : Int?
-    var khoaPhieu : String?
-    var nguoiTao : Int?
+    var khoTaiSanId : Int?
+    var trangThai : String?
+    var thoiGianCapNhat : String?
+    var ghiChu : String?
+    var giaoThucXacThuc : String?
     var ngayTao : String?
-    var nguoiUpdate : String?
     var ngayUpdate : String?
-    var tsKiemKeChiTiet : [String]?
+    var nguoiUpdate : String?
+    var daKiem : Int?
+    var nguoiLapPhieuId : String?
+    var khoaPhieu : Int?
+    var nguoiTao : String?
+    var online : String?
+    var taiSanKiemKe : [String]?
     
-    init(taiSanKiemKeId : Int?, maKiemKe : String?, ngayLapPhieu : String?, thoiGianLapPhieu : String?, thoiGianBatDauKiemKe : String?, noiDungKiemKe : String?, khoTaiSanId : Int?, soLuongTaiSan : Int?, soLuongKiemKe : Int?, soLuongTaiSanMoi : String?, soLuongTaiSanThieu : String?, nguoiKiemKe : String?, nguoiQuanLyKho : String?, nguoiLapPhieuId : Int?, khoaPhieu : String?, nguoiTao : Int?, ngayTao : String?, nguoiUpdate : String?, ngayUpdate : String?, tsKiemKeChiTiet : [String]?) {
+    init(kiemKeTaiSanChiTietId : Int?,
+    taiSanKiemKeId : Int?,
+    taiSanId : Int?,
+    soLuongTon : Int?,
+    soLuongKiemKe : Int?,
+    khoTaiSanId : Int?,
+    trangThai : String?,
+    thoiGianCapNhat : String?,
+    ghiChu : String?,
+    giaoThucXacThuc : String?,
+    ngayTao : String?,
+    ngayUpdate : String?,
+    nguoiUpdate : String?,
+    daKiem : Int?,
+    nguoiLapPhieuId : String?,
+    khoaPhieu : Int?,
+    nguoiTao : String?,
+    online : String?,
+    taiSanKiemKe : [String]?) {
+        self.kiemKeTaiSanChiTietId = kiemKeTaiSanChiTietId
         self.taiSanKiemKeId = taiSanKiemKeId
-        self.maKiemKe = maKiemKe
-        self.ngayLapPhieu = ngayLapPhieu
-        self.thoiGianLapPhieu = thoiGianLapPhieu
-        self.thoiGianBatDauKiemKe = thoiGianBatDauKiemKe
-        self.noiDungKiemKe = noiDungKiemKe
-        self.khoTaiSanId = khoTaiSanId
-        self.soLuongTaiSan = soLuongTaiSan
+        self.taiSanId = taiSanId
+        self.soLuongTon = soLuongTon
         self.soLuongKiemKe = soLuongKiemKe
-        self.soLuongTaiSanMoi = soLuongTaiSanMoi
-        self.soLuongTaiSanThieu = soLuongTaiSanThieu
-        self.nguoiKiemKe = nguoiKiemKe
-        self.nguoiTao = nguoiTao
+        self.khoTaiSanId = khoTaiSanId
+        self.trangThai = trangThai
+        self.thoiGianCapNhat = thoiGianCapNhat
+        self.ghiChu = ghiChu
+        self.giaoThucXacThuc = giaoThucXacThuc
         self.ngayTao = ngayTao
-        self.nguoiUpdate = nguoiUpdate
         self.ngayUpdate = ngayUpdate
-        self.tsKiemKeChiTiet = tsKiemKeChiTiet
-        self.nguoiQuanLyKho = nguoiQuanLyKho
+        self.nguoiUpdate = nguoiUpdate
+        self.daKiem = daKiem
         self.nguoiLapPhieuId = nguoiLapPhieuId
         self.khoaPhieu = khoaPhieu
         self.nguoiTao = nguoiTao
+        self.online = online
+        self.taiSanKiemKe = taiSanKiemKe
     }
     
     override init() {
     }
     
     required init?(map: Map) {
+        kiemKeTaiSanChiTietId <- map["kiemKeTaiSanChiTietId"]
         taiSanKiemKeId <- map["taiSanKiemKeId"]
-        maKiemKe <- map["maKiemKe"]
-        ngayLapPhieu <- map["ngayLapPhieu"]
-        thoiGianLapPhieu <- map["thoiGianLapPhieu"]
-        thoiGianBatDauKiemKe <- map["thoiGianBatDauKiemKe"]
-        noiDungKiemKe <- map["noiDungKiemKe"]
-        khoTaiSanId <- map["khoTaiSanId"]
-        soLuongTaiSan <- map["soLuongTaiSan"]
+        taiSanId <- map["taiSanId"]
+        soLuongTon <- map["soLuongTon"]
         soLuongKiemKe <- map["soLuongKiemKe"]
-        soLuongTaiSanMoi <- map["soLuongTaiSanMoi"]
-        soLuongTaiSanThieu <- map["soLuongTaiSanThieu"]
-        nguoiKiemKe <- map["nguoiKiemKe"]
-        nguoiQuanLyKho <- map["nguoiQuanLyKho"]
+        khoTaiSanId <- map["khoTaiSanId"]
+        trangThai <- map["trangThai"]
+        thoiGianCapNhat <- map["thoiGianCapNhat"]
+        ghiChu <- map["ghiChu"]
+        giaoThucXacThuc <- map["giaoThucXacThuc"]
+        ngayTao <- map["ngayTao"]
+        ngayUpdate <- map["ngayUpdate"]
+        nguoiUpdate <- map["nguoiUpdate"]
+        daKiem <- map["daKiem"]
         nguoiLapPhieuId <- map["nguoiLapPhieuId"]
         khoaPhieu <- map["khoaPhieu"]
         nguoiTao <- map["nguoiTao"]
-        ngayTao <- map["ngayTao"]
-        nguoiUpdate <- map["nguoiUpdate"]
-        ngayUpdate <- map["ngayUpdate"]
-        tsKiemKeChiTiet <- map["tsKiemKeChiTiet"]
+        online <- map["online"]
+        taiSanKiemKe <- map["taiSanKiemKe"]
     }
     
     func mapping(map: Map) {
-        
+        kiemKeTaiSanChiTietId <- map["kiemKeTaiSanChiTietId"]
         taiSanKiemKeId <- map["taiSanKiemKeId"]
-        maKiemKe <- map["maKiemKe"]
-        ngayLapPhieu <- map["ngayLapPhieu"]
-        thoiGianLapPhieu <- map["thoiGianLapPhieu"]
-        thoiGianBatDauKiemKe <- map["thoiGianBatDauKiemKe"]
-        noiDungKiemKe <- map["noiDungKiemKe"]
-        khoTaiSanId <- map["khoTaiSanId"]
-        soLuongTaiSan <- map["soLuongTaiSan"]
+        taiSanId <- map["taiSanId"]
+        soLuongTon <- map["soLuongTon"]
         soLuongKiemKe <- map["soLuongKiemKe"]
-        soLuongTaiSanMoi <- map["soLuongTaiSanMoi"]
-        soLuongTaiSanThieu <- map["soLuongTaiSanThieu"]
-        nguoiKiemKe <- map["nguoiKiemKe"]
-        nguoiQuanLyKho <- map["nguoiQuanLyKho"]
+        khoTaiSanId <- map["khoTaiSanId"]
+        trangThai <- map["trangThai"]
+        thoiGianCapNhat <- map["thoiGianCapNhat"]
+        ghiChu <- map["ghiChu"]
+        giaoThucXacThuc <- map["giaoThucXacThuc"]
+        ngayTao <- map["ngayTao"]
+        ngayUpdate <- map["ngayUpdate"]
+        nguoiUpdate <- map["nguoiUpdate"]
+        daKiem <- map["daKiem"]
         nguoiLapPhieuId <- map["nguoiLapPhieuId"]
         khoaPhieu <- map["khoaPhieu"]
         nguoiTao <- map["nguoiTao"]
-        ngayTao <- map["ngayTao"]
-        nguoiUpdate <- map["nguoiUpdate"]
-        ngayUpdate <- map["ngayUpdate"]
-        tsKiemKeChiTiet <- map["tsKiemKeChiTiet"]
+        online <- map["online"]
+        taiSanKiemKe <- map["taiSanKiemKe"]
     }
 }
