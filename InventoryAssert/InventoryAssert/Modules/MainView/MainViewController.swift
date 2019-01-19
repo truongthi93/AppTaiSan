@@ -91,6 +91,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             print("Tap Items 1")
             break
         case 1:
+            let vc = InformErrorBrokenViewController(nibName: Constants.InformErrorBroken.InformErrorBrokenViewController, bundle: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
             print("Tap Items 2")
             break
         case 2:
