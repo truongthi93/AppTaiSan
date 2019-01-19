@@ -65,6 +65,9 @@
                                             <real key="value" value="5"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="exportCSV:" destination="-1" eventType="touchUpInside" id="KJr-em-a8p"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
