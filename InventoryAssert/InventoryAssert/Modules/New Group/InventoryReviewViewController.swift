@@ -30,9 +30,7 @@ class InventoryReviewViewController: BaseViewController {
         //Delegate, Datasource
         self.inventoryReviewView.tableView.delegate = self
         self.inventoryReviewView.tableView.dataSource = self
-        self.inventoryReviewView.tableView.register(UINib(nibName: Constants.InventoryReview.inventoryReviewTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.InventoryReview.inventoryReviewTableViewCell)
-        //(UINib(nibName: "InventoryReviewTableViewCell", bundle: nil), forCellWithReuseIdentifier: "InventoryReviewTableViewCell")
-        
+        self.inventoryReviewView.tableView.register(UINib(nibName: Constants.InventoryReview.inventoryReviewTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.InventoryReview.inventoryReviewTableViewCell)        
         self.getReviewList()
     }
     
