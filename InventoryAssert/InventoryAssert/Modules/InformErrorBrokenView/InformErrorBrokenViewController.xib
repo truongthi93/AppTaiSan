@@ -162,7 +162,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="40h-ml-TZr">
                     <rect key="frame" x="10" y="612" width="355" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtQ-eQ-K92">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtQ-eQ-K92">
                             <rect key="frame" x="0.0" y="0.0" width="115" height="50"/>
                             <color key="backgroundColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -225,7 +225,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
+                <outlet property="contentFilterTf" destination="xa5-U8-TOr" id="A0T-35-Q7j"/>
                 <outlet property="listInformTableView" destination="8yv-FL-Rlo" id="o26-p9-zCY"/>
+                <outlet property="onFilterButton" destination="R27-UB-ezf" id="pzl-S2-ouj"/>
             </connections>
             <point key="canvasLocation" x="63.200000000000003" y="57.121439280359823"/>
         </view>

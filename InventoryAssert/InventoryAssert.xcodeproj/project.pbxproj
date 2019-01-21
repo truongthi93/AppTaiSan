@@ -19,6 +19,8 @@
 		04F3929621F31129006D6409 /* InformErrorBrokenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F3929021F31129006D6409 /* InformErrorBrokenViewController.xib */; };
 		04F3929721F31129006D6409 /* ItemInformErrorBrokenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3929221F31129006D6409 /* ItemInformErrorBrokenTableViewCell.swift */; };
 		04F3929821F31129006D6409 /* ItemInformErrorBrokenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F3929321F31129006D6409 /* ItemInformErrorBrokenTableViewCell.xib */; };
+		04F3929C21F31BFA006D6409 /* FooterInformErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3929A21F31BFA006D6409 /* FooterInformErrorView.swift */; };
+		04F3929D21F31BFA006D6409 /* FooterInformErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F3929B21F31BFA006D6409 /* FooterInformErrorView.xib */; };
 		4E085B6221CE010300CC2983 /* AssetListInWareHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E085B6021CE010200CC2983 /* AssetListInWareHouseViewController.swift */; };
 		4E085B6321CE010300CC2983 /* AssetListInWareHouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E085B6121CE010200CC2983 /* AssetListInWareHouseViewController.xib */; };
 		4E085B6521CE011100CC2983 /* AssetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E085B6421CE011100CC2983 /* AssetListView.swift */; };
@@ -79,6 +81,8 @@
 		04F3929021F31129006D6409 /* InformErrorBrokenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformErrorBrokenViewController.xib; sourceTree = "<group>"; };
 		04F3929221F31129006D6409 /* ItemInformErrorBrokenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInformErrorBrokenTableViewCell.swift; sourceTree = "<group>"; };
 		04F3929321F31129006D6409 /* ItemInformErrorBrokenTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemInformErrorBrokenTableViewCell.xib; sourceTree = "<group>"; };
+		04F3929A21F31BFA006D6409 /* FooterInformErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterInformErrorView.swift; sourceTree = "<group>"; };
+		04F3929B21F31BFA006D6409 /* FooterInformErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterInformErrorView.xib; sourceTree = "<group>"; };
 		4E085B6021CE010200CC2983 /* AssetListInWareHouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListInWareHouseViewController.swift; sourceTree = "<group>"; };
 		4E085B6121CE010200CC2983 /* AssetListInWareHouseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetListInWareHouseViewController.xib; sourceTree = "<group>"; };
 		4E085B6421CE011100CC2983 /* AssetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListView.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 		04F3928D21F31129006D6409 /* InformErrorBrokenView */ = {
 			isa = PBXGroup;
 			children = (
+				04F3929921F31246006D6409 /* InformErrorBrokenFooterView */,
 				04F3928E21F31129006D6409 /* InformErrorBrokenView.swift */,
 				04F3928F21F31129006D6409 /* InformErrorBrokenViewController.swift */,
 				04F3929021F31129006D6409 /* InformErrorBrokenViewController.xib */,
@@ -173,6 +178,15 @@
 				04F3929321F31129006D6409 /* ItemInformErrorBrokenTableViewCell.xib */,
 			);
 			path = InfromErrorBrokenCell;
+			sourceTree = "<group>";
+		};
+		04F3929921F31246006D6409 /* InformErrorBrokenFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				04F3929A21F31BFA006D6409 /* FooterInformErrorView.swift */,
+				04F3929B21F31BFA006D6409 /* FooterInformErrorView.xib */,
+			);
+			path = InformErrorBrokenFooterView;
 			sourceTree = "<group>";
 		};
 		33539E4076E9F5A75CCAE59B /* Pods */ = {
@@ -501,6 +515,7 @@
 				4E085B6321CE010300CC2983 /* AssetListInWareHouseViewController.xib in Resources */,
 				04F3929821F31129006D6409 /* ItemInformErrorBrokenTableViewCell.xib in Resources */,
 				4E1CD302218D81040086145E /* LaunchScreen.storyboard in Resources */,
+				04F3929D21F31BFA006D6409 /* FooterInformErrorView.xib in Resources */,
 				4E3C53AD21C63E730074AD61 /* AddReviewViewController.xib in Resources */,
 				4E1CD2FF218D81040086145E /* Assets.xcassets in Resources */,
 				4E3C53A121C62AF60074AD61 /* InventoryReviewViewController.xib in Resources */,
@@ -630,6 +645,7 @@
 				4E1CD32E218D8CD10086145E /* LoginView.swift in Sources */,
 				4E1CD32B218D876A0086145E /* Constants.swift in Sources */,
 				04F3929721F31129006D6409 /* ItemInformErrorBrokenTableViewCell.swift in Sources */,
+				04F3929C21F31BFA006D6409 /* FooterInformErrorView.swift in Sources */,
 				04648E5D21C169AA007F7A94 /* ItemsCollectionViewCell.swift in Sources */,
 				04F3929521F31129006D6409 /* InformErrorBrokenViewController.swift in Sources */,
 			);

@@ -9,6 +9,7 @@
 import UIKit
 
 class InformErrorBrokenViewController: BaseViewController {
+    var data:[String] = []
     public var informErrorBrokenView: InformErrorBrokenView! {
         guard isViewLoaded else { return nil }
         return view as? InformErrorBrokenView
@@ -19,6 +20,7 @@ class InformErrorBrokenViewController: BaseViewController {
         darkMode = false
         setNeedsStatusBarAppearanceUpdate()
         self.initTableViewCell()
+        self.setUpView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -33,14 +35,49 @@ class InformErrorBrokenViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    func setUpView() {
+    self.informErrorBrokenView.onFilterButton.addTarget(self, action: #selector(self.onFilterButtonClick(_:)), for: .touchUpInside)
+    }
+    
+    @objc func onFilterButtonClick(_ sender:UIButton) {
+        if let contentFilter = self.informErrorBrokenView.contentFilterTf.text, !contentFilter.isEmpty {
+            self.data = ["A", "B"]
+        }else {
+            self.data = []
+            if self.data.count == 0 {
+                self.informErrorBrokenView.listInformTableView.tableFooterView = self.showFooterView(message: "Error")
+                self.informErrorBrokenView.listInformTableView.reloadData()
+
+                return
+            }
+        }
+        self.informErrorBrokenView.listInformTableView.reloadData()
+    }
+
+    
     func initTableViewCell() {
         self.informErrorBrokenView.listInformTableView.delegate = self
         self.informErrorBrokenView.listInformTableView.dataSource = self
         self.informErrorBrokenView.listInformTableView.register(UINib(nibName: Constants.InformErrorBroken.itemInformErrorBrokenTableViewCell, bundle: nil), forCellReuseIdentifier:Constants.InformErrorBroken.itemInformErrorBrokenTableViewCell)
     }
+    
+    // FooterView
+    func showFooterView(message: String?) -> UIView {
+        let viewFooter = FooterInformErrorView(frame: CGRect(x: 0, y: 0, width: self.informErrorBrokenView.listInformTableView.frame.size.width, height: self.informErrorBrokenView.listInformTableView.frame.size.height))
+        return viewFooter
+    }
+
 }
 
 extension InformErrorBrokenViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if data.count != 0{
+            return 1
+        }else {
+            return 0
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180.0
     }
@@ -54,6 +91,14 @@ extension InformErrorBrokenViewController: UITableViewDelegate, UITableViewDataS
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if self.data.count == 0 {
+            return self.informErrorBrokenView.listInformTableView.frame.size.height
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
