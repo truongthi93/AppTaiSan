@@ -52,6 +52,8 @@
 		4E3C53B121C658BF0074AD61 /* ReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53B021C658BF0074AD61 /* ReviewData.swift */; };
 		4E3C53B521C65E340074AD61 /* InventoryReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53B321C65E340074AD61 /* InventoryReviewTableViewCell.swift */; };
 		4E3C53B621C65E340074AD61 /* InventoryReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C53B421C65E340074AD61 /* InventoryReviewTableViewCell.xib */; };
+		4E8498DD21F3198C00182A83 /* CSVModelExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8498DC21F3198C00182A83 /* CSVModelExport.swift */; };
+		4E8498DF21F31AD700182A83 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8498DE21F31AD700182A83 /* Asset.swift */; };
 		4EA491F621C4016100C8D88A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F521C4016100C8D88A /* DataManager.swift */; };
 		4EA491F821C4017500C8D88A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F721C4017500C8D88A /* ColorExtension.swift */; };
 		5C4348F31BC7C68B7CB360AE /* Pods_InventoryAssert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8069C9454B746C43277F4E6 /* Pods_InventoryAssert.framework */; };
@@ -118,6 +120,8 @@
 		4E3C53B021C658BF0074AD61 /* ReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewData.swift; sourceTree = "<group>"; };
 		4E3C53B321C65E340074AD61 /* InventoryReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryReviewTableViewCell.swift; sourceTree = "<group>"; };
 		4E3C53B421C65E340074AD61 /* InventoryReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryReviewTableViewCell.xib; sourceTree = "<group>"; };
+		4E8498DC21F3198C00182A83 /* CSVModelExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVModelExport.swift; sourceTree = "<group>"; };
+		4E8498DE21F31AD700182A83 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		4EA491F521C4016100C8D88A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4EA491F721C4017500C8D88A /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		53B9F78F2CC13F5DFE0CF460 /* Pods-InventoryAssert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryAssert.release.xcconfig"; path = "Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert.release.xcconfig"; sourceTree = "<group>"; };
@@ -344,6 +348,7 @@
 				0447510821C421D800C41C99 /* LoginResult.swift */,
 				4E3C539C21C61B900074AD61 /* TokenResult.swift */,
 				4E3C53B021C658BF0074AD61 /* ReviewData.swift */,
+				4E8498DE21F31AD700182A83 /* Asset.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				0447510421C421C900C41C99 /* ListObjectTransform.swift */,
 				0447510521C421CA00C41C99 /* Utility.swift */,
 				4E1CD32A218D876A0086145E /* Constants.swift */,
+				4E8498DC21F3198C00182A83 /* CSVModelExport.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -543,6 +549,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -555,6 +562,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -623,6 +631,7 @@
 				4E085B6921CE078400CC2983 /* AssetListInWareHouseTableViewCell.swift in Sources */,
 				4E3C539D21C61B900074AD61 /* TokenResult.swift in Sources */,
 				4E085B6221CE010300CC2983 /* AssetListInWareHouseViewController.swift in Sources */,
+				4E8498DF21F31AD700182A83 /* Asset.swift in Sources */,
 				4E3C53B121C658BF0074AD61 /* ReviewData.swift in Sources */,
 				04F3929421F31129006D6409 /* InformErrorBrokenView.swift in Sources */,
 				4E3C53AF21C63E860074AD61 /* AddReviewView.swift in Sources */,
@@ -635,6 +644,7 @@
 				4E3C53A421C62B1D0074AD61 /* InventoryReviewView.swift in Sources */,
 				4EA491F821C4017500C8D88A /* ColorExtension.swift in Sources */,
 				4E085B6E21CE0C8A00CC2983 /* QRSCannerViewController.swift in Sources */,
+				4E8498DD21F3198C00182A83 /* CSVModelExport.swift in Sources */,
 				4E3C53A021C62AF60074AD61 /* InventoryReviewViewController.swift in Sources */,
 				4E1CD2F5218D81020086145E /* AppDelegate.swift in Sources */,
 				4E3C53AC21C63E730074AD61 /* AddReviewViewController.swift in Sources */,
@@ -804,14 +814,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S64Q3RXYM7;
+				DEVELOPMENT_TEAM = A6HWMUD76J;
 				INFOPLIST_FILE = "$(SRCROOT)/InventoryAssert/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Hospital.InventoryAssert;
+				PRODUCT_BUNDLE_IDENTIFIER = Hospital.InventoryAsser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -826,14 +836,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S64Q3RXYM7;
+				DEVELOPMENT_TEAM = A6HWMUD76J;
 				INFOPLIST_FILE = "$(SRCROOT)/InventoryAssert/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Hospital.InventoryAssert;
+				PRODUCT_BUNDLE_IDENTIFIER = Hospital.InventoryAsser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

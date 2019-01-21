@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-
+import CSV
 
 class AssetListInWareHouseViewController: BaseViewController, AVCaptureMetadataOutputObjectsDelegate {
     public var assetListView: AssetListView! {
@@ -53,6 +53,31 @@ class AssetListInWareHouseViewController: BaseViewController, AVCaptureMetadataO
 
         self.present(nav, animated: true, completion: nil)
     }
+    
+    @IBAction func exportCSV(_ sender: Any) {
+        // Get application document directory path array
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
+        let fileName = "data.csv";
+        
+        if let documentPath = paths.first {
+            let filePath = NSMutableString(string: documentPath).appendingPathComponent(fileName);
+            guard let stream = OutputStream(toFileAtPath: filePath, append: false) else {
+                print("Export CSV Fail.")
+                return
+            }
+            
+            let csv = try! CSVWriter(stream: stream)
+        
+            try! csv.write(row: ["id", "name", "age"])
+            try! csv.write(row: ["1", "foo", "12"])
+            try! csv.write(row: ["2", "bar", "24"])
+            try! csv.write(row: ["3", "bop", "25"])
+            
+            csv.stream.close()
+        }
+        
+    }
+    
 }
 
 extension AssetListInWareHouseViewController: AddQRCodeDelegate {
