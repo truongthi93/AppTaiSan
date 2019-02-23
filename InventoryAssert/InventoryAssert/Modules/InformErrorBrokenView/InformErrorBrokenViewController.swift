@@ -26,7 +26,7 @@ class InformErrorBrokenViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
-        self.title = Constants.InformErrorBroken.title
+        self.title = Constants.InformErrorBroken.titleInformErrorBroken
         let backButton = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem  = backButton
     }
@@ -37,6 +37,8 @@ class InformErrorBrokenViewController: BaseViewController {
     
     func setUpView() {
     self.informErrorBrokenView.onFilterButton.addTarget(self, action: #selector(self.onFilterButtonClick(_:)), for: .touchUpInside)
+    
+    self.informErrorBrokenView.createErrorBrokenButton.addTarget(self, action: #selector(self.onCreateErrorBrokenButtonClick(_:)), for: .touchUpInside)
     }
     
     @objc func onFilterButtonClick(_ sender:UIButton) {
@@ -54,7 +56,11 @@ class InformErrorBrokenViewController: BaseViewController {
         self.informErrorBrokenView.listInformTableView.reloadData()
     }
 
-    
+    @objc func onCreateErrorBrokenButtonClick(_ sender:UIButton) {
+        let vc = CreateInformErrorBrokenViewController(nibName: Constants.InformErrorBroken.createInformErrorBrokenViewController, bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     func initTableViewCell() {
         self.informErrorBrokenView.listInformTableView.delegate = self
         self.informErrorBrokenView.listInformTableView.dataSource = self

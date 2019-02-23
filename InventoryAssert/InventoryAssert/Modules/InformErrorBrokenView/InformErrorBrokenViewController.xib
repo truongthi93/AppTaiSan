@@ -226,6 +226,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
                 <outlet property="contentFilterTf" destination="xa5-U8-TOr" id="A0T-35-Q7j"/>
+                <outlet property="createErrorBrokenButton" destination="FtQ-eQ-K92" id="VKB-fT-SpV"/>
                 <outlet property="listInformTableView" destination="8yv-FL-Rlo" id="o26-p9-zCY"/>
                 <outlet property="onFilterButton" destination="R27-UB-ezf" id="pzl-S2-ouj"/>
             </connections>
