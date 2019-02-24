@@ -62,6 +62,22 @@ class DataManager: NSObject {
         }
     }
     
+    func getStore(token: String, tokenType: String, completion: @escaping (_ result: [StoreData]?, _ error: NSError?) -> Void) {
+        let URL = "\(Constants.APIUrl.host)\(Constants.APIUrl.getStore)"
+        let headers = [
+            "Authorization": "\(tokenType) \(token)"
+        ]
+        print(headers)
+        
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseArray(completionHandler: { (response: DataResponse<[StoreData]>) in
+            if response.result.value != nil {
+                completion(response.result.value,nil)
+            } else {
+                completion(nil,NSError(domain: "Error Domain", code: 999, userInfo: [NSLocalizedDescriptionKey: "Fail"]))
+            }
+        })
+    }
+    
     func getReviewList(token: String, tokenType: String, completion: @escaping (_ result: [ReviewData]?, _ error: NSError?) -> Void) {
         let URL = "\(Constants.APIUrl.host)\(Constants.APIUrl.getReviewList)"
         let headers = [

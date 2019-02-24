@@ -55,6 +55,7 @@
 		4E3C53B121C658BF0074AD61 /* ReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53B021C658BF0074AD61 /* ReviewData.swift */; };
 		4E3C53B521C65E340074AD61 /* InventoryReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C53B321C65E340074AD61 /* InventoryReviewTableViewCell.swift */; };
 		4E3C53B621C65E340074AD61 /* InventoryReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C53B421C65E340074AD61 /* InventoryReviewTableViewCell.xib */; };
+		4E54434022224B910055C8BB /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E54433F22224B910055C8BB /* StoreData.swift */; };
 		4E8498DD21F3198C00182A83 /* CSVModelExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8498DC21F3198C00182A83 /* CSVModelExport.swift */; };
 		4E8498DF21F31AD700182A83 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8498DE21F31AD700182A83 /* Asset.swift */; };
 		4EA491F621C4016100C8D88A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F521C4016100C8D88A /* DataManager.swift */; };
@@ -126,6 +127,7 @@
 		4E3C53B021C658BF0074AD61 /* ReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewData.swift; sourceTree = "<group>"; };
 		4E3C53B321C65E340074AD61 /* InventoryReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryReviewTableViewCell.swift; sourceTree = "<group>"; };
 		4E3C53B421C65E340074AD61 /* InventoryReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryReviewTableViewCell.xib; sourceTree = "<group>"; };
+		4E54433F22224B910055C8BB /* StoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreData.swift; sourceTree = "<group>"; };
 		4E8498DC21F3198C00182A83 /* CSVModelExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVModelExport.swift; sourceTree = "<group>"; };
 		4E8498DE21F31AD700182A83 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		4EA491F521C4016100C8D88A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				4E3C539C21C61B900074AD61 /* TokenResult.swift */,
 				4E3C53B021C658BF0074AD61 /* ReviewData.swift */,
 				4E8498DE21F31AD700182A83 /* Asset.swift */,
+				4E54433F22224B910055C8BB /* StoreData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				4E1CD32B218D876A0086145E /* Constants.swift in Sources */,
 				04F3929721F31129006D6409 /* ItemInformErrorBrokenTableViewCell.swift in Sources */,
 				04F3929C21F31BFA006D6409 /* FooterInformErrorView.swift in Sources */,
+				4E54434022224B910055C8BB /* StoreData.swift in Sources */,
 				04648E5D21C169AA007F7A94 /* ItemsCollectionViewCell.swift in Sources */,
 				04F3929521F31129006D6409 /* InformErrorBrokenViewController.swift in Sources */,
 			);

@@ -90,37 +90,38 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         if !self.validateForm(){
             Utility.showAlertInform(title: Constants.AppCommon.error, message: Constants.AppCommon.messageFillAllInfo, context: self)
         } else {
-            self.navigationController?.popViewController(animated: true)
+            //call API get dc kiem ke id va pass qua man hinh moi.
+            let vc = AssetListInWareHouseViewController(nibName: Constants.AssetListInWareHouse.assetListInWareHouseViewController, bundle: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
     @IBAction func selectWarehouse(_ sender: Any) {
+        DataManager.shareInstance.getStore(token: "", tokenType: "") { (listStore, error) in
+            // check code and do something
+            if let list = listStore, list.count > 0{
+                self.showSelectStore(list: list)
+            } else {
+                Utility.showAlertInform(title: "", message: "", context: self)
+            }
+            
+        }
+    }
+    
+    func showSelectStore(list: [StoreData]){
         let alertController = UIAlertController(title: "", message: Constants.AddReview.selectWareHouse, preferredStyle: .actionSheet)
         
-        let kho1 = UIAlertAction(title: Constants.AddReview.wareHouseOne, style: .default, handler: { (action) -> Void in
-            print("kho1")
-            self.existedWareHouse = true
-            self.addReviewView.lblWareHouse.text = Constants.AddReview.wareHouseOne
-        } )
-        let kho2 = UIAlertAction(title: Constants.AddReview.wareHouseTwo, style: .default, handler: { (action) -> Void in
-            print("kho2")
-            self.existedWareHouse = true
-            self.addReviewView.lblWareHouse.text = Constants.AddReview.wareHouseTwo
-            
-        } )
-        let kho3 = UIAlertAction(title: Constants.AddReview.wareHouseThree, style: .default, handler: { (action) -> Void in
-            print("kho3")
-            self.existedWareHouse = true
-            self.addReviewView.lblWareHouse.text = Constants.AddReview.wareHouseThree
-        } )
+        for item in list{
+            alertController.addAction(UIAlertAction(title: item.tenKho ?? "", style: .default, handler: { (action) -> Void in
+                self.existedWareHouse = true
+                self.addReviewView.lblWareHouse.text = item.tenKho ?? ""
+            } )
+            )
+        }
         
         let cancelButton = UIAlertAction(title: Constants.AppCommon.cancel, style: .cancel, handler: { (action) -> Void in
             print("Cancel button tapped")
         } )
-        
-        alertController.addAction(kho3)
-        alertController.addAction(kho2)
-        alertController.addAction(kho1)
         alertController.addAction(cancelButton)
         
         switch UIDevice.current.userInterfaceIdiom {
@@ -137,7 +138,6 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
             break
         }
     }
-    
     func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date
