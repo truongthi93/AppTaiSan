@@ -41,6 +41,12 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc func btnClick(_ sender:UIButton) {
+        // HARDCODE LOGIN
+        let vc = MainViewController(nibName: Constants.MainView.mainViewController, bundle: nil)
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
+        return
+        
         if let username = self.loginView.tfUserName.text, !username.isEmpty, let password = self.loginView.tfPassword.text, !password.isEmpty{
             SVProgressHUD.show()
             self.view.isUserInteractionEnabled = false
