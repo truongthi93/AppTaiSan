@@ -10,7 +10,7 @@ target 'InventoryAssert' do
   pod 'SVProgressHUD'
   pod 'PromiseKit'
   pod 'ObjectMapper', '3.3'
-  pod 'CSV.swift', '~> 2.3.1'
+  pod 'CSV.swift'
   pod 'AlamofireObjectMapper'
   
   target 'InventoryAssertTests' do

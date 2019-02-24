@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0405010222223A0A006E83A4 /* CreateInformErrorBrokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040500FF22223A0A006E83A4 /* CreateInformErrorBrokenView.swift */; };
+		0405010322223A0A006E83A4 /* CreateInformErrorBrokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405010022223A0A006E83A4 /* CreateInformErrorBrokenViewController.swift */; };
+		0405010422223A0A006E83A4 /* CreateInformErrorBrokenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0405010122223A0A006E83A4 /* CreateInformErrorBrokenViewController.xib */; };
 		0447510621C421CA00C41C99 /* ListObjectTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447510421C421C900C41C99 /* ListObjectTransform.swift */; };
 		0447510721C421CA00C41C99 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447510521C421CA00C41C99 /* Utility.swift */; };
 		0447510921C421D800C41C99 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447510821C421D800C41C99 /* LoginResult.swift */; };
@@ -71,6 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040500FF22223A0A006E83A4 /* CreateInformErrorBrokenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateInformErrorBrokenView.swift; sourceTree = "<group>"; };
+		0405010022223A0A006E83A4 /* CreateInformErrorBrokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateInformErrorBrokenViewController.swift; sourceTree = "<group>"; };
+		0405010122223A0A006E83A4 /* CreateInformErrorBrokenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateInformErrorBrokenViewController.xib; sourceTree = "<group>"; };
 		0447510421C421C900C41C99 /* ListObjectTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListObjectTransform.swift; sourceTree = "<group>"; };
 		0447510521C421CA00C41C99 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		0447510821C421D800C41C99 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
@@ -152,6 +158,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040500FE22223A0A006E83A4 /* CreateInformErrorInformView */ = {
+			isa = PBXGroup;
+			children = (
+				040500FF22223A0A006E83A4 /* CreateInformErrorBrokenView.swift */,
+				0405010022223A0A006E83A4 /* CreateInformErrorBrokenViewController.swift */,
+				0405010122223A0A006E83A4 /* CreateInformErrorBrokenViewController.xib */,
+			);
+			path = CreateInformErrorInformView;
+			sourceTree = "<group>";
+		};
 		04648E5821C169AA007F7A94 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +182,7 @@
 		04F3928D21F31129006D6409 /* InformErrorBrokenView */ = {
 			isa = PBXGroup;
 			children = (
+				040500FE22223A0A006E83A4 /* CreateInformErrorInformView */,
 				04F3929921F31246006D6409 /* InformErrorBrokenFooterView */,
 				04F3928E21F31129006D6409 /* InformErrorBrokenView.swift */,
 				04F3928F21F31129006D6409 /* InformErrorBrokenViewController.swift */,
@@ -513,6 +530,7 @@
 				4E085B7421CE140500CC2983 /* ConfirmAssetInfoViewController.xib in Resources */,
 				4E085B6F21CE0C8A00CC2983 /* QRSCannerViewController.xib in Resources */,
 				4E3C53B621C65E340074AD61 /* InventoryReviewTableViewCell.xib in Resources */,
+				0405010422223A0A006E83A4 /* CreateInformErrorBrokenViewController.xib in Resources */,
 				4E085B6A21CE078400CC2983 /* AssetListInWareHouseTableViewCell.xib in Resources */,
 				4E1CD321218D849B0086145E /* LoginViewController.xib in Resources */,
 				04F3929621F31129006D6409 /* InformErrorBrokenViewController.xib in Resources */,
@@ -650,8 +668,10 @@
 				4E3C53AC21C63E730074AD61 /* AddReviewViewController.swift in Sources */,
 				0447510621C421CA00C41C99 /* ListObjectTransform.swift in Sources */,
 				4E085B7321CE140500CC2983 /* ConfirmAssetInfoViewController.swift in Sources */,
+				0405010222223A0A006E83A4 /* CreateInformErrorBrokenView.swift in Sources */,
 				4E1CD2FD218D81020086145E /* InventoryAssert.xcdatamodeld in Sources */,
 				4E3C53B521C65E340074AD61 /* InventoryReviewTableViewCell.swift in Sources */,
+				0405010322223A0A006E83A4 /* CreateInformErrorBrokenViewController.swift in Sources */,
 				4E1CD32E218D8CD10086145E /* LoginView.swift in Sources */,
 				4E1CD32B218D876A0086145E /* Constants.swift in Sources */,
 				04F3929721F31129006D6409 /* ItemInformErrorBrokenTableViewCell.swift in Sources */,

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6F218A97850E0994D72D2141FE63E279"
+               BlueprintIdentifier = "27FDAADD819B6CC10B0AED1974670123"
                BuildableName = "Pods_InventoryAssert.framework"
                BlueprintName = "Pods-InventoryAssert"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6F218A97850E0994D72D2141FE63E279"
+            BlueprintIdentifier = "27FDAADD819B6CC10B0AED1974670123"
             BuildableName = "Pods_InventoryAssert.framework"
             BlueprintName = "Pods-InventoryAssert"
             ReferencedContainer = "container:Pods.xcodeproj">
