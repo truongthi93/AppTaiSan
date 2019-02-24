@@ -59,9 +59,13 @@ class Constants {
         static let title = "Danh sách các lần kiểm kê"
         static let inventoryReviewTableViewCell = "InventoryReviewTableViewCell"
         static let inventoryReviewViewController = "InventoryReviewViewController"
-        
     }
     
+    public class AddNote{
+        static let title = "Thêm Thông Tin"
+        static let AddNoteManualForAssetViewController = "AddNoteManualForAssetViewController"
+    }
+
     public class AddReview{
         static let title = "Thông tin phiếu"
         static let addReviewViewController = "AddReviewViewController"

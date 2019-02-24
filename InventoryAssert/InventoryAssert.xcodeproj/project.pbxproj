@@ -58,6 +58,8 @@
 		4E54434022224B910055C8BB /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E54433F22224B910055C8BB /* StoreData.swift */; };
 		4E8498DD21F3198C00182A83 /* CSVModelExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8498DC21F3198C00182A83 /* CSVModelExport.swift */; };
 		4E8498DF21F31AD700182A83 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8498DE21F31AD700182A83 /* Asset.swift */; };
+		4E8EF1E92222865200828C8D /* AddNoteManualForAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8EF1E72222865200828C8D /* AddNoteManualForAssetViewController.swift */; };
+		4E8EF1EA2222865200828C8D /* AddNoteManualForAssetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8EF1E82222865200828C8D /* AddNoteManualForAssetViewController.xib */; };
 		4EA491F621C4016100C8D88A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F521C4016100C8D88A /* DataManager.swift */; };
 		4EA491F821C4017500C8D88A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA491F721C4017500C8D88A /* ColorExtension.swift */; };
 		5C4348F31BC7C68B7CB360AE /* Pods_InventoryAssert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8069C9454B746C43277F4E6 /* Pods_InventoryAssert.framework */; };
@@ -130,6 +132,8 @@
 		4E54433F22224B910055C8BB /* StoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreData.swift; sourceTree = "<group>"; };
 		4E8498DC21F3198C00182A83 /* CSVModelExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVModelExport.swift; sourceTree = "<group>"; };
 		4E8498DE21F31AD700182A83 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		4E8EF1E72222865200828C8D /* AddNoteManualForAssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteManualForAssetViewController.swift; sourceTree = "<group>"; };
+		4E8EF1E82222865200828C8D /* AddNoteManualForAssetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteManualForAssetViewController.xib; sourceTree = "<group>"; };
 		4EA491F521C4016100C8D88A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4EA491F721C4017500C8D88A /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		53B9F78F2CC13F5DFE0CF460 /* Pods-InventoryAssert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryAssert.release.xcconfig"; path = "Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert.release.xcconfig"; sourceTree = "<group>"; };
@@ -330,6 +334,7 @@
 		4E1CD318218D81CD0086145E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4E8EF1E62222862700828C8D /* AddNoteManualForAsset */,
 				04F3928D21F31129006D6409 /* InformErrorBrokenView */,
 				4E085B7021CE13EA00CC2983 /* ConfirmAssetInfo */,
 				4E085B6B21CE0C6F00CC2983 /* QRScanner */,
@@ -446,6 +451,15 @@
 			path = InventoryReviewCell;
 			sourceTree = "<group>";
 		};
+		4E8EF1E62222862700828C8D /* AddNoteManualForAsset */ = {
+			isa = PBXGroup;
+			children = (
+				4E8EF1E72222865200828C8D /* AddNoteManualForAssetViewController.swift */,
+				4E8EF1E82222865200828C8D /* AddNoteManualForAssetViewController.xib */,
+			);
+			path = AddNoteManualForAsset;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -545,6 +559,7 @@
 				04F3929D21F31BFA006D6409 /* FooterInformErrorView.xib in Resources */,
 				4E3C53AD21C63E730074AD61 /* AddReviewViewController.xib in Resources */,
 				4E1CD2FF218D81040086145E /* Assets.xcassets in Resources */,
+				4E8EF1EA2222865200828C8D /* AddNoteManualForAssetViewController.xib in Resources */,
 				4E3C53A121C62AF60074AD61 /* InventoryReviewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -680,6 +695,7 @@
 				04F3929721F31129006D6409 /* ItemInformErrorBrokenTableViewCell.swift in Sources */,
 				04F3929C21F31BFA006D6409 /* FooterInformErrorView.swift in Sources */,
 				4E54434022224B910055C8BB /* StoreData.swift in Sources */,
+				4E8EF1E92222865200828C8D /* AddNoteManualForAssetViewController.swift in Sources */,
 				04648E5D21C169AA007F7A94 /* ItemsCollectionViewCell.swift in Sources */,
 				04F3929521F31129006D6409 /* InformErrorBrokenViewController.swift in Sources */,
 			);

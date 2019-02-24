@@ -85,7 +85,12 @@ class AssetListInWareHouseViewController: BaseViewController, AVCaptureMetadataO
         // call API to save new and update items
         print("Save...")
     }
-}
+    
+    @objc func pressButton(_ sender: UIButton){ //<- needs `@objc`
+        print("\(sender.tag)")
+        let vc = AddNoteManualForAssetViewController(nibName: Constants.AddNote.AddNoteManualForAssetViewController, bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }}
 
 extension AssetListInWareHouseViewController: AddQRCodeDelegate {
     func addData(dataId : String){
@@ -95,7 +100,7 @@ extension AssetListInWareHouseViewController: AddQRCodeDelegate {
 
 extension AssetListInWareHouseViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 50.0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -109,6 +114,8 @@ extension AssetListInWareHouseViewController: UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AssetListInWareHouse.assetListInWareHouseTableViewCell, for: indexPath) as! AssetListInWareHouseTableViewCell
         cell.imgCheck.image = indexPath.row % 2 == 0 ?  UIImage(named: "check.png") : UIImage(named: "uncheck.png")
+        cell.btnViewMore.tag = indexPath.row
+        cell.btnViewMore.addTarget(self, action: #selector(self.pressButton(_:)), for: .touchUpInside) //<- use `#selector(...)`
         return cell
     }
     
