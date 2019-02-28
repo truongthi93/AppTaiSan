@@ -27,6 +27,7 @@ class CreateInformErrorBrokenViewController: BaseViewController {
         self.title = Constants.InformErrorBroken.titleCreateInformErrorBroken
         let backButton = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem  = backButton
+        self.createInformErrorBrokenView.setupCell()
     }
     
     @objc func back() {

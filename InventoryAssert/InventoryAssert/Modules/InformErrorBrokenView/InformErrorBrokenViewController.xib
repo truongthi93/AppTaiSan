@@ -127,10 +127,10 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14g-0F-n2s">
-                    <rect key="frame" x="10" y="170" width="355" height="437"/>
+                    <rect key="frame" x="10" y="170" width="355" height="442"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8yv-FL-Rlo">
-                            <rect key="frame" x="0.0" y="0.0" width="355" height="437"/>
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="442"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -160,10 +160,10 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="40h-ml-TZr">
-                    <rect key="frame" x="10" y="612" width="355" height="50"/>
+                    <rect key="frame" x="10" y="622" width="355" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtQ-eQ-K92">
-                            <rect key="frame" x="0.0" y="0.0" width="115" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="115" height="40"/>
                             <color key="backgroundColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Thêm mới">
@@ -176,7 +176,7 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ia-fR-U5o" userLabel="Xoá">
-                            <rect key="frame" x="120" y="0.0" width="115" height="50"/>
+                            <rect key="frame" x="120" y="0.0" width="115" height="40"/>
                             <color key="backgroundColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Xoá">
@@ -189,7 +189,7 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gi5-n1-L0k">
-                            <rect key="frame" x="240" y="0.0" width="115" height="50"/>
+                            <rect key="frame" x="240" y="0.0" width="115" height="40"/>
                             <color key="backgroundColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Nhật kí">
@@ -202,6 +202,9 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="jtU-aA-HWZ"/>
+                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="5"/>
@@ -212,11 +215,10 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="x2S-fd-BJr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="29m-z9-Yxv"/>
-                <constraint firstItem="40h-ml-TZr" firstAttribute="top" secondItem="14g-0F-n2s" secondAttribute="bottom" constant="5" id="3Ap-J4-3gF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="14g-0F-n2s" secondAttribute="bottom" constant="60" id="A8R-HR-1tT"/>
                 <constraint firstItem="14g-0F-n2s" firstAttribute="top" secondItem="x2S-fd-BJr" secondAttribute="bottom" constant="5" id="P61-6P-Vgr"/>
                 <constraint firstItem="40h-ml-TZr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="WnK-Dj-Gsj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="40h-ml-TZr" secondAttribute="bottom" constant="5" id="YTH-A1-j2z"/>
+                <constraint firstItem="40h-ml-TZr" firstAttribute="top" secondItem="14g-0F-n2s" secondAttribute="bottom" constant="10" id="djt-Ur-qUW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="40h-ml-TZr" secondAttribute="trailing" constant="10" id="ffK-CE-Qin"/>
                 <constraint firstItem="x2S-fd-BJr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="gss-i2-UAK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x2S-fd-BJr" secondAttribute="trailing" constant="10" id="j6H-Fa-Hth"/>

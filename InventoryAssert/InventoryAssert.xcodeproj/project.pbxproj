@@ -10,6 +10,8 @@
 		0405010222223A0A006E83A4 /* CreateInformErrorBrokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040500FF22223A0A006E83A4 /* CreateInformErrorBrokenView.swift */; };
 		0405010322223A0A006E83A4 /* CreateInformErrorBrokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405010022223A0A006E83A4 /* CreateInformErrorBrokenViewController.swift */; };
 		0405010422223A0A006E83A4 /* CreateInformErrorBrokenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0405010122223A0A006E83A4 /* CreateInformErrorBrokenViewController.xib */; };
+		040501082227646D006E83A4 /* CreateInformErrorBrokenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040501062227646D006E83A4 /* CreateInformErrorBrokenTableViewCell.swift */; };
+		040501092227646D006E83A4 /* CreateInformErrorBrokenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040501072227646D006E83A4 /* CreateInformErrorBrokenTableViewCell.xib */; };
 		0447510621C421CA00C41C99 /* ListObjectTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447510421C421C900C41C99 /* ListObjectTransform.swift */; };
 		0447510721C421CA00C41C99 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447510521C421CA00C41C99 /* Utility.swift */; };
 		0447510921C421D800C41C99 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447510821C421D800C41C99 /* LoginResult.swift */; };
@@ -77,6 +79,8 @@
 		040500FF22223A0A006E83A4 /* CreateInformErrorBrokenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateInformErrorBrokenView.swift; sourceTree = "<group>"; };
 		0405010022223A0A006E83A4 /* CreateInformErrorBrokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateInformErrorBrokenViewController.swift; sourceTree = "<group>"; };
 		0405010122223A0A006E83A4 /* CreateInformErrorBrokenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateInformErrorBrokenViewController.xib; sourceTree = "<group>"; };
+		040501062227646D006E83A4 /* CreateInformErrorBrokenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInformErrorBrokenTableViewCell.swift; sourceTree = "<group>"; };
+		040501072227646D006E83A4 /* CreateInformErrorBrokenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateInformErrorBrokenTableViewCell.xib; sourceTree = "<group>"; };
 		0447510421C421C900C41C99 /* ListObjectTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListObjectTransform.swift; sourceTree = "<group>"; };
 		0447510521C421CA00C41C99 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		0447510821C421D800C41C99 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
@@ -161,11 +165,21 @@
 		040500FE22223A0A006E83A4 /* CreateInformErrorInformView */ = {
 			isa = PBXGroup;
 			children = (
+				040501052227642B006E83A4 /* CreateInformErrorBrokenTableViewCell */,
 				040500FF22223A0A006E83A4 /* CreateInformErrorBrokenView.swift */,
 				0405010022223A0A006E83A4 /* CreateInformErrorBrokenViewController.swift */,
 				0405010122223A0A006E83A4 /* CreateInformErrorBrokenViewController.xib */,
 			);
 			path = CreateInformErrorInformView;
+			sourceTree = "<group>";
+		};
+		040501052227642B006E83A4 /* CreateInformErrorBrokenTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				040501062227646D006E83A4 /* CreateInformErrorBrokenTableViewCell.swift */,
+				040501072227646D006E83A4 /* CreateInformErrorBrokenTableViewCell.xib */,
+			);
+			path = CreateInformErrorBrokenTableViewCell;
 			sourceTree = "<group>";
 		};
 		04648E5821C169AA007F7A94 /* MainView */ = {
@@ -543,6 +557,7 @@
 				4E3C53AD21C63E730074AD61 /* AddReviewViewController.xib in Resources */,
 				4E1CD2FF218D81040086145E /* Assets.xcassets in Resources */,
 				4E3C53A121C62AF60074AD61 /* InventoryReviewViewController.xib in Resources */,
+				040501092227646D006E83A4 /* CreateInformErrorBrokenTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +692,7 @@
 				04F3929721F31129006D6409 /* ItemInformErrorBrokenTableViewCell.swift in Sources */,
 				04F3929C21F31BFA006D6409 /* FooterInformErrorView.swift in Sources */,
 				04648E5D21C169AA007F7A94 /* ItemsCollectionViewCell.swift in Sources */,
+				040501082227646D006E83A4 /* CreateInformErrorBrokenTableViewCell.swift in Sources */,
 				04F3929521F31129006D6409 /* InformErrorBrokenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
