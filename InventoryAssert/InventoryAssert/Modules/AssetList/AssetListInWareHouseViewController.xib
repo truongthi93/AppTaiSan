@@ -59,14 +59,14 @@
                                     <rect key="frame" x="243.5" y="0.0" width="111.5" height="40"/>
                                     <color key="backgroundColor" red="0.083237580960000002" green="0.50752019879999999" blue="0.66180795429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Xuất File"/>
+                                    <state key="normal" title="Lưu"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="5"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="exportCSV:" destination="-1" eventType="touchUpInside" id="KJr-em-a8p"/>
+                                        <action selector="save:" destination="-1" eventType="touchUpInside" id="aoY-hU-pkc"/>
                                     </connections>
                                 </button>
                             </subviews>

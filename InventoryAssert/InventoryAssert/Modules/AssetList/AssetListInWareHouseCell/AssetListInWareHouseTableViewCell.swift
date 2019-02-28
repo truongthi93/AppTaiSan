@@ -11,6 +11,7 @@ import UIKit
 class AssetListInWareHouseTableViewCell: UITableViewCell {
     @IBOutlet weak var imgCheck: UIImageView!
     
+    @IBOutlet weak var btnViewMore: UIButton!
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblId: UILabel!
@@ -22,7 +23,6 @@ class AssetListInWareHouseTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
