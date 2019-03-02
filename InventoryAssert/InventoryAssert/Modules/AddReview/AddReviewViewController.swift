@@ -149,19 +149,11 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         }
     }
     func showDatePicker(){
-        //Formate Date
-        datePicker.datePickerMode = .date
-        
-        //ToolBar
-        let toolbar = UIToolbar();
-        toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: Constants.AppCommon.done, style: .plain, target: self, action: #selector(donedatePicker));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: Constants.AppCommon.cancel, style: .plain, target: self, action: #selector(cancelDatePicker));
-        
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-        self.addReviewView.tfReviewDate.inputAccessoryView = toolbar
-        self.addReviewView.tfReviewDate.inputView = datePicker
+        let buttons = [doneButton, spaceButton, cancelButton]
+        Utility.showDatePicker(datePicker: datePicker, textField: self.addReviewView.tfReviewDate, buttons: buttons)
     }
     
     @objc func donedatePicker(){

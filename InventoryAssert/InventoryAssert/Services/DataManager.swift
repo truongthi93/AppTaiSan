@@ -47,6 +47,41 @@ class DataManager: NSObject {
         }
     }
     
+    func getAssertErrorBrokenDownFilter(date: String, content: String, state: String, completion: @escaping (_ result: [AssertError]?, _ error: NSError?) -> Void) {
+        let tokenType = "Bearer"
+        let token = "CfDJ8JrWIkOHor1Ft21hA4KyJxaN9kOzuqRz3RLtdLbSTOc-efWui3t9sEEr_ckw174hyj6NwLuYS0EaiiXRqXnjlm6n1HexIvQcVKlyuKS-SsE1ho2180DexgamLg_Ust5ebv9C6fPmGEfkIebOwhb7ce5A6HBdMmTrwtFka3sQ3MfIVcATIH5pLVLnMjufqFNjlJqlhQ97x7y6GxoBll_OPf2uTZvk06kebLxZSw_gXtoYHMBeYEZxmOrbyqDGCOZGT4FpHaK9PbIZktqBYZOXQ0MaET7gnF6jSa1KM8gc1MWQvi-vOSpxQUouWxbm5IwSC82COnc9sFFdHvEI1cSG1N165MwyF8_bBU1XPA6_ULHGsNgde72C4fznJG9td45hwFEVC2LgH7iaEr_2Fj7zkPw9HMBTV6EKJTe68tU599Eh" // Hardcode test
+        let URL = "\(Constants.APIUrl.host)/Repair/Filter?RequestedDate=\(date)&RequestedContent=\(content)&StatusId=\(state)"
+        let headers = [
+            "Authorization": "\(tokenType) \(token)"
+        ]
+        //Repair/Filter?RequestedDate=2019-02-24(yyyy-MM-dd)
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseArray{(response:DataResponse<[AssertError]>) in
+            if response.result.value != nil {
+                completion(response.result.value,nil)
+            } else {
+                completion(nil,NSError(domain: "Error Domain", code: 999, userInfo: [NSLocalizedDescriptionKey: "Fail"]))
+            }
+        }
+    }
+    
+    func getAssertErrorBrokenDownNearly(completion: @escaping (_ result: [AssertError]?, _ error: NSError?) -> Void) {
+        let tokenType = "Bearer"
+        let token = "CfDJ8JrWIkOHor1Ft21hA4KyJxYpmn8GbyWAcJ2JDr5mIpfeOweSFWDKZibr4QCw3wOfhEgcX007KKVyFHxfP_lCeJI_Nbxxf7cM6DuWyc5yZf899qV7dK-_UpEput_Xo5Kf8sM-s5COegzw5R3iQdc5D0nb3k9KuDXYioYT8MObVfKunu-Z7_AjIW7UTXN5ajPPEbGySRYzbk4hnszEVepfPC8XE5TtF3rgFSMLoYtN8lsbpVoTTThvkplXkABKYC7OtdREseM-PC-yPvTGl8jpUAXSbzRQKTLgLB_KS3MVzbdexYgWbrXSzVmeAcqJdfn4TU1vkQ6WoW7cg6-9_OYaoO8C6ZlsMfi6qwFZAYZCIllZN0Yh99Gjlv8TrXoKMvBSarVVd-eF0KfDv9R086Cb6Pv0t52wtL3B-_rwkafqEqtZ"
+        let URL = "\(Constants.APIUrl.host)\(Constants.APIUrl.getRepairNearly)"
+        let headers = [
+            "Authorization": "\(tokenType) \(token)"
+        ]
+
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseArray{(response:DataResponse<[AssertError]>) in
+            if response.result.value != nil {
+                completion(response.result.value,nil)
+            } else {
+                completion(nil,NSError(domain: "Error Domain", code: 999, userInfo: [NSLocalizedDescriptionKey: "Fail"]))
+            }
+        }
+    }
+
+    
     func login(userName: String, token: String, tokenType: String, completion: @escaping (_ result: LoginResult?, _ error: NSError?) -> Void) {
         let URL = "\(Constants.APIUrl.host)\(Constants.APIUrl.login)\(userName)"
         let headers = [

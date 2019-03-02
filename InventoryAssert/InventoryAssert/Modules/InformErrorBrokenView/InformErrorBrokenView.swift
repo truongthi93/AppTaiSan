@@ -12,7 +12,8 @@ class InformErrorBrokenView: UIView {
     @IBOutlet weak var listInformTableView: UITableView!
     @IBOutlet weak var onFilterButton: UIButton!
     @IBOutlet weak var contentFilterTf: UITextField!
-    
+    @IBOutlet weak var stateFilterTf: UITextField!
+    @IBOutlet weak var dateFilterTf: UITextField!
     @IBOutlet weak var createErrorBrokenButton: UIButton!
     
     override init(frame: CGRect) {

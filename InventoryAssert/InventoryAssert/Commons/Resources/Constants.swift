@@ -17,11 +17,12 @@ class Constants {
         static let deleteReview = "api/InventoryAssetDetail?inventoryAssetDetailId="
         static let getStore = "api/store"
         static let getAssetByReviewId = "api/InventoryAssetDetail?inventoryAssetDetailId="
-        
+        static let getRepairNearly = "/Repair/Nearly"
     }
     
     public class AppCommon {
-        static let formatDate = "dd/MM/yyyy"
+        static let formatDate = "dd-MM-yyyy"
+        static let formatDateSendApi = "yyyy-MM-dd"
         static let inform = "Thông báo"
         static let agree = "Đồng ý"
         static let cancel = "Huỷ bỏ"
@@ -39,6 +40,9 @@ class Constants {
         static let messageFillLoginInfo = "Vui lòng điền đầy đủ thông tin đăng nhập"
         static let messageFillAllInfo = "Vui lòng điền đầy đủ thông tin"
         static let messgaeScanNotFound = "Không tìm thấy kết quả scan"
+        static let messageGetAssertErrorBrokenNearly = "Không thể lấy danh sách tài sản hư hỏng gần đây"
+        static let messageGetAssertErrorBrokenFilter = "Không thể lấy danh sách tài sản hư hỏng theo điều kiện lọc"
+
     }
     
     public class Login{
