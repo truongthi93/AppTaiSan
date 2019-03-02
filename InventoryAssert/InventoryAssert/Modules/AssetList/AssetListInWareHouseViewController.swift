@@ -9,17 +9,23 @@
 import UIKit
 import AVFoundation
 import CSV
+enum ListAssetType: Int{
+    case store
+    case reviewId
+}
 
 class AssetListInWareHouseViewController: BaseViewController, AVCaptureMetadataOutputObjectsDelegate {
     public var assetListView: AssetListView! {
         guard isViewLoaded else { return nil }
         return view as? AssetListView
     }
-    var listReviewData : [ReviewData] = []
+    var listAsset : [Asset] = []
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
-
+    var listAssetType : ListAssetType = .store
+    var reviewId = 0, store : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         darkMode = false
@@ -28,7 +34,7 @@ class AssetListInWareHouseViewController: BaseViewController, AVCaptureMetadataO
         self.assetListView.tableView.delegate = self
         self.assetListView.tableView.dataSource = self
         self.assetListView.tableView.register(UINib(nibName: Constants.AssetListInWareHouse.assetListInWareHouseTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.AssetListInWareHouse.assetListInWareHouseTableViewCell)
-
+        self.getListAsset()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +45,6 @@ class AssetListInWareHouseViewController: BaseViewController, AVCaptureMetadataO
         let backButton = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem  = backButton
         
-        self.title = Constants.AssetListInWareHouse.title
         let downButton = UIBarButtonItem(image: UIImage(named: "download.png"), style: .plain, target: self, action: #selector(downCSV))
         self.navigationItem.rightBarButtonItem  = downButton
 
@@ -70,6 +75,13 @@ class AssetListInWareHouseViewController: BaseViewController, AVCaptureMetadataO
             try? csv?.write(row: ["3", "bop", "25"])
             
             csv?.stream.close()
+        }
+    }
+    
+    func getListAsset(){
+        DataManager.shareInstance.getAssetsByReviewId(reviewId: 7, token: "", tokenType: "") { (listAsset, error) in
+            self.listAsset = listAsset ?? [Asset]()
+            self.assetListView.tableView.reloadData()
         }
     }
     
@@ -108,7 +120,7 @@ extension AssetListInWareHouseViewController: UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return listAsset.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -116,6 +128,13 @@ extension AssetListInWareHouseViewController: UITableViewDelegate, UITableViewDa
         cell.imgCheck.image = indexPath.row % 2 == 0 ?  UIImage(named: "check.png") : UIImage(named: "uncheck.png")
         cell.btnViewMore.tag = indexPath.row
         cell.btnViewMore.addTarget(self, action: #selector(self.pressButton(_:)), for: .touchUpInside) //<- use `#selector(...)`
+        
+        let asset = self.listAsset[indexPath.row]
+        cell.lblId.text = (asset.taiSanId != nil) ? "\(String(describing: asset.taiSanId!))" : ""
+        cell.lblName.text = (asset.soLuongKiemKe != nil) ? "\(String(describing: asset.soLuongKiemKe!))" : ""
+        cell.lblTime.text = (asset.soLuongTon != nil) ? "\(String(describing: asset.soLuongTon!))" : ""
+        cell.lblStatus.text = (asset.trangThai != nil) ? "\(String(describing: asset.trangThai!))" : ""
+        
         return cell
     }
     

@@ -78,6 +78,22 @@ class DataManager: NSObject {
         })
     }
     
+    func getAssetsByReviewId(reviewId: Int, token: String, tokenType: String, completion: @escaping (_ result: [Asset]?, _ error: NSError?) -> Void) {
+        let URL = "\(Constants.APIUrl.host)\(Constants.APIUrl.getAssetByReviewId)\(reviewId)"
+        let headers = [
+            "Authorization": "\(tokenType) \(token)"
+        ]
+        print(headers)
+        
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseArray(completionHandler: { (response: DataResponse<[Asset]>) in
+            if response.result.value != nil {
+                completion(response.result.value,nil)
+            } else {
+                completion(nil,NSError(domain: "Error Domain", code: 999, userInfo: [NSLocalizedDescriptionKey: "Fail"]))
+            }
+        })
+    }
+
     func getReviewList(token: String, tokenType: String, completion: @escaping (_ result: [ReviewData]?, _ error: NSError?) -> Void) {
         let URL = "\(Constants.APIUrl.host)\(Constants.APIUrl.getReviewList)"
         let headers = [
