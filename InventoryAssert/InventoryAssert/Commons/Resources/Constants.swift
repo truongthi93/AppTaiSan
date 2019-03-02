@@ -74,14 +74,12 @@ class Constants {
         static let title = "Thông tin phiếu"
         static let addReviewViewController = "AddReviewViewController"
         static let startInventory = "Bắt đầu kiểm"
+        static let continueInventory = "Tiếp tục kiểm"
         static let wareHouse = "Kho "
         static let pleaseSelectWareHouse = "Vui lòng chọn kho"
         static let totalAssert = "Tổng tài sản: "
         static let checked = "Đã kiểm: "
         static let selectWareHouse = "Chọn Kho "
-        static let wareHouseOne = "Kho 1"
-        static let wareHouseTwo = "Kho 2"
-        static let wareHouseThree = "Kho 3"
     }
     
     public class AssetListInWareHouse{
