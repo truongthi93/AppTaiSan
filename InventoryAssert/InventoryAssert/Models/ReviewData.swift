@@ -19,6 +19,7 @@ class ReviewData : NSObject,Mappable {
     var khoTaiSanId : Int?
     var trangThai : String?
     var thoiGianCapNhat : String?
+    var tenKho : String?
     var ghiChu : String?
     var giaoThucXacThuc : String?
     var ngayTao : String?
@@ -48,12 +49,14 @@ class ReviewData : NSObject,Mappable {
     nguoiLapPhieuId : String?,
     khoaPhieu : Int?,
     nguoiTao : String?,
+    tenKho : String?,
     online : String?,
     taiSanKiemKe : [String]?) {
         self.kiemKeTaiSanChiTietId = kiemKeTaiSanChiTietId
         self.taiSanKiemKeId = taiSanKiemKeId
         self.taiSanId = taiSanId
         self.soLuongTon = soLuongTon
+        self.tenKho = tenKho
         self.soLuongKiemKe = soLuongKiemKe
         self.khoTaiSanId = khoTaiSanId
         self.trangThai = trangThai
@@ -93,6 +96,7 @@ class ReviewData : NSObject,Mappable {
         khoaPhieu <- map["khoaPhieu"]
         nguoiTao <- map["nguoiTao"]
         online <- map["online"]
+        tenKho <- map["tenKho"]
         taiSanKiemKe <- map["taiSanKiemKe"]
     }
     
@@ -113,6 +117,7 @@ class ReviewData : NSObject,Mappable {
         daKiem <- map["daKiem"]
         nguoiLapPhieuId <- map["nguoiLapPhieuId"]
         khoaPhieu <- map["khoaPhieu"]
+        tenKho <- map["tenKho"]
         nguoiTao <- map["nguoiTao"]
         online <- map["online"]
         taiSanKiemKe <- map["taiSanKiemKe"]

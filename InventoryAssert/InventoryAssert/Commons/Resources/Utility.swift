@@ -114,10 +114,11 @@ class Utility {
     }
     
     class func convertDateTimeFromServer(dtString: String) -> String{
+        print("- " + dtString)
         let dateFormatter = DateFormatter()
         let tempLocale = dateFormatter.locale // save locale temporarily
         dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.zz"
         
         guard let date = dateFormatter.date(from: dtString) else {
             return ""

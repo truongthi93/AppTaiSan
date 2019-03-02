@@ -99,19 +99,22 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.InventoryReview.inventoryReviewTableViewCell, for: indexPath) as! InventoryReviewTableViewCell
         
-        if let wh = self.listReviewData[indexPath.row].khoTaiSanId{
+        if let wh = self.listReviewData[indexPath.row].tenKho{
             cell.lblWareHouse.text = String(describing: wh)
         } else {
             cell.lblWareHouse.text = ""
         }
-        cell.lblName.text = self.listReviewData[indexPath.row].nguoiUpdate
-        cell.lblTime.text = Utility.convertDateTimeFromServer(dtString: self.listReviewData[indexPath.row].thoiGianCapNhat ?? "")
+        cell.lblName.text = self.listReviewData[indexPath.row].nguoiTao
+        cell.lblTime.text = Utility.convertDateTimeFromServer(dtString: self.listReviewData[indexPath.row].ngayTao ?? "")
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // go to detail screen
-        print("Select row at index: \(indexPath.row), id: \(self.listReviewData[indexPath.row].taiSanKiemKeId ?? -1)")
+        let vc = AddReviewViewController(nibName: Constants.AddReview.addReviewViewController, bundle: nil)
+        vc.reviewType = ActionReviewType.Edit
+        vc.existedWareHouse = true
+        vc.reviewData = self.listReviewData[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -129,7 +132,7 @@ extension InventoryReviewViewController: UITableViewDelegate, UITableViewDataSou
             self.navigationController?.pushViewController(vc, animated: true)
 
         })
-        editAction.backgroundColor = UIColor.blue
+        editAction.backgroundColor = UIColor.navigationBarColor
         
         // action two
         let deleteAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.delete, handler: { (action, indexPath) in

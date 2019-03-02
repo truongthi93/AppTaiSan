@@ -24,6 +24,7 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
     var reviewData = ReviewData()
     let datePicker = UIDatePicker()
     var existedWareHouse = false
+    var listStore = [StoreData]()
 
     
     override func viewDidLoad() {
@@ -46,19 +47,30 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         let backButton = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem  = backButton
         
-        self.reviewType == .Add ? self.addReviewView.btnReview.setTitle(Constants.AddReview.startInventory, for: .normal) : self.addReviewView.btnReview.setTitle(Constants.AppCommon.note, for: .normal)
+        self.reviewType == .Add ? self.addReviewView.btnReview.setTitle(Constants.AddReview.startInventory, for: .normal) : self.addReviewView.btnReview.setTitle(Constants.AddReview.continueInventory, for: .normal)
     }
     
     func fillData() {
-        self.addReviewView.lblWareHouse.text = (self.reviewData.khoTaiSanId != nil) ? (Constants.AddReview.wareHouse + String(describing: self.reviewData.khoTaiSanId ?? -1)) : Constants.AddReview.pleaseSelectWareHouse
-        self.addReviewView.tfNote.text = String(describing: self.reviewData.ghiChu ?? "")
-        self.addReviewView.tfReviewer.text = String(describing: self.reviewData.nguoiUpdate ?? "")
-        self.addReviewView.tfReviewDate.text = Utility.convertDateTimeFromServer(dtString: String(describing: self.reviewData.ngayTao ?? ""))
-        self.addReviewView.tfReviewId.text = String(describing: self.reviewData.kiemKeTaiSanChiTietId ?? 0)
+        DataManager.shareInstance.getStore(token: "", tokenType: "") { (listStore, error) in
+            self.listStore = listStore ?? [StoreData]()
+            let store = self.listStore.filter{ $0.khoTaiSanId == self.reviewData.khoTaiSanId}
             
-        let total = (self.reviewData.khoTaiSanId != nil) ? String(describing: self.reviewData.soLuongKiemKe ?? -1) : "0"
-        let reviewed = (self.reviewData.khoTaiSanId != nil) ? String(describing: self.reviewData.soLuongKiemKe ?? -1) : "0"
-        self.setUpTextAttributeLabel(total, reviewed)
+            if let name = store.first?.tenKho, self.reviewData.khoTaiSanId != nil {
+                self.addReviewView.lblWareHouse.text = name
+            } else {
+                self.addReviewView.lblWareHouse.text = Constants.AddReview.pleaseSelectWareHouse
+            }
+            
+            self.addReviewView.tfNote.text = String(describing: self.reviewData.ghiChu ?? "")
+            self.addReviewView.tfReviewer.text = String(describing: self.reviewData.nguoiUpdate ?? "")
+            self.addReviewView.tfReviewDate.text = Utility.convertDateTimeFromServer(dtString: String(describing: self.reviewData.ngayTao ?? ""))
+            self.addReviewView.tfReviewId.text = String(describing: self.reviewData.kiemKeTaiSanChiTietId ?? 0)
+            
+            let total = (self.reviewData.khoTaiSanId != nil) ? String(describing: self.reviewData.soLuongKiemKe ?? -1) : "0"
+            let reviewed = (self.reviewData.khoTaiSanId != nil) ? String(describing: self.reviewData.soLuongKiemKe ?? -1) : "0"
+            self.setUpTextAttributeLabel(total, reviewed)
+        }
+
     }
     
     func setUpTextAttributeLabel(_ total: String,_ reviewed: String) {
