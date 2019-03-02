@@ -126,6 +126,18 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblAssertName" destination="4C2-Io-6PC" id="BjC-JV-YKK"/>
+                <outlet property="lblAssertPosition" destination="FN3-Uq-XV8" id="qmW-Cv-Gek"/>
+                <outlet property="lblContent" destination="MDB-sU-8RL" id="1m3-PC-1cd"/>
+                <outlet property="lblDepartment" destination="Nff-P2-MED" id="Lxr-Lr-ldP"/>
+                <outlet property="lblDepartmentHandle" destination="1eg-wP-6n8" id="fcW-7V-tL8"/>
+                <outlet property="lblDeviceName" destination="D5u-fe-dnl" id="44A-PZ-Lj0"/>
+                <outlet property="lblPersonRequest" destination="BSz-QO-Ojc" id="yyD-FU-oOn"/>
+                <outlet property="lblPriorityLevel" destination="N7t-q0-FvT" id="zRo-Ow-oE1"/>
+                <outlet property="lblRequestCode" destination="wg3-84-BUz" id="dig-8P-Htg"/>
+                <outlet property="lblState" destination="8GC-4w-FTz" id="dql-jO-RiK"/>
+            </connections>
             <point key="canvasLocation" x="33.600000000000001" y="-12.143928035982009"/>
         </tableViewCell>
     </objects>

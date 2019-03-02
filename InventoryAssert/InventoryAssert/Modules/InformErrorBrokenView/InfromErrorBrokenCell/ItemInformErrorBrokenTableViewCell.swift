@@ -10,6 +10,23 @@ import UIKit
 
 class ItemInformErrorBrokenTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblRequestCode: UILabel!
+    @IBOutlet weak var lblDeviceName: UILabel!
+    @IBOutlet weak var lblPersonRequest: UILabel!
+    
+    @IBOutlet weak var lblDepartment: UILabel!
+    @IBOutlet weak var lblState: UILabel!
+    
+    @IBOutlet weak var lblAssertName: UILabel!
+    
+    @IBOutlet weak var lblContent: UILabel!
+    
+    @IBOutlet weak var lblAssertPosition: UILabel!
+    
+    @IBOutlet weak var lblDepartmentHandle: UILabel!
+    
+    @IBOutlet weak var lblPriorityLevel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

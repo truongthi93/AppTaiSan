@@ -128,5 +128,18 @@ class Utility {
         print("EXACT_DATE : \(dateString)")
         return dateString
     }
+    
+    class func showDatePicker(datePicker: UIDatePicker, textField: UITextField, buttons: [UIBarButtonItem]){
+        //Formate Date
+        datePicker.datePickerMode = .date
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        toolbar.setItems(buttons, animated: false)
+        textField.inputAccessoryView = toolbar
+        textField.inputView = datePicker
+    }
+
 }
 
