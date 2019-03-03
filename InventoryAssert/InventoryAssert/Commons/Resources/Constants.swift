@@ -10,14 +10,14 @@ import UIKit
 
 class Constants {
     public class APIUrl{
-        static let host = "http://115.79.197.84/api"
-        static let login = "/user?username="
-        static let getToken = "/user/login"
-        static let getReviewList = "/inventoryassetall"
-        static let deleteReview = "/InventoryAssetDetail?inventoryAssetDetailId="
-        static let getStore = "/store"
+        static let host = "http://115.79.197.84/"
+        static let login = "api/user?username="
+        static let getToken = "api/user/login"
+        static let getReviewList = "api/inventoryassetall"
+        static let deleteReview = "api/InventoryAssetDetail?inventoryAssetDetailId="
+        static let getStore = "api/store"
+        static let getAssetByReviewId = "api/InventoryAssetDetail?inventoryAssetDetailId="
         static let getRepairNearly = "/Repair/Nearly"
-        
     }
     
     public class AppCommon {

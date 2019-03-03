@@ -62,7 +62,7 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
             }
             
             self.addReviewView.tfNote.text = String(describing: self.reviewData.ghiChu ?? "")
-            self.addReviewView.tfReviewer.text = String(describing: self.reviewData.nguoiUpdate ?? "")
+            self.addReviewView.tfReviewer.text = String(describing: self.reviewData.nguoiTao ?? "")
             self.addReviewView.tfReviewDate.text = Utility.convertDateTimeFromServer(dtString: String(describing: self.reviewData.ngayTao ?? ""))
             self.addReviewView.tfReviewId.text = String(describing: self.reviewData.kiemKeTaiSanChiTietId ?? 0)
             
@@ -104,19 +104,17 @@ class AddReviewViewController: BaseViewController, UITextFieldDelegate {
         } else {
             //call API get dc kiem ke id va pass qua man hinh moi.
             let vc = AssetListInWareHouseViewController(nibName: Constants.AssetListInWareHouse.assetListInWareHouseViewController, bundle: nil)
+            vc.listAssetType = self.existedWareHouse ? ListAssetType.reviewId : ListAssetType.store
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
     @IBAction func selectWarehouse(_ sender: Any) {
-        DataManager.shareInstance.getStore(token: "", tokenType: "") { (listStore, error) in
-            // check code and do something
-            if let list = listStore, list.count > 0{
-                self.showSelectStore(list: list)
-            } else {
-                Utility.showAlertInform(title: "", message: "", context: self)
-            }
-            
+        // check code and do something
+        if self.listStore.count > 0{
+            self.showSelectStore(list: self.listStore)
+        } else {
+            Utility.showAlertInform(title: "", message: "", context: self)
         }
     }
     
