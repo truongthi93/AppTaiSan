@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class InformErrorBrokenViewController: BaseViewController {
+class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
     var assertErrorList:[AssertError] = []
     let datePicker = UIDatePicker()
     var dateFilter: String?
@@ -26,6 +26,7 @@ class InformErrorBrokenViewController: BaseViewController {
         self.initTableViewCell()
         self.setUpView()
         self.showDatePicker()
+        self.informErrorBrokenView.dateFilterTf.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,26 +47,52 @@ class InformErrorBrokenViewController: BaseViewController {
         self.informErrorBrokenView.createErrorBrokenButton.addTarget(self, action: #selector(self.onCreateErrorBrokenButtonClick(_:)), for: .touchUpInside)
     }
     
-    func showDatePicker(){
-        let doneButton = UIBarButtonItem(title: Constants.AppCommon.done, style: .plain, target: self, action: #selector(donedatePicker));
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: Constants.AppCommon.cancel, style: .plain, target: self, action: #selector(cancelDatePicker));
-        let buttons = [doneButton, spaceButton, cancelButton]
-        Utility.showDatePicker(datePicker: datePicker, textField: self.informErrorBrokenView.dateFilterTf, buttons: buttons)
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if self.informErrorBrokenView.dateFilterTf.text == "" {
+            self.datePicker.setDate(Date(), animated: false)
+        }
+            self.setFormatDatePicker()
     }
     
-    @objc func donedatePicker(){
+    func setFormatDatePicker(){
         let formatterApi = DateFormatter()
         formatterApi.dateFormat = Constants.AppCommon.formatDateSendApi
         let formatter = DateFormatter()
         formatter.dateFormat = Constants.AppCommon.formatDate
         self.dateFilter = formatterApi.string(from: datePicker.date)
         self.informErrorBrokenView.dateFilterTf.text = formatter.string(from: datePicker.date)
+    }
+    
+    func showDatePicker(){
+        let doneButton = UIBarButtonItem(title: Constants.AppCommon.done, style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: Constants.AppCommon.cancel, style: .plain, target: self, action: #selector(cancelDatePicker));
+        let buttons = [doneButton, spaceButton, cancelButton]
+        self.datePicker.setDate(Date(), animated: false)
+        Utility.showDatePicker(datePicker: datePicker, textField: self.informErrorBrokenView.dateFilterTf, buttons: buttons)
+
+        self.datePicker.addTarget(self, action: #selector(self.valueChanged(_:)), for: UIControl.Event.valueChanged)
+
+    }
+    
+    @objc func valueChanged(_ datePicker: UIDatePicker) {
+        let selectedDate = datePicker.date as NSDate
+        print("Ngay duoc chon.....\(selectedDate)")
+        self.setFormatDatePicker()
+    }
+    
+    @objc func donedatePicker(){
+//        let formatterApi = DateFormatter()
+//        formatterApi.dateFormat = Constants.AppCommon.formatDateSendApi
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = Constants.AppCommon.formatDate
+//        self.dateFilter = formatterApi.string(from: datePicker.date)
+//        self.informErrorBrokenView.dateFilterTf.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
     
     @objc func cancelDatePicker(){
-        self.dateFilter = ""
+        self.informErrorBrokenView.dateFilterTf.text = ""
         self.view.endEditing(true)
     }
     
@@ -187,3 +214,4 @@ extension InformErrorBrokenViewController: UITableViewDelegate, UITableViewDataS
     }
     
 }
+
