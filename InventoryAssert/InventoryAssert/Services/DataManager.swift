@@ -49,8 +49,8 @@ class DataManager: NSObject {
     
     func getAssertErrorBrokenDownFilter(date: String, content: String, state: String, completion: @escaping (_ result: [AssertError]?, _ error: NSError?) -> Void) {
         let tokenType = "Bearer"
-        let token = "CfDJ8JrWIkOHor1Ft21hA4KyJxaN9kOzuqRz3RLtdLbSTOc-efWui3t9sEEr_ckw174hyj6NwLuYS0EaiiXRqXnjlm6n1HexIvQcVKlyuKS-SsE1ho2180DexgamLg_Ust5ebv9C6fPmGEfkIebOwhb7ce5A6HBdMmTrwtFka3sQ3MfIVcATIH5pLVLnMjufqFNjlJqlhQ97x7y6GxoBll_OPf2uTZvk06kebLxZSw_gXtoYHMBeYEZxmOrbyqDGCOZGT4FpHaK9PbIZktqBYZOXQ0MaET7gnF6jSa1KM8gc1MWQvi-vOSpxQUouWxbm5IwSC82COnc9sFFdHvEI1cSG1N165MwyF8_bBU1XPA6_ULHGsNgde72C4fznJG9td45hwFEVC2LgH7iaEr_2Fj7zkPw9HMBTV6EKJTe68tU599Eh" // Hardcode test
-        let URL = "\(Constants.APIUrl.host)/Repair/Filter?RequestedDate=\(date)&RequestedContent=\(content)&StatusId=\(state)"
+        let token = "CfDJ8JrWIkOHor1Ft21hA4KyJxbfivLAasK_fJ6nnb50ghF_zG9jZZE2mKUpaw8wLUPSvIueoNxiUQcrEu1Nnm0i-qA8I0ZM4HsJQlpKKa69AR38Tf9FCJ6uCIREG0j99mbF4eDsHKCEg3XX2fDlhFe8uq8y4spiArng2eEPrEfZxKcD6zJxfSOnSkdnpFRn85ZECbCcct4YlAMyV9xvmgoQFnSFo-MQ-BfrijgxOoJ2eUVbTvS1XEcb6DaUqU752qEfnnw2eSPWGfBMJPclCZUU1ohWiA21nbRRkhwPI-TlhX-vC9vp5oIWSHicSe2Et1ys0nV_f-d0BRzixaQyVqEPDvNRpVCc6FaqKFtneJuhbROYjCCnXSw93e8GOo8_qyYcm1BXWyAaGY3mt_LkCSgbV8slQ3G7l-B_JjtMhUi5OR_4" // Hardcode test
+        let URL = "\(Constants.APIUrl.host)/api/Repair/Filter?RequestedDate=\(date)&RequestedContent=\(content)&StatusId=\(state)"
         let headers = [
             "Authorization": "\(tokenType) \(token)"
         ]

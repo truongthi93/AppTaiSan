@@ -17,7 +17,7 @@ class Constants {
         static let deleteReview = "api/InventoryAssetDetail?inventoryAssetDetailId="
         static let getStore = "api/store"
         static let getAssetByReviewId = "api/InventoryAssetDetail?inventoryAssetDetailId="
-        static let getRepairNearly = "/Repair/Nearly"
+        static let getRepairNearly = "api/Repair/Nearly"
     }
     
     public class AppCommon {
