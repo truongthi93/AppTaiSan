@@ -9,6 +9,12 @@
 import UIKit
 import SVProgressHUD
 
+// define enum type for assert
+enum TypeAssert {
+    case addNew
+    case update
+}
+
 class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
     var assertErrorList:[AssertError] = []
     let datePicker = UIDatePicker()
@@ -51,7 +57,7 @@ class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
         if self.informErrorBrokenView.dateFilterTf.text == "" {
             self.datePicker.setDate(Date(), animated: false)
         }
-            self.setFormatDatePicker()
+        self.setFormatDatePicker()
     }
     
     func setFormatDatePicker(){
@@ -70,9 +76,9 @@ class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
         let buttons = [doneButton, spaceButton, cancelButton]
         self.datePicker.setDate(Date(), animated: false)
         Utility.showDatePicker(datePicker: datePicker, textField: self.informErrorBrokenView.dateFilterTf, buttons: buttons)
-
+        
         self.datePicker.addTarget(self, action: #selector(self.valueChanged(_:)), for: UIControl.Event.valueChanged)
-
+        
     }
     
     @objc func valueChanged(_ datePicker: UIDatePicker) {
@@ -82,12 +88,12 @@ class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc func donedatePicker(){
-//        let formatterApi = DateFormatter()
-//        formatterApi.dateFormat = Constants.AppCommon.formatDateSendApi
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = Constants.AppCommon.formatDate
-//        self.dateFilter = formatterApi.string(from: datePicker.date)
-//        self.informErrorBrokenView.dateFilterTf.text = formatter.string(from: datePicker.date)
+        //        let formatterApi = DateFormatter()
+        //        formatterApi.dateFormat = Constants.AppCommon.formatDateSendApi
+        //        let formatter = DateFormatter()
+        //        formatter.dateFormat = Constants.AppCommon.formatDate
+        //        self.dateFilter = formatterApi.string(from: datePicker.date)
+        //        self.informErrorBrokenView.dateFilterTf.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
     
@@ -212,6 +218,46 @@ extension InformErrorBrokenViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Item: \(indexPath)")
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        // action one
+        let editAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.update, handler: { (action, indexPath) in
+            let vc = CreateInformErrorBrokenViewController(nibName: Constants.InformErrorBroken.createInformErrorBrokenViewController, bundle: nil)
+            vc.assertErrorList = self.assertErrorList[indexPath.row]
+            vc.type = .update
+            self.navigationController?.pushViewController(vc, animated: true)
+        })
+        editAction.backgroundColor = UIColor.navigationBarColor
+        
+        // action two
+        let deleteAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.delete, handler: { (action, indexPath) in
+            // call APi to delete, if success remove in local list and UI, if fail show alert
+            let buttonOk = UIAlertAction(title: Constants.AppCommon.agree, style: .default, handler: { (action) in
+                //                DataManager.shareInstance.DeleteReview(id: self.listReviewData[indexPath.row].kiemKeTaiSanChiTietId ?? 0, completion: { (isSuccess, error) in
+                //                    if isSuccess != nil, isSuccess == true{
+                self.assertErrorList.remove(at: indexPath.row)
+                self.informErrorBrokenView.listInformTableView.reloadData()
+                //                    } else {
+                //                        Utility.showAlertInform(title: Constants.AppCommon.error, message: Constants.AppCommon.messageDeleteFailed, context: self)
+                //                    }
+                //                })
+                
+            })
+            
+            let buttonCancel = UIAlertAction(title: Constants.AppCommon.cancel, style: .cancel, handler: { (action) in
+            })
+            Utility.showAlert(title: Constants.AppCommon.note, message:Constants.AppCommon.messageConfirmDelete, buttons: [buttonOk, buttonCancel], context: self)
+        })
+        deleteAction.backgroundColor = UIColor.red
+        
+        return [deleteAction, editAction]
+    }
+    
     
 }
 
