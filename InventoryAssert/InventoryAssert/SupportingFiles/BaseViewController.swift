@@ -10,11 +10,11 @@ import UIKit
 
 class BaseViewController: UIViewController {
     var darkMode = true
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
-
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
     
@@ -25,5 +25,15 @@ class BaseViewController: UIViewController {
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return darkMode ? .default : .lightContent
     }
-
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
 }

@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LeM-JW-GYl">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LeM-JW-GYl" customClass="TPKeyboardAvoidingCollectionView">
                     <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THm-7X-Kdg">
@@ -274,6 +274,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="THm-7X-Kdg" firstAttribute="leading" secondItem="LeM-JW-GYl" secondAttribute="leading" id="PxF-Be-dz9"/>
                         <constraint firstAttribute="bottom" secondItem="THm-7X-Kdg" secondAttribute="bottom" id="Wwc-Du-rG7"/>
@@ -332,6 +333,16 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
                 <outlet property="assetTableview" destination="nKX-Ye-S7z" id="jmv-RB-UDm"/>
+                <outlet property="contentRequestTf" destination="569-or-lXU" id="qYU-Ow-brX"/>
+                <outlet property="dateRequestTf" destination="Yb2-2H-j8r" id="rQ3-v4-awp"/>
+                <outlet property="groupTf" destination="tUK-1q-cLM" id="SkC-Kz-b4P"/>
+                <outlet property="nameDeviceTf" destination="mRb-hh-naa" id="fG6-HO-AUX"/>
+                <outlet property="personRequestTf" destination="MIy-6v-Ivn" id="3vi-Fp-nkl"/>
+                <outlet property="posititionTf" destination="MSu-KI-hpo" id="Oza-1X-5DP"/>
+                <outlet property="priorityRequestTf" destination="C1R-YD-SiM" id="RrK-zo-7aS"/>
+                <outlet property="stateTf" destination="ybR-mW-hKB" id="Ip8-7T-m7t"/>
+                <outlet property="timeExpectedTf" destination="GMP-zx-3zh" id="p6l-Cs-ocy"/>
+                <outlet property="timeFinishRequestTf" destination="Kdj-F4-6UR" id="qAU-pB-Xfr"/>
             </connections>
             <point key="canvasLocation" x="-1296.8" y="-353.94088669950742"/>
         </view>

@@ -28,6 +28,7 @@ class Constants {
         static let cancel = "Huỷ bỏ"
         static let delete = "Xoá"
         static let update = "Cập nhật"
+        static let addNew = "Thêm mới"
         static let note = "Chú ý"
         static let error = "Lỗi"
         static let done = "Đã xong"
@@ -103,7 +104,7 @@ class Constants {
     public class InformErrorBroken {
         static let titleInformErrorBroken = "Báo lỗi hư hỏng"
         static let titleCreateInformErrorBroken = " Tạo báo lỗi hư hỏng"
-
+        static let titleUpdateInformErrorBroken = " Cập nhật báo lỗi hư hỏng"
         static let informErrorBrokenViewController = "InformErrorBrokenViewController"
         static let itemInformErrorBrokenTableViewCell = "ItemInformErrorBrokenTableViewCell"
         static let createInformErrorBrokenViewController = "CreateInformErrorBrokenViewController"
