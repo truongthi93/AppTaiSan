@@ -67,6 +67,7 @@ class Constants {
     
     public class AddNote{
         static let title = "Thêm Thông Tin"
+        static let infoAsset = "Thông Tin Tài Sản"
         static let AddNoteManualForAssetViewController = "AddNoteManualForAssetViewController"
     }
 

@@ -54,6 +54,9 @@
                                             <real key="value" value="5"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="searchAsset:" destination="-1" eventType="touchUpInside" id="3cL-eZ-9vY"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNK-HR-zA7">
                                     <rect key="frame" x="243.5" y="0.0" width="111.5" height="40"/>

@@ -89,7 +89,12 @@ class AssetListInWareHouseViewController: BaseViewController, AVCaptureMetadataO
         let vc = QRSCannerViewController(nibName: Constants.QASCanner.QRSCannerViewController, bundle: nil)
         vc.delegate = self
         let nav = UINavigationController(rootViewController: vc)
-
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    @IBAction func searchAsset(_ sender: Any) {
+        let vc = AssetSearchViewController(nibName: "AssetSearchViewController", bundle: nil)
+        let nav = UINavigationController(rootViewController: vc)
         self.present(nav, animated: true, completion: nil)
     }
     
@@ -107,6 +112,8 @@ class AssetListInWareHouseViewController: BaseViewController, AVCaptureMetadataO
 extension AssetListInWareHouseViewController: AddQRCodeDelegate {
     func addData(dataId : String){
         // List model should add new data and reload if dataId != ""
+        self.listAsset.append(Asset(kiemKeTaiSanChiTietId: 0, taiSanKiemKeId: 0, taiSanId: 0, soLuongTon: 0, soLuongKiemKe: 0, khoTaiSanId: 0, trangThai: "", thoiGianCapNhat: "", ghiChu: "", giaoThucXacThuc: "", ngayTao: "", ngayUpdate: "", nguoiUpdate: "", daKiem: 0, nguoiLapPhieuId: "", khoaPhieu: 0, nguoiTao: "", online: "", taiSanKiemKe: nil))
+        self.assetListView.tableView.reloadData()
     }
 }
 

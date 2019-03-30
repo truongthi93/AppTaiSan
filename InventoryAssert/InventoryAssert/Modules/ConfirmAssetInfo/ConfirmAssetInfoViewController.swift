@@ -25,7 +25,7 @@ class ConfirmAssetInfoViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
-        self.title = Constants.QASCanner.title
+        self.title = Constants.AddNote.infoAsset
         let backButton = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem  = backButton
     }
@@ -35,11 +35,15 @@ class ConfirmAssetInfoViewController: BaseViewController {
     }
 
     @IBAction func confirm(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
         self.delegate?.confirmAddAsset(isConfirmed: true, dataId: self.assetId)
+
     }
 
     @IBAction func cancel(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
         self.delegate?.confirmAddAsset(isConfirmed: false, dataId: "")
+
     }
     
 }

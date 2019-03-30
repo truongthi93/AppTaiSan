@@ -159,7 +159,7 @@ class QRSCannerViewController: BaseViewController , AVCaptureMetadataOutputObjec
 //                launchApp(decodedURL: metadataObj.stringValue ?? "")
                 print("Ket qua scan: \(metadataObj.stringValue ?? "")")
                 
-                let cancelAction = UIAlertAction(title: Constants.AppCommon.cancel, style: UIAlertAction.Style.cancel){ (aa) in
+                let cancelAction = UIAlertAction(title: Constants.AppCommon.done, style: UIAlertAction.Style.cancel){ (aa) in
                     self.captureSession.stopRunning()
                     let vc = ConfirmAssetInfoViewController(nibName: Constants.ConfirmAssetInfo.confirmAssetInfoViewController, bundle: nil)
                     vc.assetId = metadataObj.stringValue ?? ""
@@ -178,9 +178,10 @@ class QRSCannerViewController: BaseViewController , AVCaptureMetadataOutputObjec
 extension QRSCannerViewController: ConfirmAddAssetDelegate {
     func confirmAddAsset(isConfirmed : Bool, dataId: String){
         if isConfirmed{
+            self.dismiss(animated: true, completion: nil)
             self.delegate?.addData(dataId: dataId)
         } else {
-            self.delegate?.addData(dataId: "")
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }
