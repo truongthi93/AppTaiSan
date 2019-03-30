@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LeM-JW-GYl">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LeM-JW-GYl" customClass="TPKeyboardAvoidingCollectionView">
                     <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THm-7X-Kdg">
@@ -274,6 +274,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="THm-7X-Kdg" firstAttribute="leading" secondItem="LeM-JW-GYl" secondAttribute="leading" id="PxF-Be-dz9"/>
                         <constraint firstAttribute="bottom" secondItem="THm-7X-Kdg" secondAttribute="bottom" id="Wwc-Du-rG7"/>
