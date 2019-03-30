@@ -15,6 +15,7 @@ class InformErrorBrokenView: UIView {
     @IBOutlet weak var stateFilterTf: UITextField!
     @IBOutlet weak var dateFilterTf: UITextField!
     @IBOutlet weak var createErrorBrokenButton: UIButton!
+    @IBOutlet weak var onResetButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

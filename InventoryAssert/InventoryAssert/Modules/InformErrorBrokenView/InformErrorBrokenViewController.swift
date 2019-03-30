@@ -51,6 +51,9 @@ class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
         self.informErrorBrokenView.onFilterButton.addTarget(self, action: #selector(self.onFilterButtonClick(_:)), for: .touchUpInside)
         
         self.informErrorBrokenView.createErrorBrokenButton.addTarget(self, action: #selector(self.onCreateErrorBrokenButtonClick(_:)), for: .touchUpInside)
+        
+        self.informErrorBrokenView.onResetButton.addTarget(self, action: #selector(self.onResetButtonClick(_:)), for: .touchUpInside)
+        
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -103,12 +106,30 @@ class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
     }
     
     
+    @objc func onResetButtonClick(_ sender:UIButton) {
+        self.resetTextField()
+        
+        SVProgressHUD.show()
+        self.view.isUserInteractionEnabled = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.callAPIgetAssertErrorNearly()
+        }
+    }
+    
+    func resetTextField() {
+        self.informErrorBrokenView.contentFilterTf.text = ""
+        self.informErrorBrokenView.dateFilterTf.text = ""
+        self.informErrorBrokenView.stateFilterTf.text = ""
+        self.dateFilter = ""
+        
+    }
+    
     @objc func onFilterButtonClick(_ sender:UIButton) {
         
         let content: String? = self.informErrorBrokenView.contentFilterTf.text
         let state: String? = self.informErrorBrokenView.stateFilterTf.text
         let date: String? =  self.informErrorBrokenView.dateFilterTf.text
-        
         
         SVProgressHUD.show()
         self.view.isUserInteractionEnabled = false
