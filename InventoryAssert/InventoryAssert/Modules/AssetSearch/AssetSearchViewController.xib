@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AssetSearchViewController" customModule="InventoryAssert" customModuleProvider="target">
             <connections>
+                <outlet property="AssetList" destination="Evs-Xe-vop" id="FlM-TL-c4W"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -120,7 +121,19 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqK-Za-xKo">
                     <rect key="frame" x="8" y="196" width="359" height="463"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Evs-Xe-vop">
+                            <rect key="frame" x="0.0" y="0.0" width="359" height="463"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Evs-Xe-vop" secondAttribute="trailing" id="2QH-8j-VPw"/>
+                        <constraint firstAttribute="bottom" secondItem="Evs-Xe-vop" secondAttribute="bottom" id="5Ok-3M-Yz6"/>
+                        <constraint firstItem="Evs-Xe-vop" firstAttribute="top" secondItem="JqK-Za-xKo" secondAttribute="top" id="d8H-QA-J5c"/>
+                        <constraint firstItem="Evs-Xe-vop" firstAttribute="leading" secondItem="JqK-Za-xKo" secondAttribute="leading" id="iwR-mu-5k8"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
