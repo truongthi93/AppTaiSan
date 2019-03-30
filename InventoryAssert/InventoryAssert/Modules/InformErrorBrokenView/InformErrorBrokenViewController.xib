@@ -82,19 +82,36 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập ngày cần lọc " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucu-fU-pYc">
-                                    <rect key="frame" x="90" y="0.0" width="200" height="40"/>
+                                    <rect key="frame" x="90" y="0.0" width="145" height="40"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R27-UB-ezf" userLabel="Lọc">
-                                    <rect key="frame" x="295" y="0.0" width="50" height="40"/>
+                                    <rect key="frame" x="240" y="0.0" width="50" height="40"/>
                                     <color key="backgroundColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="50" id="DeQ-k1-rHW"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                     <state key="normal" title="Lọc">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hE-q6-acf">
+                                    <rect key="frame" x="295" y="0.0" width="50" height="40"/>
+                                    <color key="backgroundColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="TGH-GT-l7r"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                    <state key="normal" title="Reset">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -232,6 +249,7 @@
                 <outlet property="dateFilterTf" destination="ucu-fU-pYc" id="moI-5K-yLl"/>
                 <outlet property="listInformTableView" destination="8yv-FL-Rlo" id="o26-p9-zCY"/>
                 <outlet property="onFilterButton" destination="R27-UB-ezf" id="pzl-S2-ouj"/>
+                <outlet property="onResetButton" destination="8hE-q6-acf" id="Ghh-ut-0Ea"/>
                 <outlet property="stateFilterTf" destination="Bp1-5L-YP0" id="bGq-BG-6uf"/>
             </connections>
             <point key="canvasLocation" x="63.200000000000003" y="57.121439280359823"/>
