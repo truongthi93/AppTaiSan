@@ -55,6 +55,6 @@ extension AssetSearchViewController: ConfirmAddAssetDelegate {
         if isConfirmed{
             self.dismiss(animated: true, completion: nil)
             self.delegate?.addData(dataId: dataId)
-        } 
+        }
     }
 }
