@@ -169,6 +169,7 @@ class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
     func initTableViewCell() {
         self.informErrorBrokenView.listInformTableView.delegate = self
         self.informErrorBrokenView.listInformTableView.dataSource = self
+        self.informErrorBrokenView.listInformTableView.tableFooterView = UIView()
         self.informErrorBrokenView.listInformTableView.register(UINib(nibName: Constants.InformErrorBroken.itemInformErrorBrokenTableViewCell, bundle: nil), forCellReuseIdentifier:Constants.InformErrorBroken.itemInformErrorBrokenTableViewCell)
     }
     
@@ -188,20 +189,18 @@ class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
     }
     
     // FooterView
-    //    func showFooterView(message: String?) -> UIView {
-    //        let viewFooter = FooterInformErrorView(frame: CGRect(x: 0, y: 0, width: self.informErrorBrokenView.listInformTableView.frame.size.width, height: self.informErrorBrokenView.listInformTableView.frame.size.height))
-    //        return viewFooter
-    //    }
-    
+    func showFooterView(message: String?) -> UIView {
+        let viewFooter = FooterInformErrorView(frame: CGRect(x: 0, y: 0, width: self.informErrorBrokenView.listInformTableView.frame.size.width, height: self.informErrorBrokenView.listInformTableView.frame.size.height))
+        return viewFooter
+    }
 }
 
 extension InformErrorBrokenViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         if self.assertErrorList.count != 0{
             return 1
-        }else {
-            return 0
         }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -231,13 +230,16 @@ extension InformErrorBrokenViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if self.assertErrorList.count == 0 {
             return self.informErrorBrokenView.listInformTableView.frame.size.height
-        } else {
-            return 0
         }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Item: \(indexPath)")
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = CreateInformErrorBrokenViewController(nibName: Constants.InformErrorBroken.createInformErrorBrokenViewController, bundle: nil)
+        vc.assertErrorList = self.assertErrorList[indexPath.row]
+        vc.type = .update
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -258,22 +260,18 @@ extension InformErrorBrokenViewController: UITableViewDelegate, UITableViewDataS
         // action two
         let deleteAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.delete, handler: { (action, indexPath) in
             // call APi to delete, if success remove in local list and UI, if fail show alert
+            
             let buttonOk = UIAlertAction(title: Constants.AppCommon.agree, style: .default, handler: { (action) in
-                //                DataManager.shareInstance.DeleteReview(id: self.listReviewData[indexPath.row].kiemKeTaiSanChiTietId ?? 0, completion: { (isSuccess, error) in
-                //                    if isSuccess != nil, isSuccess == true{
+                // TODO: Call API update to remove item
                 self.assertErrorList.remove(at: indexPath.row)
                 self.informErrorBrokenView.listInformTableView.reloadData()
-                //                    } else {
-                //                        Utility.showAlertInform(title: Constants.AppCommon.error, message: Constants.AppCommon.messageDeleteFailed, context: self)
-                //                    }
-                //                })
-                
             })
             
             let buttonCancel = UIAlertAction(title: Constants.AppCommon.cancel, style: .cancel, handler: { (action) in
             })
             Utility.showAlert(title: Constants.AppCommon.note, message:Constants.AppCommon.messageConfirmDelete, buttons: [buttonOk, buttonCancel], context: self)
         })
+        
         deleteAction.backgroundColor = UIColor.red
         
         return [deleteAction, editAction]
