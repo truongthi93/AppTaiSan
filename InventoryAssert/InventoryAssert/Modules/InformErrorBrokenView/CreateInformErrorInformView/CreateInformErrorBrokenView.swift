@@ -83,6 +83,7 @@ extension CreateInformErrorBrokenView: UITableViewDataSource, UITableViewDelegat
         // action two
         let deleteAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.delete, handler: { (action, indexPath) in
             // call APi to delete, if success remove in local list and UI, if fail show alert
+            print("Delete item in list asserts...")
             let buttonOk = UIAlertAction(title: Constants.AppCommon.agree, style: .default, handler: { (action) in
 //                DataManager.shareInstance.DeleteReview(id: self.listReviewData[indexPath.row].kiemKeTaiSanChiTietId ?? 0, completion: { (isSuccess, error) in
 //                    if isSuccess != nil, isSuccess == true{
