@@ -282,52 +282,78 @@
                         <constraint firstItem="THm-7X-Kdg" firstAttribute="top" secondItem="LeM-JW-GYl" secondAttribute="top" id="fch-vU-bff"/>
                     </constraints>
                 </scrollView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lZI-yg-Nhe">
-                    <rect key="frame" x="2" y="528" width="316" height="40"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1NJ-pp-7Pk" userLabel="BottomView">
+                    <rect key="frame" x="0.0" y="528" width="320" height="40"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxa-4D-pfA">
-                            <rect key="frame" x="0.0" y="0.0" width="153" height="40"/>
-                            <color key="backgroundColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Quét mã QR">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="3"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJo-VC-EVs">
-                            <rect key="frame" x="163" y="0.0" width="153" height="40"/>
-                            <color key="backgroundColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Lưu">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="3"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lZI-yg-Nhe">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxa-4D-pfA">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                    <color key="backgroundColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="Quét mã QR">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZT4-WD-O6l">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="40"/>
+                                    <color key="backgroundColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="Tim TS">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJo-VC-EVs">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="40"/>
+                                    <color key="backgroundColor" red="0.08235294118" green="0.50588235290000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="Lưu">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="aRa-Vf-tQ7"/>
+                            </constraints>
+                            <viewLayoutGuide key="safeArea" id="W5V-v2-5zZ"/>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="aRa-Vf-tQ7"/>
+                        <constraint firstItem="lZI-yg-Nhe" firstAttribute="bottom" secondItem="h8x-R6-Yp8" secondAttribute="bottom" id="G5c-Ce-g87"/>
+                        <constraint firstItem="lZI-yg-Nhe" firstAttribute="top" secondItem="h8x-R6-Yp8" secondAttribute="top" id="NoC-AL-nnE"/>
+                        <constraint firstItem="lZI-yg-Nhe" firstAttribute="leading" secondItem="h8x-R6-Yp8" secondAttribute="leading" id="aUt-KR-Ej5"/>
+                        <constraint firstAttribute="height" constant="40" id="fsN-x5-uMr"/>
+                        <constraint firstItem="h8x-R6-Yp8" firstAttribute="trailing" secondItem="lZI-yg-Nhe" secondAttribute="trailing" id="msC-5g-73W"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="W5V-v2-5zZ"/>
-                </stackView>
+                    <viewLayoutGuide key="safeArea" id="h8x-R6-Yp8"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lZI-yg-Nhe" secondAttribute="bottom" id="0rK-e4-kqB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LeM-JW-GYl" secondAttribute="bottom" id="5ge-10-1nh"/>
                 <constraint firstItem="LeM-JW-GYl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="78Q-fk-fr9"/>
+                <constraint firstItem="1NJ-pp-7Pk" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="EiO-UX-kCd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LeM-JW-GYl" secondAttribute="trailing" id="IIF-DC-6WK"/>
-                <constraint firstItem="lZI-yg-Nhe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="2" id="Szp-Sg-fL2"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lZI-yg-Nhe" secondAttribute="trailing" constant="2" id="rCO-d9-L7V"/>
+                <constraint firstItem="1NJ-pp-7Pk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TyF-3P-XNa"/>
                 <constraint firstItem="THm-7X-Kdg" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="t5b-pI-8Ca"/>
+                <constraint firstItem="1NJ-pp-7Pk" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tBY-EG-CoJ"/>
                 <constraint firstItem="LeM-JW-GYl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ymd-rG-pAu"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
