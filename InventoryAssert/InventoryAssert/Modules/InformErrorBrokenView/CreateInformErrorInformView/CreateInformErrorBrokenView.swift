@@ -25,6 +25,11 @@ class CreateInformErrorBrokenView: UIView {
     @IBOutlet weak var timeFinishRequestTf: UITextField!
     @IBOutlet weak var timeExpectedTf: UITextField!
     
+    var subAssertErrors:[AssertError] = [
+        AssertError(JSON: ["maYeuCau": "M001", "tenYeuCau": "May in"]) ?? AssertError(),
+        AssertError(JSON: ["maYeuCau": "M002", "tenYeuCau": "May Photocopy"]) ?? AssertError()]
+    var imagesAssert: [UIImage]? = [UIImage(named: "Pic1") ?? UIImage(), UIImage(named: "Pic2")  ?? UIImage(), UIImage(named: "Pic3")  ?? UIImage()]
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -42,12 +47,12 @@ class CreateInformErrorBrokenView: UIView {
         self.imageCollectionView.collectionViewLayout = layout
         //</Collectionview Images>
         
-        
-        
+         //<TableView list sub assert>
         self.assetTableview.delegate = self
         self.assetTableview.dataSource = self
         self.assetTableview.register(UINib(nibName: "CreateInformErrorBrokenTableViewCell", bundle: nil), forCellReuseIdentifier: "CreateInformErrorBrokenTableViewCell")
-        
+        self.assetTableview.tableFooterView = UIView()
+       //</TableView list sub assert>
         self.applyUIForText(assertErrorList: assertErrorList)
     }
     
@@ -72,7 +77,7 @@ class CreateInformErrorBrokenView: UIView {
 
 extension CreateInformErrorBrokenView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return self.subAssertErrors.count 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -135,16 +140,29 @@ extension CreateInformErrorBrokenView: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.imagesAssert?.count ?? 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let index = indexPath.item
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
+        cell.imgAssert.image = self.imagesAssert?[index] ?? UIImage()
+        cell.callbackDeleteItem = {
+            print("button pressed", indexPath.item)
+            self.deleteItemHandle(at: index)
+        }
         return cell
         
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("ALALALALLALALA")
+        print("Click on Imgae...\(indexPath.item)")
+    }
+    
+    func deleteItemHandle(at index: Int) {
+        print("Delele image...\(index)")
+        self.imagesAssert?.remove(at: index)
+        self.imageCollectionView.reloadData()
     }
 }

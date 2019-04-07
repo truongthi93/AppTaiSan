@@ -9,10 +9,18 @@
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var imgAssert: UIImageView!
+    @IBOutlet weak var deleteButton: UIButton!
+    var callbackDeleteItem : (()->Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    @IBAction func onDeleteButtonClick(_ sender: Any) {
+        callbackDeleteItem?()
+    }
+    
 }
