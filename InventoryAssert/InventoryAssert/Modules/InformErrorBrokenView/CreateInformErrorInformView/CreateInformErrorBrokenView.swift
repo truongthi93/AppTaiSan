@@ -12,6 +12,8 @@ class CreateInformErrorBrokenView: UIView {
     
     
     @IBOutlet weak var assetTableview: UITableView!
+    @IBOutlet weak var imageCollectionView: UICollectionView!
+    
     @IBOutlet weak var dateRequestTf: UITextField!
     @IBOutlet weak var personRequestTf: UITextField!
     @IBOutlet weak var priorityRequestTf: UITextField!
@@ -28,9 +30,24 @@ class CreateInformErrorBrokenView: UIView {
     }
     
     func setupCell(assertErrorList: AssertError?) {
-        assetTableview.delegate = self
-        assetTableview.dataSource = self
-        assetTableview.register(UINib(nibName: "CreateInformErrorBrokenTableViewCell", bundle: nil), forCellReuseIdentifier: "CreateInformErrorBrokenTableViewCell")
+        //<Collectionview Images>
+        self.imageCollectionView.delegate = self
+        self.imageCollectionView.dataSource = self
+        self.imageCollectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
+        
+        
+        //edit size fr items
+        let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        self.imageCollectionView.collectionViewLayout = layout
+        //</Collectionview Images>
+        
+        
+        
+        self.assetTableview.delegate = self
+        self.assetTableview.dataSource = self
+        self.assetTableview.register(UINib(nibName: "CreateInformErrorBrokenTableViewCell", bundle: nil), forCellReuseIdentifier: "CreateInformErrorBrokenTableViewCell")
+        
         self.applyUIForText(assertErrorList: assertErrorList)
     }
     
@@ -71,11 +88,11 @@ extension CreateInformErrorBrokenView: UITableViewDataSource, UITableViewDelegat
         
         // action one
         let editAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.update, handler: { (action, indexPath) in
-//            let vc = AddReviewViewController(nibName: Constants.AddReview.addReviewViewController, bundle: nil)
-//            vc.reviewType = ActionReviewType.Edit
-//            vc.existedWareHouse = true
-//            vc.reviewData = self.listReviewData[indexPath.row]
-//            self.navigationController?.pushViewController(vc, animated: true)
+            //            let vc = AddReviewViewController(nibName: Constants.AddReview.addReviewViewController, bundle: nil)
+            //            vc.reviewType = ActionReviewType.Edit
+            //            vc.existedWareHouse = true
+            //            vc.reviewData = self.listReviewData[indexPath.row]
+            //            self.navigationController?.pushViewController(vc, animated: true)
             
         })
         editAction.backgroundColor = UIColor.navigationBarColor
@@ -85,24 +102,49 @@ extension CreateInformErrorBrokenView: UITableViewDataSource, UITableViewDelegat
             // call APi to delete, if success remove in local list and UI, if fail show alert
             print("Delete item in list asserts...")
             let buttonOk = UIAlertAction(title: Constants.AppCommon.agree, style: .default, handler: { (action) in
-//                DataManager.shareInstance.DeleteReview(id: self.listReviewData[indexPath.row].kiemKeTaiSanChiTietId ?? 0, completion: { (isSuccess, error) in
-//                    if isSuccess != nil, isSuccess == true{
-//                        self.listReviewData.remove(at: indexPath.row)
-//                        self.inventoryReviewView.tableView.reloadData()
-//                    } else {
-//                        Utility.showAlertInform(title: Constants.AppCommon.error, message: Constants.AppCommon.messageDeleteFailed, context: self)
-//                    }
-//                })
+                //                DataManager.shareInstance.DeleteReview(id: self.listReviewData[indexPath.row].kiemKeTaiSanChiTietId ?? 0, completion: { (isSuccess, error) in
+                //                    if isSuccess != nil, isSuccess == true{
+                //                        self.listReviewData.remove(at: indexPath.row)
+                //                        self.inventoryReviewView.tableView.reloadData()
+                //                    } else {
+                //                        Utility.showAlertInform(title: Constants.AppCommon.error, message: Constants.AppCommon.messageDeleteFailed, context: self)
+                //                    }
+                //                })
                 
             })
             
-//            let buttonCancel = UIAlertAction(title: Constants.AppCommon.cancel, style: .cancel, handler: { (action) in
-//            })
-//            Utility.showAlert(title: Constants.AppCommon.note, message:Constants.AppCommon.messageConfirmDelete, buttons: [buttonOk, buttonCancel], context: self)
+            //            let buttonCancel = UIAlertAction(title: Constants.AppCommon.cancel, style: .cancel, handler: { (action) in
+            //            })
+            //            Utility.showAlert(title: Constants.AppCommon.note, message:Constants.AppCommon.messageConfirmDelete, buttons: [buttonOk, buttonCancel], context: self)
         })
         deleteAction.backgroundColor = UIColor.red
         
         return [deleteAction, editAction]
     }
+    
+}
 
+extension CreateInformErrorBrokenView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //device screen size
+        //        let width = UIScreen.main.bounds.size.width
+        //        let height = UIScreen.main.bounds.size.height
+        //calculation of cell size
+        return CGSize(width: 250, height: 250)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
+        return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("ALALALALLALALA")
+    }
 }
