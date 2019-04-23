@@ -29,6 +29,15 @@ class CreateInformErrorBrokenViewController: BaseViewController {
         darkMode = false
         setNeedsStatusBarAppearanceUpdate()
         
+        //Handle Button Click
+        self.createInformErrorBrokenView.addPhotoButton.addTarget(self, action: #selector(self.onAddPhotoButtonClick(_:)), for: .touchUpInside)
+        
+        self.createInformErrorBrokenView.scanQRCodeButton.addTarget(self, action: #selector(self.onScanQRCodeButtonClick(_:)), for: .touchUpInside)
+        
+        self.createInformErrorBrokenView.findAssertButton.addTarget(self, action: #selector(self.onFindAssertButtonClick(_:)), for: .touchUpInside)
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,13 +65,36 @@ class CreateInformErrorBrokenViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func addPhotoButtonClick(_ sender: Any) {
+    @objc func onAddPhotoButtonClick(_ sender:UIButton) {
         CameraHandler.shared.showActionSheet(vc: self)
         CameraHandler.shared.imagePickedBlock = { (image) in
             /* get your image here */
             self.imageAsserts?.append(image)
             self.createInformErrorBrokenView.imageCollectionView.reloadData()
         }
+    }
+    
+    @objc func onScanQRCodeButtonClick(_ sender:UIButton) {
+        let vc = QRSCannerViewController(nibName: Constants.QASCanner.QRSCannerViewController, bundle: nil)
+        vc.delegate = self
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    @objc func onFindAssertButtonClick(_ sender:UIButton) {
+        let vc = AssetSearchViewController(nibName: "AssetSearchViewController", bundle: nil)
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+}
+
+extension CreateInformErrorBrokenViewController: AddQRCodeDelegate {
+    func addData(dataId : String){
+        // List model should add new data and reload if dataId != ""
+        //        self.listAsset.append(Asset(kiemKeTaiSanChiTietId: 0, taiSanKiemKeId: 0, taiSanId: 0, soLuongTon: 0, soLuongKiemKe: 0, khoTaiSanId: 0, trangThai: "", thoiGianCapNhat: "", ghiChu: "", giaoThucXacThuc: "", ngayTao: "", ngayUpdate: "", nguoiUpdate: "", daKiem: 0, nguoiLapPhieuId: "", khoaPhieu: 0, nguoiTao: "", online: "", taiSanKiemKe: nil))
+        //        self.assetListView.tableView.reloadData()
+        print("QRCODE Success........")
     }
 }
 
@@ -81,23 +113,27 @@ extension CreateInformErrorBrokenViewController: UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        // action one
-        let editAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.update, handler: { (action, indexPath) in
-            //            let vc = AddReviewViewController(nibName: Constants.AddReview.addReviewViewController, bundle: nil)
-            //            vc.reviewType = ActionReviewType.Edit
-            //            vc.existedWareHouse = true
-            //            vc.reviewData = self.listReviewData[indexPath.row]
-            //            self.navigationController?.pushViewController(vc, animated: true)
-            
-        })
-        editAction.backgroundColor = UIColor.navigationBarColor
+        /*
+         // action one
+         let editAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.update, handler: { (action, indexPath) in
+         //            let vc = AddReviewViewController(nibName: Constants.AddReview.addReviewViewController, bundle: nil)
+         //            vc.reviewType = ActionReviewType.Edit
+         //            vc.existedWareHouse = true
+         //            vc.reviewData = self.listReviewData[indexPath.row]
+         //            self.navigationController?.pushViewController(vc, animated: true)
+         
+         })
+         editAction.backgroundColor = UIColor.navigationBarColor
+         */
         
         // action two
         let deleteAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.delete, handler: { (action, indexPath) in
             // call APi to delete, if success remove in local list and UI, if fail show alert
             print("Delete item in list asserts...")
             let buttonOk = UIAlertAction(title: Constants.AppCommon.agree, style: .default, handler: { (action) in
+                
+                self.subAssertErrors.remove(at: indexPath.row)
+                
                 //                DataManager.shareInstance.DeleteReview(id: self.listReviewData[indexPath.row].kiemKeTaiSanChiTietId ?? 0, completion: { (isSuccess, error) in
                 //                    if isSuccess != nil, isSuccess == true{
                 //                        self.listReviewData.remove(at: indexPath.row)
@@ -107,15 +143,17 @@ extension CreateInformErrorBrokenViewController: UITableViewDataSource, UITableV
                 //                    }
                 //                })
                 
+                self.createInformErrorBrokenView.assetTableview.reloadData()
             })
             
-            //            let buttonCancel = UIAlertAction(title: Constants.AppCommon.cancel, style: .cancel, handler: { (action) in
-            //            })
-            //            Utility.showAlert(title: Constants.AppCommon.note, message:Constants.AppCommon.messageConfirmDelete, buttons: [buttonOk, buttonCancel], context: self)
+            let buttonCancel = UIAlertAction(title: Constants.AppCommon.cancel, style: .cancel, handler: { (action) in
+            })
+            
+            Utility.showAlert(title: Constants.AppCommon.note, message:Constants.AppCommon.messageConfirmDelete, buttons: [buttonOk, buttonCancel], context: self)
         })
         deleteAction.backgroundColor = UIColor.red
         
-        return [deleteAction, editAction]
+        return [deleteAction]        // return [deleteAction, editAction]
     }
     
 }
@@ -160,8 +198,14 @@ extension CreateInformErrorBrokenViewController: UICollectionViewDelegate, UICol
 
 extension CreateInformErrorBrokenViewController: AssetsPickerViewControllerDelegate {
     
-    func assetsPickerCannotAccessPhotoLibrary(controller: AssetsPickerViewController) {}
-    func assetsPickerDidCancel(controller: AssetsPickerViewController) {}
+    func assetsPickerCannotAccessPhotoLibrary(controller: AssetsPickerViewController) {
+        
+    }
+    
+    func assetsPickerDidCancel(controller: AssetsPickerViewController) {
+        
+    }
+    
     func assetsPicker(controller: AssetsPickerViewController, selected assets: [PHAsset]) {
         // do your job with selected assets
         if !assets.isEmpty {
@@ -178,16 +222,16 @@ extension CreateInformErrorBrokenViewController: AssetsPickerViewControllerDeleg
         return true
     }
     
-//    func assetsPicker(controller: AssetsPickerViewController, didSelect asset: PHAsset, at indexPath: IndexPath) {
-//
-//    }
-//
-//    func assetsPicker(controller: AssetsPickerViewController, shouldDeselect asset: PHAsset, at indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    func assetsPicker(controller: AssetsPickerViewController, didDeselect asset: PHAsset, at indexPath: IndexPath) {
-//
-//    }
-//
+    //    func assetsPicker(controller: AssetsPickerViewController, didSelect asset: PHAsset, at indexPath: IndexPath) {
+    //
+    //    }
+    //
+    //    func assetsPicker(controller: AssetsPickerViewController, shouldDeselect asset: PHAsset, at indexPath: IndexPath) -> Bool {
+    //        return true
+    //    }
+    //
+    //    func assetsPicker(controller: AssetsPickerViewController, didDeselect asset: PHAsset, at indexPath: IndexPath) {
+    //
+    //    }
+    //
 }

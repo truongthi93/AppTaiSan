@@ -304,9 +304,6 @@
                                                             <real key="value" value="3"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="addPhotoButtonClick:" destination="-1" eventType="touchUpInside" id="erf-bF-f11"/>
-                                                    </connections>
                                                 </button>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kqb-eh-KCN">
                                                     <rect key="frame" x="5" y="90" width="355" height="300"/>
@@ -452,15 +449,18 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
+                <outlet property="addPhotoButton" destination="NA2-Ma-Ue4" id="MG1-z4-FN2"/>
                 <outlet property="assetTableview" destination="nKX-Ye-S7z" id="jmv-RB-UDm"/>
                 <outlet property="contentRequestTf" destination="569-or-lXU" id="qYU-Ow-brX"/>
                 <outlet property="dateRequestTf" destination="Yb2-2H-j8r" id="rQ3-v4-awp"/>
+                <outlet property="findAssertButton" destination="ZT4-WD-O6l" id="9sL-fm-u9c"/>
                 <outlet property="groupTf" destination="tUK-1q-cLM" id="SkC-Kz-b4P"/>
                 <outlet property="imageCollectionView" destination="kqb-eh-KCN" id="CBu-em-adS"/>
                 <outlet property="nameDeviceTf" destination="mRb-hh-naa" id="fG6-HO-AUX"/>
                 <outlet property="personRequestTf" destination="MIy-6v-Ivn" id="3vi-Fp-nkl"/>
                 <outlet property="posititionTf" destination="MSu-KI-hpo" id="Oza-1X-5DP"/>
                 <outlet property="priorityRequestTf" destination="C1R-YD-SiM" id="RrK-zo-7aS"/>
+                <outlet property="scanQRCodeButton" destination="gxa-4D-pfA" id="TbY-Im-Hkh"/>
                 <outlet property="stateTf" destination="ybR-mW-hKB" id="Ip8-7T-m7t"/>
                 <outlet property="timeExpectedTf" destination="GMP-zx-3zh" id="p6l-Cs-ocy"/>
                 <outlet property="timeFinishRequestTf" destination="Kdj-F4-6UR" id="qAU-pB-Xfr"/>

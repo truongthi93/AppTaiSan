@@ -19,8 +19,7 @@ class CameraHandler: NSObject{
     //MARK: Internal Properties
     var imagePickedBlock: ((UIImage) -> Void)?
     
-    func camera()
-    {
+    func camera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             let myPickerController = UIImagePickerController()
             myPickerController.delegate = self;

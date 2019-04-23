@@ -24,6 +24,9 @@ class CreateInformErrorBrokenView: UIView {
     @IBOutlet weak var contentRequestTf: UITextField!
     @IBOutlet weak var timeFinishRequestTf: UITextField!
     @IBOutlet weak var timeExpectedTf: UITextField!
+    @IBOutlet weak var addPhotoButton: UIButton!
+    @IBOutlet weak var scanQRCodeButton: UIButton!
+    @IBOutlet weak var findAssertButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
