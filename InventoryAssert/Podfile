@@ -12,7 +12,8 @@ target 'InventoryAssert' do
   pod 'ObjectMapper', '3.3'
   pod 'CSV.swift'
   pod 'AlamofireObjectMapper'
-  
+  pod 'AssetsPickerViewController', '~> 2.0'
+
   target 'InventoryAssertTests' do
     inherit! :search_paths
   end

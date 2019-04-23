@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -73,6 +73,7 @@
 		4EDB6DAE224F6DD9003C4EAA /* AssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB6DAC224F6DD9003C4EAA /* AssetTableViewCell.swift */; };
 		4EDB6DAF224F6DD9003C4EAA /* AssetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EDB6DAD224F6DD9003C4EAA /* AssetTableViewCell.xib */; };
 		5C4348F31BC7C68B7CB360AE /* Pods_InventoryAssert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8069C9454B746C43277F4E6 /* Pods_InventoryAssert.framework */; };
+		D3711F41226EC5DC00CE0370 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3711F40226EC5DC00CE0370 /* CameraHandler.swift */; };
 		EECA5BC440DD260ED773C8BF /* Pods_InventoryAssertTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D7798615BAD767F2D7F872 /* Pods_InventoryAssertTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +163,7 @@
 		9B079DE23E2B15A667D875AD /* Pods-InventoryAssertTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryAssertTests.debug.xcconfig"; path = "Target Support Files/Pods-InventoryAssertTests/Pods-InventoryAssertTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A8069C9454B746C43277F4E6 /* Pods_InventoryAssert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InventoryAssert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C1308079EFDEF2EDDB05F0 /* Pods-InventoryAssert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryAssert.debug.xcconfig"; path = "Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert.debug.xcconfig"; sourceTree = "<group>"; };
+		D3711F40226EC5DC00CE0370 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,6 +462,7 @@
 				4E1CD32A218D876A0086145E /* Constants.swift */,
 				4E8498DC21F3198C00182A83 /* CSVModelExport.swift */,
 				04103542222978D2001F796F /* AppUserDefault.swift */,
+				D3711F40226EC5DC00CE0370 /* CameraHandler.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -583,15 +586,18 @@
 				TargetAttributes = {
 					4E1CD2F0218D81020086145E = {
 						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 85V69UE735;
+						ProvisioningStyle = Automatic;
 					};
 					4E1CD307218D81040086145E = {
 						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 4E1CD2F0218D81020086145E;
 					};
 				};
 			};
 			buildConfigurationList = 4E1CD2EC218D81020086145E /* Build configuration list for PBXProject "InventoryAssert" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -659,12 +665,20 @@
 				"${PODS_ROOT}/Target Support Files/Pods-InventoryAssert/Pods-InventoryAssert-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/AssetsPickerViewController/AssetsPickerViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
+				"${BUILT_PRODUCTS_DIR}/Device/Device.framework",
+				"${BUILT_PRODUCTS_DIR}/Dimmer/Dimmer.framework",
+				"${BUILT_PRODUCTS_DIR}/FadeView/FadeView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftARGB/SwiftARGB.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
+				"${BUILT_PRODUCTS_DIR}/TinyLog/TinyLog.framework",
+				"${BUILT_PRODUCTS_DIR}/UIViewKVO/UIViewKVO.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -672,12 +686,20 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AssetsPickerViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dimmer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FadeView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftARGB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyLog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIViewKVO.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -772,6 +794,7 @@
 				4E1CD32E218D8CD10086145E /* LoginView.swift in Sources */,
 				4E1CD32B218D876A0086145E /* Constants.swift in Sources */,
 				04F3929721F31129006D6409 /* ItemInformErrorBrokenTableViewCell.swift in Sources */,
+				D3711F41226EC5DC00CE0370 /* CameraHandler.swift in Sources */,
 				04F3929C21F31BFA006D6409 /* FooterInformErrorView.swift in Sources */,
 				4E54434022224B910055C8BB /* StoreData.swift in Sources */,
 				4E8EF1E92222865200828C8D /* AddNoteManualForAssetViewController.swift in Sources */,
@@ -921,8 +944,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -937,10 +959,7 @@
 				DEVELOPMENT_TEAM = 85V69UE735;
 				INFOPLIST_FILE = "$(SRCROOT)/InventoryAssert/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Hospital.InventoryAsser1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -959,10 +978,7 @@
 				DEVELOPMENT_TEAM = 85V69UE735;
 				INFOPLIST_FILE = "$(SRCROOT)/InventoryAssert/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Hospital.InventoryAsser1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -979,11 +995,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = InventoryAssertTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Hospital.InventoryAssertTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1000,11 +1012,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = InventoryAssertTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Hospital.InventoryAssertTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

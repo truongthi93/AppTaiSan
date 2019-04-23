@@ -237,7 +237,7 @@ extension InformErrorBrokenViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = CreateInformErrorBrokenViewController(nibName: Constants.InformErrorBroken.createInformErrorBrokenViewController, bundle: nil)
-        vc.assertErrorList = self.assertErrorList[indexPath.row]
+        vc.assertError = self.assertErrorList[indexPath.row]
         vc.type = .update
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -251,7 +251,7 @@ extension InformErrorBrokenViewController: UITableViewDelegate, UITableViewDataS
         // action one
         let editAction = UITableViewRowAction(style: .default, title: Constants.AppCommon.update, handler: { (action, indexPath) in
             let vc = CreateInformErrorBrokenViewController(nibName: Constants.InformErrorBroken.createInformErrorBrokenViewController, bundle: nil)
-            vc.assertErrorList = self.assertErrorList[indexPath.row]
+            vc.assertError = self.assertErrorList[indexPath.row]
             vc.type = .update
             self.navigationController?.pushViewController(vc, animated: true)
         })

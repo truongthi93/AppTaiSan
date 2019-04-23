@@ -7,6 +7,7 @@
 //
 import Foundation
 import UIKit
+import Photos
 
 class Utility {
     /// Show Alert
@@ -142,5 +143,20 @@ class Utility {
         textField.inputView = datePicker
     }
 
+    /// ConvertPHAAssertToImage
+    ///
+    /// - Parameter asset:
+    /// - Returns:
+    class func convertAssertToImage(asset: PHAsset) -> UIImage {
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        var thumbnail = UIImage()
+        option.isSynchronous = true
+        manager.requestImage(for: asset, targetSize: CGSize(width:300.0, height: 300.0), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+            thumbnail = result!
+        })
+        return thumbnail
+    }
+    
 }
 
