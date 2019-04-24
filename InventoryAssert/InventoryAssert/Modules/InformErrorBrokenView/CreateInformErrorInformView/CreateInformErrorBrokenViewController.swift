@@ -10,7 +10,7 @@ import UIKit
 import AssetsPickerViewController
 import Photos
 
-class CreateInformErrorBrokenViewController: BaseViewController {
+class CreateInformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
     public var createInformErrorBrokenView: CreateInformErrorBrokenView! {
         guard isViewLoaded else { return nil }
         return view as? CreateInformErrorBrokenView
@@ -22,7 +22,12 @@ class CreateInformErrorBrokenViewController: BaseViewController {
         AssertError(JSON: ["maYeuCau": "M002", "tenYeuCau": "May Photocopy"]) ?? AssertError()]
     var imageAsserts: [UIImage]? = [] //[UIImage(named: "Pic1") ?? UIImage(), UIImage(named: "Pic2")  ?? UIImage(), UIImage(named: "Pic3")  ?? UIImage()]
     
+    /*Handle input State textfile*/
+    let dataPickerStates: [String] = Constants.InformErrorBroken.dataPickerStates
+    /*Handle input State textfile*/
+    
     var type: TypeAssert = .addNew
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +41,12 @@ class CreateInformErrorBrokenViewController: BaseViewController {
         
         self.createInformErrorBrokenView.findAssertButton.addTarget(self, action: #selector(self.onFindAssertButtonClick(_:)), for: .touchUpInside)
         
-        
-        
+        /*Handle input State textfile*/
+        self.createInformErrorBrokenView.thePicker.delegate = self
+        self.createInformErrorBrokenView.thePicker.dataSource = self
+        self.createInformErrorBrokenView.stateTf.delegate = self
+        self.showPicker()
+        /*Handle input State textfile*/
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -234,4 +243,49 @@ extension CreateInformErrorBrokenViewController: AssetsPickerViewControllerDeleg
     //
     //    }
     //
+}
+
+extension CreateInformErrorBrokenViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func showPicker(){
+        let doneButton = UIBarButtonItem(title: Constants.AppCommon.done, style: .plain, target: self, action: #selector(donePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: Constants.AppCommon.cancel, style: .plain, target: self, action: #selector(cancelPicker));
+        let buttons = [doneButton, spaceButton, cancelButton]
+        
+        Utility.showInputTextFieldPicker(pickerView: self.createInformErrorBrokenView.thePicker, textField: self.createInformErrorBrokenView.stateTf, buttons: buttons)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if self.createInformErrorBrokenView.stateTf.text == "" {
+            self.createInformErrorBrokenView.stateTf.text = self.dataPickerStates[0]
+            self.createInformErrorBrokenView.thePicker.selectRow(0, inComponent: 0, animated: true)
+        }
+    }
+
+    @objc func donePicker(){
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelPicker(){
+        self.createInformErrorBrokenView.stateTf.text = ""
+        self.view.endEditing(true)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.dataPickerStates.count
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.dataPickerStates[row]
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.createInformErrorBrokenView.stateTf.text = self.dataPickerStates[row]
+    }
+    
 }

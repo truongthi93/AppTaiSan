@@ -142,6 +142,15 @@ class Utility {
         textField.inputAccessoryView = toolbar
         textField.inputView = datePicker
     }
+    
+    class func showInputTextFieldPicker(pickerView: UIPickerView, textField: UITextField, buttons: [UIBarButtonItem]){
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        toolbar.setItems(buttons, animated: false)
+        textField.inputAccessoryView = toolbar
+        textField.inputView = pickerView
+    }
 
     /// ConvertPHAAssertToImage
     ///

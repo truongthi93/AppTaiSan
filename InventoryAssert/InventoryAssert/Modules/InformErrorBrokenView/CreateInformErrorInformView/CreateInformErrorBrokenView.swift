@@ -27,12 +27,17 @@ class CreateInformErrorBrokenView: UIView {
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var scanQRCodeButton: UIButton!
     @IBOutlet weak var findAssertButton: UIButton!
+    let thePicker = UIPickerView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
     func setupCell(assertError: AssertError?) {
+        /*Handle input State textfile*/
+        self.stateTf.inputView = self.thePicker
+        /*Handle input State textfile*/
+        
         //<Collectionview Images>
         self.imageCollectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
         //edit size fr items

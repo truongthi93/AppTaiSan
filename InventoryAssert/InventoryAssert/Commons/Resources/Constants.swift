@@ -108,5 +108,6 @@ class Constants {
         static let informErrorBrokenViewController = "InformErrorBrokenViewController"
         static let itemInformErrorBrokenTableViewCell = "ItemInformErrorBrokenTableViewCell"
         static let createInformErrorBrokenViewController = "CreateInformErrorBrokenViewController"
+        static let dataPickerStates: [String] = ["Mới", "Đã tiếp nhận", "Bỏ qua", "Đang xữ lý", "Hoàn thành", "Đóng", "Không xữ lý được"]
     }
 }
