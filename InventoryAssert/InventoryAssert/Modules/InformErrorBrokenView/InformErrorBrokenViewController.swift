@@ -68,9 +68,6 @@ class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == self.informErrorBrokenView.dateFilterTf {
-            
-        }
         switch textField {
         case self.informErrorBrokenView.dateFilterTf:
             if self.informErrorBrokenView.dateFilterTf.text == "" {
@@ -300,7 +297,7 @@ extension InformErrorBrokenViewController: UITableViewDelegate, UITableViewDataS
         
         return [deleteAction, editAction]
     }
-
+    
 }
 
 extension InformErrorBrokenViewController: UIPickerViewDelegate, UIPickerViewDataSource {

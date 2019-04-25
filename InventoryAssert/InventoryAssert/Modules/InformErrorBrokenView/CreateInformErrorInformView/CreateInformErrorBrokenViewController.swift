@@ -16,11 +16,14 @@ class CreateInformErrorBrokenViewController: BaseViewController, UITextFieldDele
         return view as? CreateInformErrorBrokenView
     }
     
+    let datePicker = UIDatePicker()
+    var dateFilter: String?
+    
     var assertError: AssertError?
     var subAssertErrors: [AssertError] = [
         AssertError(JSON: ["maYeuCau": "M001", "tenYeuCau": "May in"]) ?? AssertError(),
         AssertError(JSON: ["maYeuCau": "M002", "tenYeuCau": "May Photocopy"]) ?? AssertError()]
-    var imageAsserts: [UIImage]? = [] //[UIImage(named: "Pic1") ?? UIImage(), UIImage(named: "Pic2")  ?? UIImage(), UIImage(named: "Pic3")  ?? UIImage()]
+    var imageAsserts: [UIImage]? = []
     
     /*Handle input State textfile*/
     let dataPickerStates: [String] = Constants.InformErrorBroken.dataPickerStates
@@ -41,7 +44,12 @@ class CreateInformErrorBrokenViewController: BaseViewController, UITextFieldDele
         
         self.createInformErrorBrokenView.findAssertButton.addTarget(self, action: #selector(self.onFindAssertButtonClick(_:)), for: .touchUpInside)
         
-        /*Handle input State textfile*/
+        /*Handle input DatePicker textfield*/
+        self.showDatePicker()
+        self.createInformErrorBrokenView.dateRequestTf.delegate = self
+        
+        
+        /*Handle input State textfield*/
         self.createInformErrorBrokenView.thePicker.delegate = self
         self.createInformErrorBrokenView.thePicker.dataSource = self
         self.createInformErrorBrokenView.stateTf.delegate = self
@@ -66,8 +74,8 @@ class CreateInformErrorBrokenViewController: BaseViewController, UITextFieldDele
         self.createInformErrorBrokenView.imageCollectionView.delegate = self
         self.createInformErrorBrokenView.imageCollectionView.dataSource = self
         
-        self.createInformErrorBrokenView.setupCell(assertError: self.assertError)
-        
+        // Pass Assert Data
+        self.createInformErrorBrokenView.setupCell(assertError: self.assertError, type: self.type)
     }
     
     @objc func back() {
@@ -246,6 +254,63 @@ extension CreateInformErrorBrokenViewController: AssetsPickerViewControllerDeleg
 }
 
 extension CreateInformErrorBrokenViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case self.createInformErrorBrokenView.dateRequestTf:
+            if self.createInformErrorBrokenView.dateRequestTf.text == "" {
+                self.datePicker.setDate(Date(), animated: false)
+                self.setFormatDatePicker()
+            }
+            
+            break
+        case self.createInformErrorBrokenView.stateTf:
+            self.initValueStatusTextField()
+            break
+        default:
+            print("TextFieldDidBeginEditing.....")
+            break
+        }
+    }
+    
+    func setFormatDatePicker(){
+        let formatterApi = DateFormatter()
+        formatterApi.dateFormat = Constants.AppCommon.formatDateSendApi
+        let formatter = DateFormatter()
+        formatter.dateFormat = Constants.AppCommon.formatDate
+        self.dateFilter = formatterApi.string(from: datePicker.date)
+        self.createInformErrorBrokenView.dateRequestTf.text = formatter.string(from: datePicker.date)
+    }
+    
+    func showDatePicker(){
+        let doneButton = UIBarButtonItem(title: Constants.AppCommon.done, style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: Constants.AppCommon.cancel, style: .plain, target: self, action: #selector(cancelDatePicker));
+        let buttons = [doneButton, spaceButton, cancelButton]
+        self.datePicker.setDate(Date(), animated: false)
+        Utility.showDatePicker(datePicker: datePicker, textField: self.createInformErrorBrokenView.dateRequestTf, buttons: buttons)
+        
+        self.datePicker.addTarget(self, action: #selector(self.valueChanged(_:)), for: UIControl.Event.valueChanged)
+        
+    }
+    
+    @objc func valueChanged(_ datePicker: UIDatePicker) {
+        let selectedDate = datePicker.date as NSDate
+        print("Ngay duoc chon.....\(selectedDate)")
+        self.setFormatDatePicker()
+    }
+    
+    @objc func donedatePicker(){
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        if self.type == .addNew {
+            self.createInformErrorBrokenView.dateRequestTf.text = ""
+        } else {
+            self.createInformErrorBrokenView.dateRequestTf.text = Utility.convertDateString(dateTime: String(describing: assertError?.ngayYeuCau ?? ""))
+        }
+        self.view.endEditing(true)
+    }
     
     func showPicker(){
         let doneButton = UIBarButtonItem(title: Constants.AppCommon.done, style: .plain, target: self, action: #selector(donePicker));
@@ -256,13 +321,13 @@ extension CreateInformErrorBrokenViewController: UIPickerViewDelegate, UIPickerV
         Utility.showInputTextFieldPicker(pickerView: self.createInformErrorBrokenView.thePicker, textField: self.createInformErrorBrokenView.stateTf, buttons: buttons)
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func initValueStatusTextField(){
         if self.createInformErrorBrokenView.stateTf.text == "" {
             self.createInformErrorBrokenView.stateTf.text = self.dataPickerStates[0]
             self.createInformErrorBrokenView.thePicker.selectRow(0, inComponent: 0, animated: true)
         }
     }
-
+    
     @objc func donePicker(){
         self.view.endEditing(true)
     }

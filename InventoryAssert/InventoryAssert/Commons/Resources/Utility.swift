@@ -131,10 +131,27 @@ class Utility {
         return dateString
     }
     
+    /// Get the date string from date.
+    ///
+    /// - Parameter dateTime: the date.
+    /// - Returns: the date as String.
+    class func convertDateString(dateTime: String) -> String {
+         //CONVERT FROM String to Date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let date = dateFormatter.date(from: dateTime)
+        
+        //CONVERT FROM Date to String
+        dateFormatter.dateFormat =  Constants.AppCommon.formatDate
+        let dateString = dateFormatter.string(from: date ?? Date())
+        print("Ngay DATE......\(dateString)")
+        return dateString
+    }
+    
     class func showDatePicker(datePicker: UIDatePicker, textField: UITextField, buttons: [UIBarButtonItem]){
         //Formate Date
         datePicker.datePickerMode = .date
-        
+        datePicker.locale = Locale.init(identifier: "vi")
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()

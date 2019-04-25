@@ -33,7 +33,7 @@ class CreateInformErrorBrokenView: UIView {
         super.init(frame: frame)
     }
     
-    func setupCell(assertError: AssertError?) {
+    func setupCell(assertError: AssertError?, type: TypeAssert) {
         /*Handle input State textfile*/
         self.stateTf.inputView = self.thePicker
         /*Handle input State textfile*/
@@ -49,12 +49,15 @@ class CreateInformErrorBrokenView: UIView {
         self.assetTableview.register(UINib(nibName: "CreateInformErrorBrokenTableViewCell", bundle: nil), forCellReuseIdentifier: "CreateInformErrorBrokenTableViewCell")
         self.assetTableview.tableFooterView = UIView()
         //</TableView list sub assert>
-        self.applyUIForText(assertError: assertError)
+        
+        if type == .update {
+            self.applyUIForText(assertError: assertError)
+        }
     }
     
     func applyUIForText(assertError: AssertError?) {
         self.contentRequestTf.text = assertError?.noiDung ?? ""
-        self.dateRequestTf.text = assertError?.ngayYeuCau ?? ""
+        self.dateRequestTf.text =  Utility.convertDateString(dateTime: String(describing: assertError?.ngayYeuCau ?? ""))//assertError?.ngayYeuCau ?? ""
         self.personRequestTf.text = assertError?.ngayYeuCau ?? ""
         self.priorityRequestTf.text = assertError?.loaiUuTien ?? ""
         self.nameDeviceTf.text = assertError?.tenTrangThai ?? ""
