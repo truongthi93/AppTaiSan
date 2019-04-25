@@ -16,9 +16,13 @@ class InformErrorBrokenView: UIView {
     @IBOutlet weak var dateFilterTf: UITextField!
     @IBOutlet weak var createErrorBrokenButton: UIButton!
     @IBOutlet weak var onResetButton: UIButton!
+    let thePicker = UIPickerView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        /*Handle input State textfile*/
+        self.stateFilterTf.inputView = self.thePicker
+        /*Handle input State textfile*/
     }
     
     required init?(coder aDecoder: NSCoder) {

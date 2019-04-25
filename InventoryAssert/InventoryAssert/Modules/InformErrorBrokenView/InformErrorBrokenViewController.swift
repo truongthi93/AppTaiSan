@@ -20,6 +20,10 @@ class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
     let datePicker = UIDatePicker()
     var dateFilter: String?
     
+    /*Handle input State textfile*/
+    let dataPickerStates: [String] = Constants.InformErrorBroken.dataPickerStates
+    /*Handle input State textfile*/
+    
     public var informErrorBrokenView: InformErrorBrokenView! {
         guard isViewLoaded else { return nil }
         return view as? InformErrorBrokenView
@@ -33,6 +37,13 @@ class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
         self.setUpView()
         self.showDatePicker()
         self.informErrorBrokenView.dateFilterTf.delegate = self
+        
+        /*Handle input State textfile*/
+        self.informErrorBrokenView.thePicker.delegate = self
+        self.informErrorBrokenView.thePicker.dataSource = self
+        self.informErrorBrokenView.stateFilterTf.delegate = self
+        self.showPicker()
+        /*Handle input State textfile*/
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,10 +68,23 @@ class InformErrorBrokenViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if self.informErrorBrokenView.dateFilterTf.text == "" {
-            self.datePicker.setDate(Date(), animated: false)
+        if textField == self.informErrorBrokenView.dateFilterTf {
+            
         }
-        self.setFormatDatePicker()
+        switch textField {
+        case self.informErrorBrokenView.dateFilterTf:
+            if self.informErrorBrokenView.dateFilterTf.text == "" {
+                self.datePicker.setDate(Date(), animated: false)
+            }
+            self.setFormatDatePicker()
+            break
+        case self.informErrorBrokenView.stateFilterTf:
+            self.initValueStatusTextField()
+            break
+        default:
+            print("TextFieldDidBeginEditing.....")
+            break
+        }
     }
     
     func setFormatDatePicker(){
@@ -276,8 +300,50 @@ extension InformErrorBrokenViewController: UITableViewDelegate, UITableViewDataS
         
         return [deleteAction, editAction]
     }
-    
-    
+
 }
 
-
+extension InformErrorBrokenViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func showPicker(){
+        let doneButton = UIBarButtonItem(title: Constants.AppCommon.done, style: .plain, target: self, action: #selector(donePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: Constants.AppCommon.cancel, style: .plain, target: self, action: #selector(cancelPicker));
+        let buttons = [doneButton, spaceButton, cancelButton]
+        
+        Utility.showInputTextFieldPicker(pickerView: self.informErrorBrokenView.thePicker, textField: self.informErrorBrokenView.stateFilterTf, buttons: buttons)
+    }
+    
+    func initValueStatusTextField(){
+        if self.informErrorBrokenView.stateFilterTf.text == "" {
+            self.informErrorBrokenView.stateFilterTf.text = self.dataPickerStates[0]
+            self.informErrorBrokenView.thePicker.selectRow(0, inComponent: 0, animated: true)
+        }
+    }
+    
+    @objc func donePicker(){
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelPicker(){
+        self.informErrorBrokenView.stateFilterTf.text = ""
+        self.view.endEditing(true)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.dataPickerStates.count
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.dataPickerStates[row]
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.informErrorBrokenView.stateFilterTf.text = self.dataPickerStates[row]
+    }
+    
+}
